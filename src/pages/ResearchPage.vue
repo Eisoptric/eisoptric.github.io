@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Breadcrumb from '../components/Breadcrumb.vue'
-import Epigraph from '../components/Epigraph.vue'
 import LetterMark from '../components/LetterMark.vue'
 import Ornament from '../components/Ornament.vue'
 import { localePath, useI18n } from '../i18n'
@@ -20,26 +19,10 @@ const { locale, t } = useI18n()
     </div>
   </section>
 
-  <section class="section band-oat" id="hidden-name">
-    <div class="wrap">
-      <Epigraph center />
-      <Ornament />
-      <div class="manuscript">
-        <div class="section-head">
-          <LetterMark :index="0" />
-          <h2>{{ t.researchPage.nameTitle }}</h2>
-        </div>
-        <div class="prose">
-          <p v-for="(para, i) in t.researchPage.name" :key="para" :class="{ 'drop-cap': i === 0 }">{{ para }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="agenda">
+  <section class="section band-oat" id="agenda">
     <div class="wrap">
       <div class="section-head">
-        <LetterMark :index="1" />
+        <LetterMark :index="0" />
         <h2>{{ t.researchPage.agendaTitle }}</h2>
         <p class="lede">{{ t.researchPage.agendaDesc }}</p>
       </div>
@@ -56,10 +39,10 @@ const { locale, t } = useI18n()
     </div>
   </section>
 
-  <section class="section band-oat" id="models">
+  <section class="section" id="models">
     <div class="wrap two lilith-teaser">
       <div class="section-head">
-        <LetterMark :index="2" />
+        <LetterMark :index="1" />
         <h2>{{ t.researchPage.modelsTitle }}</h2>
       </div>
       <div>
@@ -72,10 +55,10 @@ const { locale, t } = useI18n()
     </div>
   </section>
 
-  <section class="section" id="notes">
+  <section class="section band-oat" id="notes">
     <div class="wrap">
       <div class="section-head">
-        <LetterMark :index="3" />
+        <LetterMark :index="2" />
         <h2>{{ t.researchPage.notesTitle }}</h2>
         <p class="lede">{{ t.researchPage.notesDesc }}</p>
       </div>
@@ -88,10 +71,10 @@ const { locale, t } = useI18n()
     </div>
   </section>
 
-  <section class="section band-oat">
+  <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <LetterMark :index="4" />
+        <LetterMark :index="3" />
         <h2>{{ t.researchPage.standardTitle }}</h2>
       </div>
       <ul class="principles four-col">
