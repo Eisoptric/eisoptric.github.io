@@ -42,7 +42,7 @@ const messages = {
     hero: {
       eyebrow: 'Saturn · An independent AI research project',
       title: 'How do models learn, and what do they compute?',
-      desc: 'Saturn is a small research team. We study how capabilities form while a model is pretrained, and what the trained network actually computes inside. We build the tools that work needs, and release them for anyone to use.',
+      desc: 'Saturn is an independent research project. We study how capabilities form while a model is pretrained, and what the trained network actually computes inside. We build the tools that work needs, and release them for anyone to use.',
       primary: 'Our research',
       secondary: 'About Saturn',
       note: 'Our first research notes are in progress.',
@@ -254,7 +254,7 @@ const messages = {
       title: 'Questions about Saturn',
       items: [
         ['What is Saturn?', 'Saturn is a small, independent AI research project run by Saturn Technology Project. It studies how capabilities form during pretraining and what trained models compute inside, and how to keep models that act through tools under human oversight.'],
-        ['Who runs Saturn?', 'A small team under Saturn Technology Project, based in Taiwan. Saturn is not part of a company or university.'],
+        ['Who runs Saturn?', 'Saturn Technology Project, an independent project based in Taiwan, currently run by one researcher. Saturn is not part of a company or university.'],
         ['Why does a research project ship software?', 'Because the research needs it. Saturn App is the workbench we use for experiments and interpretability, and Saturn MCP is the gateway we needed before letting agents act on their own. We release them because they are useful beyond our own work.'],
         ['Are the tools free?', 'Yes. Saturn App and Saturn MCP are both free, with every feature on every account. Saturn App is open source under the Apache License 2.0.'],
         ['Where are the research results?', 'Our first notes are in progress. They will be published on the research page, each with its question, method, code and data.'],
@@ -603,7 +603,7 @@ const messages = {
       title: 'About Saturn — A small, independent AI research project',
       description: 'Saturn is a small AI research project run by Saturn Technology Project. Who we are, what we work towards, why we build and release tools, and how to reach us.',
       eyebrow: 'About',
-      heading: 'A small team trying to understand how models learn.',
+      heading: 'An independent project to understand how models learn.',
       lede: 'Saturn is an independent research project run by Saturn Technology Project. We want to understand how AI systems acquire what they know and what they compute when they use it, because that understanding is what makes more capable systems safe to build and to rely on.',
       missionTitle: 'Why we exist.',
       mission: [
@@ -615,10 +615,10 @@ const messages = {
         'Saturn’s work is organized around one image, taken from the Alphabet of Ben Sira, a medieval Hebrew text. In it, Lilith speaks a name that may not be spoken, and leaves.',
         'We borrow the image, not the belief. A model knows something it was never told. Our work is to read that name, rather than let it go unread, and that is why our own models are called Lilith.',
       ],
-      teamTitle: 'Who we are.',
+      teamTitle: 'Who runs Saturn.',
       team: [
-        ['Saturn Technology Project', 'The team behind Saturn: a small, independent group based in Taiwan, not part of a company or university.'],
-        ['Small on purpose', 'We pick a few questions and go deep, and we write our own tools rather than wait for them.'],
+        ['Saturn Technology Project', 'The project behind Saturn: independent, based in Taiwan, and currently run by one researcher. It is not part of a company or university.'],
+        ['Small on purpose', 'A few questions, studied in depth. The tools the work needs are written in-house rather than waited for.'],
         ['Our own models', 'We train small models of our own, the Lilith series, because studying how a model learns means seeing every step of its training.'],
       ],
       toolsTitle: 'Why we build tools.',
@@ -708,7 +708,7 @@ const messages = {
     hero: {
       eyebrow: 'Saturn · 獨立 AI 研究計劃',
       title: '模型如何學會東西？它的內部在算什麼？',
-      desc: 'Saturn 是一個小型研究團隊。我們研究能力在模型預訓練時如何形成，以及訓練好的網路內部實際上在計算什麼。研究需要的工具我們自己打造，並釋出給所有人使用。',
+      desc: 'Saturn 是一個獨立研究計劃。我們研究能力在模型預訓練時如何形成，以及訓練好的網路內部實際上在計算什麼。研究需要的工具我們自己打造，並釋出給所有人使用。',
       primary: '我們的研究',
       secondary: '關於 Saturn',
       note: '第一批研究筆記正在撰寫中。',
@@ -905,7 +905,7 @@ const messages = {
       title: '關於 Saturn',
       items: [
         ['Saturn 是什麼？', 'Saturn 是由 Saturn Technology Project 運作的小型獨立 AI 研究計劃。我們研究能力如何在預訓練中形成、訓練好的模型內部在計算什麼，以及如何讓透過工具行動的模型留在人的監督之下。'],
-        ['誰在經營 Saturn？', 'Saturn Technology Project 底下的一個小團隊，位於台灣。Saturn 不隸屬於任何公司或大學。'],
+        ['誰在經營 Saturn？', 'Saturn Technology Project，一個位於台灣的獨立計劃，目前由一位研究者經營。Saturn 不隸屬於任何公司或大學。'],
         ['研究計劃為什麼要發行軟體？', '因為研究需要。Saturn App 是我們做實驗與可解釋性分析的工作台；Saturn MCP 是我們讓 Agent 自主行動之前需要的 Gateway。它們在我們自己的研究之外也有用，所以我們把它們釋出。'],
         ['工具是免費的嗎？', '是的。Saturn App 與 Saturn MCP 都免費，每個帳號都有全部功能。Saturn App 以 Apache License 2.0 授權開源。'],
         ['研究成果在哪裡？', '第一批筆記正在撰寫中。發表後會放在研究頁，每篇都附上問題、方法、程式碼與資料。'],
@@ -1253,7 +1253,7 @@ const messages = {
       title: '關於 Saturn — 小型獨立 AI 研究計劃',
       description: 'Saturn 是由 Saturn Technology Project 運作的小型 AI 研究計劃。我們是誰、為了什麼而做、為什麼打造並釋出工具，以及如何聯絡我們。',
       eyebrow: '關於',
-      heading: '一個想弄懂模型如何學習的小團隊。',
+      heading: '一個想弄懂模型如何學習的獨立計劃。',
       lede: 'Saturn 是由 Saturn Technology Project 運作的獨立研究計劃。我們想理解 AI 系統如何習得它所知道的東西，以及使用這些知識時在計算什麼，因為正是這份理解，讓更強大的系統可以被安全地打造與依賴。',
       missionTitle: '我們為什麼存在。',
       mission: [
@@ -1265,10 +1265,10 @@ const messages = {
         'Saturn 的研究圍繞著一個意象，它出自中世紀的希伯來文本《便西拉字母書》。書中的 Lilith 說出了不可言說之名，然後離去。',
         '我們借用的是這個意象，而不是這份信仰。模型知道一些從沒有人告訴它的事。我們的工作是讀懂那個名字，而不是任由它無人讀懂；這也是我們自己的模型叫做 Lilith 的原因。',
       ],
-      teamTitle: '我們是誰。',
+      teamTitle: '誰在經營 Saturn。',
       team: [
-        ['Saturn Technology Project', 'Saturn 背後的團隊：一個位於台灣的小型獨立團隊，不隸屬於任何公司或大學。'],
-        ['刻意保持小', '我們只挑少數問題深入研究，需要的工具自己寫，而不是等別人做。'],
+        ['Saturn Technology Project', 'Saturn 背後的計劃：獨立運作、位於台灣，目前由一位研究者經營，不隸屬於任何公司或大學。'],
+        ['刻意保持小', '只挑少數問題深入研究；研究需要的工具自己寫，而不是等別人做。'],
         ['自己的模型', '我們訓練自己的小型模型，也就是 Lilith 系列，因為研究模型如何學習，就得看見它訓練的每一步。'],
       ],
       toolsTitle: '我們為什麼做工具。',
