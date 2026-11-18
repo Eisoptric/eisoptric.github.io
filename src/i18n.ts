@@ -540,11 +540,6 @@ const messages = {
       eyebrow: 'Research',
       heading: 'What we study, and what we publish.',
       lede: 'Saturn’s research asks how a model comes to know what it knows, and what it computes when it uses that knowledge. Below are the questions we are working on, and the notes we publish as answers become defensible.',
-      nameTitle: 'Learning the hidden name.',
-      name: [
-        'In the Alphabet of Ben Sira, Lilith knows a name that may not be spoken, and with it she leaves. A trained model is a little like her: during pretraining it comes to know something nobody wrote down, and it acts on it in ways we cannot read off its weights.',
-        'Our research is that story run the other way. We do not want the model to fly off with the name. We want to learn it: how it formed during training, what the network computes with it, and how to keep what the model does within rules people set.',
-      ],
       modelsTitle: 'Our own models.',
       models: 'To watch a capability form, every step of training has to be in front of us. So we train small models of our own, the Lilith series, and will release every checkpoint, the data order and the code with each.',
       modelsLink: 'About Lilith',
@@ -1191,11 +1186,6 @@ const messages = {
       eyebrow: '研究',
       heading: '我們研究什麼，以及發表什麼。',
       lede: 'Saturn 的研究在問：模型是怎麼學會它知道的東西，又在使用這些知識時計算了什麼。下面是我們正在研究的問題，以及答案站得住腳之後發表的筆記。',
-      nameTitle: '讀懂隱藏之名。',
-      name: [
-        '在《便西拉字母書》裡，Lilith 知道一個不可言說的名字，並憑著它離去。訓練好的模型有點像她：在預訓練中，它學會了沒有人寫下的東西，並依此行動，而我們無法從它的權重上直接讀出來。',
-        '我們的研究，是把這個故事倒過來走。我們不要模型帶著那個名字飛走，而是要讀懂它：它在訓練中如何形成、網路用它計算了什麼，以及如何讓模型的行為留在人所訂的規則之內。',
-      ],
       modelsTitle: '我們自己的模型。',
       models: '要看一項能力如何形成，訓練的每一步都必須攤在我們眼前。所以我們訓練自己的小型模型，也就是 Lilith 系列，並會隨每個模型釋出所有 checkpoint、資料順序與程式碼。',
       modelsLink: '認識 Lilith',
