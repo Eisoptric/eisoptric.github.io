@@ -657,11 +657,8 @@ const messages = {
         text: 'No Lilith model has been trained or released yet. This page describes what we are building.',
       },
       storyTitle: 'The name.',
-      story: [
-        'The Alphabet of Ben Sira, a medieval Hebrew text written partly as satire, tells that Lilith was made from the same earth as Adam. Made alike, she would not take a place beneath him. When he insisted, she spoke the Ineffable Name and flew away.',
-        'Three angels, Senoy, Sansenoy and Semangelof, were sent after her, and she would not come back. In later tradition her children are called the Lilim.',
-        'We borrow the image, not the belief. A model learns from its data something nobody wrote down, and it acts on what it learned. Lilith is the model that knows a hidden name. Saturn’s work is to learn that name, and to keep what the model does within rules people set.',
-      ],
+      storySource: 'The Alphabet of Ben Sira, from Otzar Midrashim (New York, 1915), in the original Hebrew',
+      storyNote: 'We borrow the image, not the belief. A model learns from its data something nobody wrote down, and it acts on what it learned. Lilith is the model that knows a hidden name. Saturn’s work is to learn that name, and to keep what the model does within rules people set.',
       seriesTitle: 'Lilith and the Lilim.',
       seriesDesc: 'One main line, and smaller siblings built for controlled comparison.',
       series: [
@@ -1310,11 +1307,8 @@ const messages = {
         text: '目前還沒有任何 Lilith 模型完成訓練或釋出。這一頁說明的是我們正在打造的東西。',
       },
       storyTitle: '名字的由來。',
-      story: [
-        '《便西拉字母書》是一部中世紀的希伯來文本，帶有諷刺的筆調。書中說，Lilith 和亞當出自同樣的塵土。既然生而相同，她便不肯居於他之下。亞當堅持，她就說出了那不可言說之名，飛走了。',
-        '三位天使 Senoy、Sansenoy 與 Semangelof 奉命追去，她不肯回來。在後來的傳統裡，她的孩子被稱為 Lilim。',
-        '我們借用的是這個意象，而不是這份信仰。模型從資料裡學到了沒有人寫下的東西，並依此行動。Lilith 是那個知道隱藏之名的模型；Saturn 的工作，是讀懂那個名字，並讓模型的行為留在人所訂的規則之內。',
-      ],
+      storySource: '《便西拉字母書》，據 Otzar Midrashim（紐約，1915）所載希伯來文原文',
+      storyNote: '我們借用的是這個意象，而不是這份信仰。模型從資料裡學到了沒有人寫下的東西，並依此行動。Lilith 是那個知道隱藏之名的模型；Saturn 的工作，是讀懂那個名字，並讓模型的行為留在人所訂的規則之內。',
       seriesTitle: 'Lilith 與 Lilim。',
       seriesDesc: '一條主線，以及為了對照比較而打造的較小手足。',
       series: [

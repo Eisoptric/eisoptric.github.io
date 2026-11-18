@@ -2945,3 +2945,44 @@ html[lang="zh-Hant"] .lilith-hero h1 {
     padding: 24px 22px 28px;
   }
 }
+
+/* The Lilith page's original Hebrew passage, untranslated. */
+.original blockquote {
+  font-family: var(--hebrew);
+  font-size: 22px;
+  line-height: 2.05;
+  text-align: justify;
+  color: var(--ink);
+}
+
+.original .rubric {
+  font-size: 1.5em;
+  color: var(--accent-ink);
+}
+
+.original figcaption {
+  margin-top: 22px;
+  font-family: var(--display);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--ink-3);
+}
+
+.original figcaption a {
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.original figcaption a:hover {
+  color: var(--accent-ink);
+}
+
+.section-head .lede + .lede {
+  margin-top: 12px;
+}
+
+@media (max-width: 760px) {
+  .original blockquote {
+    font-size: 19px;
+    text-align: right;
+  }
+}

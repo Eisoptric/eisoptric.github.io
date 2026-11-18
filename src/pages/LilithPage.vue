@@ -6,8 +6,12 @@ import Ornament from '../components/Ornament.vue'
 import { useI18n } from '../i18n'
 import { CONTACT_ADDRESS, ORG_GITHUB_URL } from '../config'
 import { roman } from '../roman'
+import { BEN_SIRA_LILITH, BEN_SIRA_SOURCE_URL } from '../ben-sira'
 
 const { t } = useI18n()
+// The opening word is set in rubric red, as a scribe would begin a passage.
+const [firstWord, ...rest] = BEN_SIRA_LILITH.split(' ')
+const restOfText = rest.join(' ')
 </script>
 
 <template>
@@ -36,9 +40,12 @@ const { t } = useI18n()
           <LetterMark :index="0" />
           <h2>{{ t.lilithPage.storyTitle }}</h2>
         </div>
-        <div class="prose">
-          <p v-for="(para, i) in t.lilithPage.story" :key="para" :class="{ 'drop-cap': i === 0 }">{{ para }}</p>
-        </div>
+        <figure class="original">
+          <blockquote lang="he" dir="rtl"><span class="rubric">{{ firstWord }}</span> {{ restOfText }}</blockquote>
+          <figcaption>
+            <a :href="BEN_SIRA_SOURCE_URL" target="_blank" rel="noopener noreferrer">{{ t.lilithPage.storySource }}</a>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -48,6 +55,7 @@ const { t } = useI18n()
       <div class="section-head">
         <LetterMark :index="1" />
         <h2>{{ t.lilithPage.seriesTitle }}</h2>
+        <p class="lede">{{ t.lilithPage.storyNote }}</p>
         <p class="lede">{{ t.lilithPage.seriesDesc }}</p>
       </div>
       <div class="two series">
