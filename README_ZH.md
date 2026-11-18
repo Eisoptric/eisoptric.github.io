@@ -27,7 +27,10 @@
 
 | 英文 | 中文 | 元件 | 內容 |
 | --- | --- | --- | --- |
-| `/` | `/zh` | `HomePage.vue` | Saturn 致力的方向（AI 安全）、並列的兩個產品（`#saturn-mcp`、`#saturn-app`）、我們怎麼做、免費方案、常見問題（`#faq`）與行動呼籲 |
+| `/` | `/zh` | `HomePage.vue` | 研究問題、三條研究主線、最新研究筆記（第一篇發表前為佔位）、研究途中做出來的工具（`#tools`）、我們怎麼做研究、常見問題（`#faq`）與追蹤 GitHub 的行動呼籲 |
+| `/research` | `/zh/research` | `ResearchPage.vue` | 研究方向（`#agenda`）、研究筆記列表（`#notes`，目前為佔位）與每篇筆記包含的內容 |
+| `/lilith` | `/zh/lilith` | `LilithPage.vue` | Saturn 自己的小型模型 Lilith（準備中）：名字與它在《便西拉字母書》中的出處（`#name`）、Lilith 與 Lilim（`#series`）、每個模型會一起釋出什麼（`#release`），以及為什麼是小模型（`#scale`） |
+| `/about` | `/zh/about` | `AboutPage.vue` | 使命、我們是誰、為什麼做工具，以及聯絡方式（`#contact`） |
 | `/mcp` | `/zh/mcp` | `McpPage.vue` | Saturn MCP，也就是 Gateway：政策範例、四個設定步驟、使用情境、功能、安全、為什麼需要專屬 Gateway 與主控台 |
 | `/app` | `/zh/app` | `AppPage.vue` | Saturn App，AI 研究工作台：GitHub 儲存庫連結、發行版本連結、功能與系統需求 |
 | `/trust` | `/zh/trust` | `TrustPage.vue` | 金鑰、原始內容與憑證如何受到保護、常見問題、系統白皮書（`#whitepaper`）與漏洞回報（`#disclosure`） |
@@ -77,7 +80,7 @@ npm run dev
 
 1. `vite build` 寫出用戶端套件與 `dist/index.html`。範本 [`index.html`](index.html) 有兩個標記：包住預設標題與描述的 `<!--seo-->…<!--/seo-->`，以及 `<div id="app">` 裡的 `<!--app-html-->`。
 2. `vite build --ssr src/entry-server.ts --outDir dist-ssr` 建置一個 Node 套件，匯出 `render(url)`、`prerenderPaths()` 與 `sitemapXml()`。
-3. [`scripts/prerender.mjs`](scripts/prerender.mjs) 載入這個套件，對 `prerenderPaths()` 的每個路徑（每個頁面的兩種語言，共十四個）：
+3. [`scripts/prerender.mjs`](scripts/prerender.mjs) 載入這個套件，對 `prerenderPaths()` 的每個路徑（每個頁面的兩種語言，共二十個）：
    - 以記憶體歷程的路由器、依路徑決定的語系，用 `renderToString` 渲染頁面；
    - 以 `src/seo.ts` 的 `headTags()` 產生的 head 標籤取代 `<!--seo-->` 區塊；
    - 把 `<html lang>` 設為 `en` 或 `zh-Hant`，並以渲染出的 HTML 取代 `<!--app-html-->`；
@@ -137,7 +140,7 @@ const { t } = useI18n()
 - **Open Graph 與 Twitter 卡片。** 標題、描述、語系（`en_US` 或 `zh_TW`），以及 1200 × 630 的 `og.png`，替代文字使用該頁的語言。
 - **Robots。** `index, follow, max-image-preview:large`。
 - **JSON-LD。** 每頁一個 `@graph`，包含 `Organization` 與 `WebSite`、該頁的 `WebPage`（首頁以外都附 `BreadcrumbList`）、首頁、Trust 與方案頁由常見問題文案產生的 `FAQPage`，以及 Saturn MCP（首頁、MCP、方案頁）與 Saturn App（首頁、App、方案頁）的 `SoftwareApplication`。
-- **Sitemap。** `sitemapXml()` 列出全部十四個網址及其替代語言、每頁的優先順序，並以建置日期作為 `lastmod`。
+- **Sitemap。** `sitemapXml()` 列出全部二十個網址及其替代語言、每頁的優先順序，並以建置日期作為 `lastmod`。
 
 提供給搜尋引擎爬蟲與語言模型的檔案：
 
@@ -154,10 +157,10 @@ Markdown 版本、`llms.txt` 與 `llms-full.txt` 都由渲染出的頁面產生�
 
 ### OG 圖片
 
-`public/og.png` 由 [`scripts/og.swift`](scripts/og.swift) 以 AppKit 繪製，因此只能在 macOS 上執行。它接受輸出路徑與一張 logo 圖片作為參數：
+`public/og.png` 由 [`scripts/og.mjs`](scripts/og.mjs) 在無頭 Chromium 中渲染 [`scripts/og.html`](scripts/og.html) 產生。需要安裝 Playwright 與 Chromium，並能連上 Google Fonts。它接受輸出路徑與一張 logo 圖片作為參數：
 
 ```bash
-swift scripts/og.swift public/og.png public/favicon.png
+node scripts/og.mjs public/og.png public/favicon.png
 ```
 
 圖片上的文字寫在指令碼裡。
@@ -238,7 +241,7 @@ npm run deploy
 | `src/style.css` | 網站樣式 |
 | `public/` | 原樣提供的檔案：`_headers`、`_redirects`、`robots.txt`、`.well-known/security.txt`、web manifest、圖示與 `og.png` |
 | `scripts/prerender.mjs` | 寫出預先渲染的頁面、各頁的 Markdown 版本、sitemap、`llms.txt` 與 `llms-full.txt` |
-| `scripts/og.swift` | 繪製 `public/og.png` |
+| `scripts/og.html`、`scripts/og.mjs` | 繪製 `public/og.png` |
 
 ## 授權
 

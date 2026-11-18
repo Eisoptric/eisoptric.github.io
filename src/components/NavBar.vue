@@ -3,7 +3,7 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import Brand from './Brand.vue'
 import { localePath, useI18n } from '../i18n'
-import { CONSOLE_URL } from '../config'
+import { ORG_GITHUB_URL } from '../config'
 
 const { locale, t } = useI18n()
 const route = useRoute()
@@ -41,10 +41,11 @@ onBeforeUnmount(() => {
 })
 
 const links = computed(() => [
-  { label: t.value.nav.mcp, to: localePath('/mcp', locale.value) },
+  { label: t.value.nav.research, to: localePath('/research', locale.value) },
+  { label: t.value.nav.lilith, to: localePath('/lilith', locale.value) },
   { label: t.value.nav.app, to: localePath('/app', locale.value) },
-  { label: t.value.nav.trust, to: localePath('/trust', locale.value) },
-  { label: t.value.nav.pricing, to: localePath('/pricing', locale.value) },
+  { label: t.value.nav.mcp, to: localePath('/mcp', locale.value) },
+  { label: t.value.nav.about, to: localePath('/about', locale.value) },
 ])
 const enTo = computed(() => localePath(route.path, 'en'))
 const zhTo = computed(() => localePath(route.path, 'zh'))
@@ -60,7 +61,7 @@ const zhTo = computed(() => localePath(route.path, 'zh'))
       </nav>
 
       <div class="nav-end">
-        <a class="btn btn-primary btn-sm" :href="CONSOLE_URL">{{ t.nav.start }}</a>
+        <a class="btn btn-primary btn-sm" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{ t.nav.cta }}</a>
         <div class="lang" @click.stop>
           <button
             class="lang-btn"
@@ -88,7 +89,7 @@ const zhTo = computed(() => localePath(route.path, 'zh'))
       </div>
 
       <div class="mobile-tools">
-        <a class="btn btn-primary btn-sm mobile-start" :href="CONSOLE_URL">{{ t.nav.start }}</a>
+        <a class="btn btn-primary btn-sm mobile-start" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{ t.nav.cta }}</a>
         <div class="lang" @click.stop>
           <button
             class="lang-btn"

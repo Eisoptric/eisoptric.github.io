@@ -3,25 +3,12 @@ import { computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import NavBar from './components/NavBar.vue'
 import Footer from './components/Footer.vue'
-import { locale, type PageName } from './i18n'
+import { isPageName, locale, type PageName } from './i18n'
 import { applyHead, applyNotFoundHead } from './seo'
 
 const route = useRoute()
 
-const page = computed<PageName>(() => {
-  const name = route.meta.page
-  if (
-    name === 'mcp' ||
-    name === 'app' ||
-    name === 'trust' ||
-    name === 'pricing' ||
-    name === 'terms' ||
-    name === 'privacy' ||
-    name === 'home'
-  )
-    return name
-  return 'home'
-})
+const page = computed<PageName>(() => (isPageName(route.meta.page) ? route.meta.page : 'home'))
 
 watch(
   [locale, page, () => route.meta.notFound],
