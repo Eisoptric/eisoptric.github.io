@@ -11,6 +11,8 @@ const route = useRoute()
 const page = computed<PageName>(() => {
   const name = route.meta.page
   if (
+    name === 'research' ||
+    name === 'about' ||
     name === 'mcp' ||
     name === 'app' ||
     name === 'trust' ||

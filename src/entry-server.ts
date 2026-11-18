@@ -26,6 +26,8 @@ export async function render(url: string) {
   if (meta.notFound) return { html, head: notFoundHeadTags(lang), lang, page: null }
   const page = meta.page
   const current: PageName =
+    page === 'research' ||
+    page === 'about' ||
     page === 'mcp' ||
     page === 'app' ||
     page === 'trust' ||

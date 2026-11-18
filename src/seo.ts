@@ -1,9 +1,9 @@
-import { CONTACT_ADDRESS, GITHUB_URL, RELEASES_URL, SITE_URL } from './config'
+import { CONTACT_ADDRESS, GITHUB_URL, ORG_GITHUB_URL, RELEASES_URL, SITE_URL } from './config'
 import { freePricing } from './free-pricing'
 import { copy, pageMeta, type Locale, type PageName } from './i18n'
 import { legalCopy } from './legal'
 
-export const PAGES = ['home', 'mcp', 'app', 'trust', 'pricing', 'terms', 'privacy'] as const
+export const PAGES = ['home', 'research', 'about', 'mcp', 'app', 'trust', 'pricing', 'terms', 'privacy'] as const
 const LOCALES = ['en', 'zh'] as const
 const ORG_ID = `${SITE_URL}/#organization`
 const SITE_ID = `${SITE_URL}/#website`
@@ -45,12 +45,14 @@ function ogLocale(lang: Locale): string {
 
 function imageAlt(lang: Locale): string {
   return lang === 'zh'
-    ? 'Saturn，打造安全、可問責的 AI 工具'
-    : 'Saturn, tools for secure, accountable AI'
+    ? 'Saturn，研究 AI 模型如何學習、內部在算什麼'
+    : 'Saturn, research on how AI models learn and what they compute'
 }
 
 function crumbLabel(page: PageName, lang: Locale): string {
   const nav = copy(lang).nav
+  if (page === 'research') return nav.research
+  if (page === 'about') return nav.about
   if (page === 'mcp') return nav.mcp
   if (page === 'app') return nav.app
   if (page === 'trust') return nav.trust
@@ -135,15 +137,17 @@ export function jsonLd(page: PageName, lang: Locale) {
 
   const graph: Record<string, unknown>[] = [
     {
-      '@type': 'Organization',
+      '@type': ['Organization', 'ResearchProject'],
       '@id': ORG_ID,
       name: 'Saturn',
+      alternateName: 'Saturn Technology Project',
       url: SITE_URL,
       logo: new URL('/favicon.png', SITE_URL).href,
       image: OG_IMAGE,
       email: CONTACT_ADDRESS,
       description: copy('en').meta.description,
-      sameAs: [GITHUB_URL],
+      sameAs: [ORG_GITHUB_URL, GITHUB_URL],
+      knowsAbout: ['Pretraining dynamics', 'Mechanistic interpretability', 'AI agent oversight'],
       founder: { '@type': 'Person', name: 'Rick Weng' },
     },
     {
@@ -247,6 +251,8 @@ export function applyNotFoundHead(lang: Locale) {
 export function sitemapXml(): string {
   const priorities: Record<PageName, string> = {
     home: '1.0',
+    research: '0.9',
+    about: '0.8',
     mcp: '0.9',
     app: '0.9',
     trust: '0.8',

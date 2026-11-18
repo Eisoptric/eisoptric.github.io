@@ -5,10 +5,10 @@ import { localePath, useI18n } from '../i18n'
 const { locale, t } = useI18n()
 
 const links = computed(() => [
-  { to: '/mcp', name: t.value.nav.mcp, desc: t.value.notFound.links.mcp },
+  { to: '/research', name: t.value.nav.research, desc: t.value.notFound.links.research },
+  { to: '/about', name: t.value.nav.about, desc: t.value.notFound.links.about },
   { to: '/app', name: t.value.nav.app, desc: t.value.notFound.links.app },
-  { to: '/trust', name: t.value.nav.trust, desc: t.value.notFound.links.trust },
-  { to: '/pricing', name: t.value.nav.pricing, desc: t.value.notFound.links.pricing },
+  { to: '/mcp', name: t.value.nav.mcp, desc: t.value.notFound.links.mcp },
 ])
 </script>
 

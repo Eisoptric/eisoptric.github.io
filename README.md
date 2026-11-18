@@ -6,7 +6,7 @@
 
 **The source of [saturn-core.com](https://saturn-core.com).**
 
-The landing page, Saturn MCP, Saturn App, Trust (with the whitepaper), Pricing, Terms and Privacy, in English and 繁體中文, prerendered to static HTML.
+Saturn is a small, independent AI research project by Saturn Technology Project. The site holds the landing page, Research, About, the pages of the two tools it releases (Saturn App and Saturn MCP), Trust (with the whitepaper), Pricing, Terms and Privacy, in English and 繁體中文, prerendered to static HTML.
 
 ![Vue](https://img.shields.io/badge/Vue-3.5-4FC08D.svg?logo=vuedotjs&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-8-646CFF.svg?logo=vite&logoColor=white)
@@ -27,7 +27,9 @@ Every page exists twice: once at its English path and once under `/zh` in 繁體
 
 | English | 中文 | Component | What it contains |
 | --- | --- | --- | --- |
-| `/` | `/zh` | `HomePage.vue` | What Saturn works on (AI security), its two products side by side (`#saturn-mcp`, `#saturn-app`), how it is built, the free plan, FAQ (`#faq`) and a call to action |
+| `/` | `/zh` | `HomePage.vue` | The research questions, the three research areas, the latest research notes (a placeholder until the first is published), the tools from our work (`#tools`), how we work, FAQ (`#faq`) and a call to follow on GitHub |
+| `/research` | `/zh/research` | `ResearchPage.vue` | The research agenda (`#agenda`), the list of research notes (`#notes`, a placeholder for now) and what every note includes |
+| `/about` | `/zh/about` | `AboutPage.vue` | Mission, who we are, why we build tools, and contact (`#contact`) |
 | `/mcp` | `/zh/mcp` | `McpPage.vue` | Saturn MCP, the gateway: an example policy, the four setup steps, use cases, capabilities, security, why a dedicated gateway and the console |
 | `/app` | `/zh/app` | `AppPage.vue` | Saturn App, the AI research workbench: a link to the GitHub repository, a link to its releases, features and requirements |
 | `/trust` | `/zh/trust` | `TrustPage.vue` | How keys, payloads and credentials are protected, FAQ, the system whitepaper (`#whitepaper`) and vulnerability disclosure (`#disclosure`) |
@@ -77,7 +79,7 @@ npm run dev
 
 1. `vite build` writes the client bundle and `dist/index.html`. The template [`index.html`](index.html) holds two markers: `<!--seo-->…<!--/seo-->` around the default title and description, and `<!--app-html-->` inside `<div id="app">`.
 2. `vite build --ssr src/entry-server.ts --outDir dist-ssr` builds a Node bundle that exports `render(url)`, `prerenderPaths()` and `sitemapXml()`.
-3. [`scripts/prerender.mjs`](scripts/prerender.mjs) loads that bundle and, for each path in `prerenderPaths()` (every page in both languages, fourteen in all):
+3. [`scripts/prerender.mjs`](scripts/prerender.mjs) loads that bundle and, for each path in `prerenderPaths()` (every page in both languages, eighteen in all):
    - renders the page with `renderToString` on a router in memory history, with the locale taken from the path;
    - replaces the `<!--seo-->` block with the page's head tags from `headTags()` in `src/seo.ts`;
    - sets `<html lang>` to `en` or `zh-Hant`, and puts the rendered HTML in place of `<!--app-html-->`;
@@ -137,7 +139,7 @@ Chinese copy uses Taiwan terms and full-width punctuation, as the existing text 
 - **Open Graph and Twitter cards.** Title, description, locale (`en_US` or `zh_TW`) and `og.png` at 1200 × 630, with alt text in the page's language.
 - **Robots.** `index, follow, max-image-preview:large`.
 - **JSON-LD.** One `@graph` per page with the `Organization` and `WebSite`, the page's `WebPage` (with a `BreadcrumbList` on every page but home), `FAQPage` on Home, Trust and Pricing built from the FAQ copy, and `SoftwareApplication` entries for Saturn MCP (Home, MCP, Pricing) and Saturn App (Home, App, Pricing).
-- **Sitemap.** `sitemapXml()` lists all fourteen URLs with their alternates, a priority per page, and the build date as `lastmod`.
+- **Sitemap.** `sitemapXml()` lists all eighteen URLs with their alternates, a priority per page, and the build date as `lastmod`.
 
 Files that serve crawlers and language models:
 

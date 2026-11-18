@@ -8,10 +8,17 @@ const year = new Date().getFullYear()
 
 const columns = computed(() => [
   {
-    heading: t.value.footer.product,
+    heading: t.value.footer.research,
     links: [
-      { label: t.value.footer.mcp, to: localePath('/mcp', locale.value) },
+      { label: t.value.nav.research, to: localePath('/research', locale.value) },
+      { label: t.value.nav.about, to: localePath('/about', locale.value) },
+    ],
+  },
+  {
+    heading: t.value.footer.tools,
+    links: [
       { label: t.value.footer.app, to: localePath('/app', locale.value) },
+      { label: t.value.footer.mcp, to: localePath('/mcp', locale.value) },
       { label: t.value.footer.trust, to: localePath('/trust', locale.value) },
       { label: t.value.footer.pricing, to: localePath('/pricing', locale.value) },
     ],
