@@ -1,7 +1,7 @@
 import { createSSRApp } from 'vue'
 import { renderToString } from 'vue/server-renderer'
 import App from './App.vue'
-import { locale, type Locale, type PageName } from './i18n'
+import { isPageName, locale, type Locale, type PageName } from './i18n'
 import { createAppRouter } from './router'
 import { headTags, notFoundHeadTags } from './seo'
 
@@ -24,18 +24,6 @@ export async function render(url: string) {
   const html = await renderToString(app)
   const meta = appRouter.currentRoute.value.meta
   if (meta.notFound) return { html, head: notFoundHeadTags(lang), lang, page: null }
-  const page = meta.page
-  const current: PageName =
-    page === 'research' ||
-    page === 'about' ||
-    page === 'mcp' ||
-    page === 'app' ||
-    page === 'trust' ||
-    page === 'pricing' ||
-    page === 'terms' ||
-    page === 'privacy' ||
-    page === 'home'
-      ? page
-      : 'home'
+  const current: PageName = isPageName(meta.page) ? meta.page : 'home'
   return { html, head: headTags(current, lang), lang, page: current }
 }

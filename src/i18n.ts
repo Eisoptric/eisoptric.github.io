@@ -28,6 +28,7 @@ const messages = {
     nav: {
       home: 'Saturn home',
       research: 'Research',
+      lilith: 'Lilith',
       about: 'About',
       tools: 'Tools',
       mcp: 'Saturn MCP',
@@ -539,6 +540,14 @@ const messages = {
       eyebrow: 'Research',
       heading: 'What we study, and what we publish.',
       lede: 'Saturn’s research asks how a model comes to know what it knows, and what it computes when it uses that knowledge. Below are the questions we are working on, and the notes we publish as answers become defensible.',
+      nameTitle: 'Learning the hidden name.',
+      name: [
+        'In the Alphabet of Ben Sira, Lilith knows a name that may not be spoken, and with it she leaves. A trained model is a little like her: during pretraining it comes to know something nobody wrote down, and it acts on it in ways we cannot read off its weights.',
+        'Our research is that story run the other way. We do not want the model to fly off with the name. We want to learn it: how it formed during training, what the network computes with it, and how to keep what the model does within rules people set.',
+      ],
+      modelsTitle: 'Our own models.',
+      models: 'To watch a capability form, every step of training has to be in front of us. So we train small models of our own, the Lilith series, and will release every checkpoint, the data order and the code with each.',
+      modelsLink: 'About Lilith',
       agendaTitle: 'Research agenda.',
       agendaDesc: 'The questions each line of research is organized around. They will change as we learn.',
       areas: [
@@ -601,10 +610,16 @@ const messages = {
         'Models keep getting more capable, and our understanding of what happens inside them lags behind. We think closing that gap is one of the most useful things research can do right now.',
         'So we study both ends: how a capability forms while a model is trained, and what the trained network does when it uses it. And because models increasingly act on their own, we also study how to keep those actions under human oversight.',
       ],
+      nameTitle: 'The hidden name.',
+      name: [
+        'Saturn’s work is organized around one image, taken from the Alphabet of Ben Sira, a medieval Hebrew text. In it, Lilith speaks a name that may not be spoken, and leaves.',
+        'We borrow the image, not the belief. A model knows something it was never told. Our work is to read that name, rather than let it go unread, and that is why our own models are called Lilith.',
+      ],
       teamTitle: 'Who we are.',
       team: [
         ['Saturn Technology Project', 'The team behind Saturn: a small, independent group based in Taiwan, not part of a company or university.'],
         ['Small on purpose', 'We pick a few questions and go deep, and we write our own tools rather than wait for them.'],
+        ['Our own models', 'We train small models of our own, the Lilith series, because studying how a model learns means seeing every step of its training.'],
       ],
       toolsTitle: 'Why we build tools.',
       toolsDesc: 'Research is only as good as the instruments behind it. We build what we need, use it every day, and release it when it is useful to others.',
@@ -620,6 +635,54 @@ const messages = {
       github: 'Saturn on GitHub',
       donate: 'Support the project',
     },
+    epigraph: {
+      quote: 'She uttered the Ineffable Name and flew away into the air.',
+      cite: 'After the Alphabet of Ben Sira',
+    },
+    homeLilith: {
+      eyebrow: 'Models',
+      title: 'Lilith.',
+      desc: 'Small language models we train from scratch and release with every step of their training, so that how a model learns can be studied rather than guessed.',
+      badge: 'In preparation',
+      link: 'About Lilith',
+    },
+    lilithPage: {
+      title: 'Lilith — Small open models for studying how models learn',
+      description: 'Lilith is Saturn’s series of small language models, trained from scratch so that every checkpoint, the data order and the code can be studied. The Lilim are its smaller siblings. No model has been released yet.',
+      eyebrow: 'Lilith · Models',
+      heading: 'Lilith',
+      lede: 'Small language models, trained from scratch and released with every step of their training, so that how they learn can be studied rather than guessed.',
+      status: {
+        badge: 'In preparation',
+        text: 'No Lilith model has been trained or released yet. This page describes what we are building.',
+      },
+      storyTitle: 'The name.',
+      story: [
+        'The Alphabet of Ben Sira, a medieval Hebrew text written partly as satire, tells that Lilith was made from the same earth as Adam. Made alike, she would not take a place beneath him. When he insisted, she spoke the Ineffable Name and flew away.',
+        'Three angels, Senoy, Sansenoy and Semangelof, were sent after her, and she would not come back. In later tradition her children are called the Lilim.',
+        'We borrow the image, not the belief. A model learns from its data something nobody wrote down, and it acts on what it learned. Lilith is the model that knows a hidden name. Saturn’s work is to learn that name, and to keep what the model does within rules people set.',
+      ],
+      seriesTitle: 'Lilith and the Lilim.',
+      seriesDesc: 'One main line, and smaller siblings built for controlled comparison.',
+      series: [
+        ['Lilith', 'The main line: language models we pretrain from scratch, with training kept simple enough to repeat.'],
+        ['Lilim', 'Smaller siblings of each Lilith model, varying one thing at a time: size, seed or data order, so that one change can be compared against another.'],
+      ],
+      releaseTitle: 'What each model will come with.',
+      release: [
+        ['Every checkpoint', 'Saved densely through training, and most densely early on, where many capabilities first appear.'],
+        ['The exact data order', 'Which tokens the model saw at each step, so a change in behaviour can be traced back to what it was learning from.'],
+        ['Code and configuration', 'The training code, hyperparameters and environment: enough to train the same model again.'],
+        ['Notes', 'What we measured along the way: evaluations across checkpoints, the probes we ran, and what did not work.'],
+      ],
+      scaleTitle: 'Why small.',
+      scale: [
+        'Lilith will not be a frontier model, and is not meant to be. A small model can be trained many times, inspected at every step, and compared under one controlled change at a time.',
+        'That is what studying how models learn requires, and it is what frontier-scale training cannot offer.',
+      ],
+      ctaTitle: 'Follow Lilith from the first checkpoint.',
+      ctaBody: 'Training runs, releases and notes will be announced on GitHub.',
+    },
     pricingPage: {
       title: 'Saturn Pricing — Free Desktop App and MCP Gateway',
       description: 'Saturn is free. The desktop App and the MCP gateway cost nothing, and every account gets every feature. Sponsors keep it that way.',
@@ -634,6 +697,7 @@ const messages = {
     nav: {
       home: 'Saturn 首頁',
       research: '研究',
+      lilith: 'Lilith',
       about: '關於',
       tools: '工具',
       mcp: 'Saturn MCP',
@@ -1129,6 +1193,14 @@ const messages = {
       eyebrow: '研究',
       heading: '我們研究什麼，以及發表什麼。',
       lede: 'Saturn 的研究在問：模型是怎麼學會它知道的東西，又在使用這些知識時計算了什麼。下面是我們正在研究的問題，以及答案站得住腳之後發表的筆記。',
+      nameTitle: '讀懂隱藏之名。',
+      name: [
+        '在《便西拉字母書》裡，Lilith 知道一個不可言說的名字，並憑著它離去。訓練好的模型有點像她：在預訓練中，它學會了沒有人寫下的東西，並依此行動，而我們無法從它的權重上直接讀出來。',
+        '我們的研究，是把這個故事倒過來走。我們不要模型帶著那個名字飛走，而是要讀懂它：它在訓練中如何形成、網路用它計算了什麼，以及如何讓模型的行為留在人所訂的規則之內。',
+      ],
+      modelsTitle: '我們自己的模型。',
+      models: '要看一項能力如何形成，訓練的每一步都必須攤在我們眼前。所以我們訓練自己的小型模型，也就是 Lilith 系列，並會隨每個模型釋出所有 checkpoint、資料順序與程式碼。',
+      modelsLink: '認識 Lilith',
       agendaTitle: '研究方向。',
       agendaDesc: '每一條研究主線圍繞的問題。隨著我們學到更多，它們也會改變。',
       areas: [
@@ -1191,10 +1263,16 @@ const messages = {
         '模型的能力不斷提升，我們對它內部發生什麼的理解卻落在後面。我們認為縮小這個差距，是現在研究能做的最有用的事之一。',
         '所以我們從兩端研究：能力在模型訓練時如何形成，以及訓練好的網路在使用它時做了什麼。而因為模型越來越常自己行動，我們也研究如何讓這些行動留在人的監督之下。',
       ],
+      nameTitle: '隱藏之名。',
+      name: [
+        'Saturn 的研究圍繞著一個意象，它出自中世紀的希伯來文本《便西拉字母書》。書中的 Lilith 說出了不可言說之名，然後離去。',
+        '我們借用的是這個意象，而不是這份信仰。模型知道一些從沒有人告訴它的事。我們的工作是讀懂那個名字，而不是任由它無人讀懂；這也是我們自己的模型叫做 Lilith 的原因。',
+      ],
       teamTitle: '我們是誰。',
       team: [
         ['Saturn Technology Project', 'Saturn 背後的團隊：一個位於台灣的小型獨立團隊，不隸屬於任何公司或大學。'],
         ['刻意保持小', '我們只挑少數問題深入研究，需要的工具自己寫，而不是等別人做。'],
+        ['自己的模型', '我們訓練自己的小型模型，也就是 Lilith 系列，因為研究模型如何學習，就得看見它訓練的每一步。'],
       ],
       toolsTitle: '我們為什麼做工具。',
       toolsDesc: '研究的品質取決於背後的儀器。我們打造自己需要的工具、每天使用它，並在它對別人也有用時釋出。',
@@ -1210,6 +1288,54 @@ const messages = {
       github: 'Saturn 的 GitHub',
       donate: '支持這個計劃',
     },
+    epigraph: {
+      quote: '她說出了那不可言說之名，便飛入空中而去。',
+      cite: '據《便西拉字母書》',
+    },
+    homeLilith: {
+      eyebrow: '模型',
+      title: 'Lilith。',
+      desc: '我們從頭訓練的小型語言模型，連同訓練過程的每一步一起釋出，讓模型如何學習可以被研究，而不是被猜測。',
+      badge: '準備中',
+      link: '認識 Lilith',
+    },
+    lilithPage: {
+      title: 'Lilith — 用來研究模型如何學習的小型開放模型',
+      description: 'Lilith 是 Saturn 從頭訓練的小型語言模型系列，每個 checkpoint、資料順序與程式碼都會公開供人研究。Lilim 是它較小的手足。目前尚未釋出任何模型。',
+      eyebrow: 'Lilith · 模型',
+      heading: 'Lilith',
+      lede: '從頭訓練的小型語言模型，連同訓練過程的每一步一起釋出，讓它們如何學習可以被研究，而不是被猜測。',
+      status: {
+        badge: '準備中',
+        text: '目前還沒有任何 Lilith 模型完成訓練或釋出。這一頁說明的是我們正在打造的東西。',
+      },
+      storyTitle: '名字的由來。',
+      story: [
+        '《便西拉字母書》是一部中世紀的希伯來文本，帶有諷刺的筆調。書中說，Lilith 和亞當出自同樣的塵土。既然生而相同，她便不肯居於他之下。亞當堅持，她就說出了那不可言說之名，飛走了。',
+        '三位天使 Senoy、Sansenoy 與 Semangelof 奉命追去，她不肯回來。在後來的傳統裡，她的孩子被稱為 Lilim。',
+        '我們借用的是這個意象，而不是這份信仰。模型從資料裡學到了沒有人寫下的東西，並依此行動。Lilith 是那個知道隱藏之名的模型；Saturn 的工作，是讀懂那個名字，並讓模型的行為留在人所訂的規則之內。',
+      ],
+      seriesTitle: 'Lilith 與 Lilim。',
+      seriesDesc: '一條主線，以及為了對照比較而打造的較小手足。',
+      series: [
+        ['Lilith', '主線：我們從頭預訓練的語言模型，訓練流程保持簡單，好讓它可以重來。'],
+        ['Lilim', '每個 Lilith 模型的較小手足，一次只改變一件事：大小、隨機種子或資料順序，讓每一個改變都能和另一個比較。'],
+      ],
+      releaseTitle: '每個模型會一起釋出什麼。',
+      release: [
+        ['每一個 checkpoint', '在整個訓練過程中密集保存，越早期越密集，因為許多能力正是在那時第一次出現。'],
+        ['確切的資料順序', '模型在每一步看過哪些 token，讓行為的改變可以追溯回它當時在學什麼。'],
+        ['程式碼與設定', '訓練程式碼、超參數與環境，足以把同一個模型再訓練一次。'],
+        ['研究筆記', '一路上量測到的東西：跨 checkpoint 的評測、跑過的探針，以及沒有成功的部分。'],
+      ],
+      scaleTitle: '為什麼是小模型。',
+      scale: [
+        'Lilith 不會是前沿等級的模型，也不打算是。小模型可以訓練很多次、在每一步被檢視，並且一次只改變一個條件來比較。',
+        '研究模型如何學習，需要的正是這些；而這些，正是前沿規模的訓練給不了的。',
+      ],
+      ctaTitle: '從第一個 checkpoint 開始追蹤 Lilith。',
+      ctaBody: '訓練進度、模型釋出與研究筆記都會在 GitHub 上公告。',
+    },
     pricingPage: {
       title: '方案與定價 — 免費 Saturn App 與 MCP Gateway',
       description: 'Saturn 完全免費。桌面 App 與 MCP Gateway 都不收費，每個帳號都能使用全部功能，由贊助者支持維持。',
@@ -1217,11 +1343,16 @@ const messages = {
   },
 } as const
 
-export type PageName = 'home' | 'research' | 'about' | 'mcp' | 'app' | 'trust' | 'pricing' | 'terms' | 'privacy'
+export const PAGE_NAMES = ['home', 'research', 'lilith', 'about', 'mcp', 'app', 'trust', 'pricing', 'terms', 'privacy'] as const
+export type PageName = (typeof PAGE_NAMES)[number]
+export function isPageName(value: unknown): value is PageName {
+  return typeof value === 'string' && (PAGE_NAMES as readonly string[]).includes(value)
+}
 
 export function pageMeta(page: PageName, lang: Locale = locale.value) {
   const m = messages[lang]
   if (page === 'research') return { title: m.researchPage.title, description: m.researchPage.description }
+  if (page === 'lilith') return { title: m.lilithPage.title, description: m.lilithPage.description }
   if (page === 'about') return { title: m.aboutPage.title, description: m.aboutPage.description }
   if (page === 'mcp') return { title: m.mcpPage.title, description: m.mcpPage.description }
   if (page === 'app') return { title: m.appPage.title, description: m.appPage.description }

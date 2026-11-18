@@ -42,6 +42,7 @@ onBeforeUnmount(() => {
 
 const links = computed(() => [
   { label: t.value.nav.research, to: localePath('/research', locale.value) },
+  { label: t.value.nav.lilith, to: localePath('/lilith', locale.value) },
   { label: t.value.nav.app, to: localePath('/app', locale.value) },
   { label: t.value.nav.mcp, to: localePath('/mcp', locale.value) },
   { label: t.value.nav.about, to: localePath('/about', locale.value) },

@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import Epigraph from '../components/Epigraph.vue'
+import LetterMark from '../components/LetterMark.vue'
+import Ornament from '../components/Ornament.vue'
 import { localePath, useI18n } from '../i18n'
 import { CONTACT_ADDRESS, ORG_GITHUB_URL } from '../config'
+import { roman } from '../roman'
 
 const { locale, t } = useI18n()
 </script>
@@ -23,7 +27,7 @@ const { locale, t } = useI18n()
           <p class="eyebrow">{{ t.hero.questionsLabel }}</p>
           <ol>
             <li v-for="(q, i) in t.hero.questions" :key="q">
-              <span class="num">{{ String(i + 1).padStart(2, '0') }}</span>
+              <span class="num">{{ roman(i + 1) }}</span>
               <span>{{ q }}</span>
             </li>
           </ol>
@@ -32,15 +36,22 @@ const { locale, t } = useI18n()
     </div>
   </section>
 
-  <section class="section band-oat">
+  <section class="section band-oat epigraph-band">
+    <div class="wrap">
+      <Epigraph center />
+    </div>
+  </section>
+
+  <section class="section">
     <div class="wrap">
       <div class="section-head">
+        <LetterMark :index="0" />
         <h2>{{ t.areas.title }}</h2>
         <p class="lede">{{ t.areas.desc }}</p>
       </div>
       <div class="three">
         <article v-for="(item, i) in t.areas.items" :key="item[0]" class="benefit">
-          <span class="num">{{ String(i + 1).padStart(2, '0') }}</span>
+          <span class="num">{{ roman(i + 1) }}</span>
           <h3>{{ item[0] }}</h3>
           <p>{{ item[1] }}</p>
         </article>
@@ -48,9 +59,27 @@ const { locale, t } = useI18n()
     </div>
   </section>
 
+  <section class="section band-oat">
+    <div class="wrap two lilith-teaser">
+      <div class="section-head">
+        <LetterMark :index="1" />
+        <p class="eyebrow accent">{{ t.homeLilith.eyebrow }}</p>
+        <h2>{{ t.homeLilith.title }}</h2>
+      </div>
+      <div>
+        <p class="lede">{{ t.homeLilith.desc }}</p>
+        <p class="status-line">
+          <span class="status-badge status-planned">{{ t.homeLilith.badge }}</span>
+          <RouterLink class="text-link" :to="localePath('/lilith', locale)">{{ t.homeLilith.link }} →</RouterLink>
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="wrap">
       <div class="section-head">
+        <LetterMark :index="2" />
         <h2>{{ t.notes.title }}</h2>
         <p class="lede">{{ t.notes.desc }}</p>
       </div>
@@ -66,6 +95,7 @@ const { locale, t } = useI18n()
   <section id="tools" class="section band-oat product">
     <div class="wrap">
       <div class="section-head">
+        <LetterMark :index="3" />
         <p class="eyebrow accent">{{ t.tools.eyebrow }}</p>
         <h2>{{ t.tools.title }}</h2>
         <p class="lede">{{ t.tools.desc }}</p>
@@ -104,10 +134,12 @@ const { locale, t } = useI18n()
   <section class="section">
     <div class="wrap">
       <div class="section-head">
+        <LetterMark :index="4" />
         <h2>{{ t.principles.title }}</h2>
       </div>
       <ul class="principles">
-        <li v-for="item in t.principles.items" :key="item[0]">
+        <li v-for="(item, i) in t.principles.items" :key="item[0]">
+          <span class="roman">{{ roman(i + 1) }}</span>
           <h3>{{ item[0] }}</h3>
           <p>{{ item[1] }}</p>
         </li>
@@ -118,6 +150,7 @@ const { locale, t } = useI18n()
   <section class="section band-oat" id="faq">
     <div class="wrap">
       <div class="section-head">
+        <LetterMark :index="5" />
         <h2>{{ t.homeFaq.title }}</h2>
       </div>
       <dl class="faq">
@@ -131,6 +164,7 @@ const { locale, t } = useI18n()
 
   <section class="section">
     <div class="wrap cta">
+      <Ornament />
       <h2>{{ t.cta.title }}</h2>
       <p class="lede">{{ t.cta.body }}</p>
       <div class="actions">

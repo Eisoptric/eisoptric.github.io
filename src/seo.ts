@@ -1,9 +1,9 @@
 import { CONTACT_ADDRESS, GITHUB_URL, ORG_GITHUB_URL, RELEASES_URL, SITE_URL } from './config'
 import { freePricing } from './free-pricing'
-import { copy, pageMeta, type Locale, type PageName } from './i18n'
+import { PAGE_NAMES, copy, pageMeta, type Locale, type PageName } from './i18n'
 import { legalCopy } from './legal'
 
-export const PAGES = ['home', 'research', 'about', 'mcp', 'app', 'trust', 'pricing', 'terms', 'privacy'] as const
+export const PAGES = PAGE_NAMES
 const LOCALES = ['en', 'zh'] as const
 const ORG_ID = `${SITE_URL}/#organization`
 const SITE_ID = `${SITE_URL}/#website`
@@ -52,6 +52,7 @@ function imageAlt(lang: Locale): string {
 function crumbLabel(page: PageName, lang: Locale): string {
   const nav = copy(lang).nav
   if (page === 'research') return nav.research
+  if (page === 'lilith') return nav.lilith
   if (page === 'about') return nav.about
   if (page === 'mcp') return nav.mcp
   if (page === 'app') return nav.app
@@ -252,6 +253,7 @@ export function sitemapXml(): string {
   const priorities: Record<PageName, string> = {
     home: '1.0',
     research: '0.9',
+    lilith: '0.9',
     about: '0.8',
     mcp: '0.9',
     app: '0.9',

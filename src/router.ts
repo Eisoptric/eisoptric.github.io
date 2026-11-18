@@ -3,6 +3,7 @@ import { createMemoryHistory, createRouter, createWebHistory, type RouteRecordRa
 import HomePage from './pages/HomePage.vue'
 import ResearchPage from './pages/ResearchPage.vue'
 import AboutPage from './pages/AboutPage.vue'
+import LilithPage from './pages/LilithPage.vue'
 import McpPage from './pages/McpPage.vue'
 import AppPage from './pages/AppPage.vue'
 import TrustPage from './pages/TrustPage.vue'
@@ -22,6 +23,7 @@ declare module 'vue-router' {
 const pages: { path: string; page: PageName; component: Component }[] = [
   { path: '/', page: 'home', component: HomePage },
   { path: '/research', page: 'research', component: ResearchPage },
+  { path: '/lilith', page: 'lilith', component: LilithPage },
   { path: '/about', page: 'about', component: AboutPage },
   { path: '/mcp', page: 'mcp', component: McpPage },
   { path: '/app', page: 'app', component: AppPage },

@@ -11,6 +11,7 @@ const columns = computed(() => [
     heading: t.value.footer.research,
     links: [
       { label: t.value.nav.research, to: localePath('/research', locale.value) },
+      { label: t.value.nav.lilith, to: localePath('/lilith', locale.value) },
       { label: t.value.nav.about, to: localePath('/about', locale.value) },
     ],
   },

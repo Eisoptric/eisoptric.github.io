@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import Breadcrumb from '../components/Breadcrumb.vue'
+import Epigraph from '../components/Epigraph.vue'
+import LetterMark from '../components/LetterMark.vue'
+import Ornament from '../components/Ornament.vue'
 import { localePath, useI18n } from '../i18n'
 import { DONATE_URL, ORG_GITHUB_URL } from '../config'
+import { roman } from '../roman'
 
 const { locale, t } = useI18n()
 const toolPaths = ['/app', '/mcp']
@@ -19,22 +23,44 @@ const toolPaths = ['/app', '/mcp']
 
   <section class="section band-oat">
     <div class="wrap two">
-      <div>
+      <div class="section-head">
+        <LetterMark :index="0" />
         <h2>{{ t.aboutPage.missionTitle }}</h2>
       </div>
       <div class="prose">
-        <p v-for="para in t.aboutPage.mission" :key="para">{{ para }}</p>
+        <p v-for="(para, i) in t.aboutPage.mission" :key="para" :class="{ 'drop-cap': i === 0 }">{{ para }}</p>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="hidden-name">
+    <div class="wrap">
+      <Epigraph center />
+      <Ornament />
+      <div class="manuscript">
+        <div class="section-head">
+          <LetterMark :index="1" />
+          <h2>{{ t.aboutPage.nameTitle }}</h2>
+        </div>
+        <div class="prose">
+          <p v-for="para in t.aboutPage.name" :key="para">{{ para }}</p>
+        </div>
+        <p class="manuscript-link">
+          <RouterLink class="text-link" :to="localePath('/lilith', locale)">{{ t.homeLilith.link }} →</RouterLink>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band-oat">
     <div class="wrap">
       <div class="section-head">
+        <LetterMark :index="2" />
         <h2>{{ t.aboutPage.teamTitle }}</h2>
       </div>
-      <ul class="principles two-col">
-        <li v-for="item in t.aboutPage.team" :key="item[0]">
+      <ul class="principles">
+        <li v-for="(item, i) in t.aboutPage.team" :key="item[0]">
+          <span class="roman">{{ roman(i + 1) }}</span>
           <h3>{{ item[0] }}</h3>
           <p>{{ item[1] }}</p>
         </li>
@@ -42,9 +68,10 @@ const toolPaths = ['/app', '/mcp']
     </div>
   </section>
 
-  <section class="section band-oat">
+  <section class="section">
     <div class="wrap">
       <div class="section-head">
+        <LetterMark :index="3" />
         <h2>{{ t.aboutPage.toolsTitle }}</h2>
         <p class="lede">{{ t.aboutPage.toolsDesc }}</p>
       </div>
@@ -64,9 +91,10 @@ const toolPaths = ['/app', '/mcp']
     </div>
   </section>
 
-  <section class="section" id="contact">
+  <section class="section band-oat" id="contact">
     <div class="wrap">
       <div class="section-head">
+        <LetterMark :index="4" />
         <h2>{{ t.aboutPage.contactTitle }}</h2>
       </div>
       <dl class="faq">
