@@ -254,7 +254,7 @@ const messages = {
       title: 'Questions about Saturn',
       items: [
         ['What is Saturn?', 'Saturn is a small, independent AI research project run by Saturn Technology Project. It studies how capabilities form during pretraining and what trained models compute inside, and how to keep models that act through tools under human oversight.'],
-        ['Who runs Saturn?', 'Saturn Technology Project, an independent project based in Taiwan, currently run by one researcher. Saturn is not part of a company or university.'],
+        ['Who runs Saturn?', 'Saturn Technology Project, an independent project based in Taiwan, founded and run by Rick Weng. Saturn is not part of a company or university.'],
         ['Why does a research project ship software?', 'Because the research needs it. Saturn App is the workbench we use for experiments and interpretability, and Saturn MCP is the gateway we needed before letting agents act on their own. We release them because they are useful beyond our own work.'],
         ['Are the tools free?', 'Yes. Saturn App and Saturn MCP are both free, with every feature on every account. Saturn App is open source under the Apache License 2.0.'],
         ['Where are the research results?', 'Our first notes are in progress. They will be published on the research page, each with its question, method, code and data.'],
@@ -617,7 +617,8 @@ const messages = {
       ],
       teamTitle: 'Who runs Saturn.',
       team: [
-        ['Saturn Technology Project', 'The project behind Saturn: independent, based in Taiwan, and currently run by one researcher. It is not part of a company or university.'],
+        ['Rick Weng', 'Founder of Saturn Technology Project, and for now its only researcher: the experiments, the models, the tools and this site.'],
+        ['Saturn Technology Project', 'The project behind Saturn: independent and based in Taiwan. It is not part of a company or university.'],
         ['Small on purpose', 'A few questions, studied in depth. The tools the work needs are written in-house rather than waited for.'],
         ['Our own models', 'We train small models of our own, the Lilith series, because studying how a model learns means seeing every step of its training.'],
       ],
@@ -905,7 +906,7 @@ const messages = {
       title: '關於 Saturn',
       items: [
         ['Saturn 是什麼？', 'Saturn 是由 Saturn Technology Project 運作的小型獨立 AI 研究計劃。我們研究能力如何在預訓練中形成、訓練好的模型內部在計算什麼，以及如何讓透過工具行動的模型留在人的監督之下。'],
-        ['誰在經營 Saturn？', 'Saturn Technology Project，一個位於台灣的獨立計劃，目前由一位研究者經營。Saturn 不隸屬於任何公司或大學。'],
+        ['誰在經營 Saturn？', 'Saturn Technology Project，一個位於台灣的獨立計劃，由 Rick Weng 創立並經營。Saturn 不隸屬於任何公司或大學。'],
         ['研究計劃為什麼要發行軟體？', '因為研究需要。Saturn App 是我們做實驗與可解釋性分析的工作台；Saturn MCP 是我們讓 Agent 自主行動之前需要的 Gateway。它們在我們自己的研究之外也有用，所以我們把它們釋出。'],
         ['工具是免費的嗎？', '是的。Saturn App 與 Saturn MCP 都免費，每個帳號都有全部功能。Saturn App 以 Apache License 2.0 授權開源。'],
         ['研究成果在哪裡？', '第一批筆記正在撰寫中。發表後會放在研究頁，每篇都附上問題、方法、程式碼與資料。'],
@@ -1267,7 +1268,8 @@ const messages = {
       ],
       teamTitle: '誰在經營 Saturn。',
       team: [
-        ['Saturn Technology Project', 'Saturn 背後的計劃：獨立運作、位於台灣，目前由一位研究者經營，不隸屬於任何公司或大學。'],
+        ['Rick Weng', 'Saturn Technology Project 的創立者，目前也是唯一的研究者：實驗、模型、工具與這個網站，都由 Rick 一手打造。'],
+        ['Saturn Technology Project', 'Saturn 背後的計劃：獨立運作、位於台灣，不隸屬於任何公司或大學。'],
         ['刻意保持小', '只挑少數問題深入研究；研究需要的工具自己寫，而不是等別人做。'],
         ['自己的模型', '我們訓練自己的小型模型，也就是 Lilith 系列，因為研究模型如何學習，就得看見它訓練的每一步。'],
       ],

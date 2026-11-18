@@ -58,7 +58,7 @@ const toolPaths = ['/app', '/mcp']
         <LetterMark :index="2" />
         <h2>{{ t.aboutPage.teamTitle }}</h2>
       </div>
-      <ul class="principles">
+      <ul class="principles four-col">
         <li v-for="(item, i) in t.aboutPage.team" :key="item[0]">
           <span class="roman">{{ roman(i + 1) }}</span>
           <h3>{{ item[0] }}</h3>
