@@ -157,10 +157,10 @@ The Markdown copies, `llms.txt` and `llms-full.txt` are built from the rendered 
 
 ### The OG image
 
-`public/og.png` is drawn by [`scripts/og.swift`](scripts/og.swift) with AppKit, so it runs on macOS only. It takes the output path and a logo image as arguments:
+`public/og.png` is drawn from [`scripts/og.html`](scripts/og.html) by [`scripts/og.mjs`](scripts/og.mjs) in a headless Chromium. It needs Playwright with a Chromium installed, and network access for Google Fonts. It takes the output path and a logo image as arguments:
 
 ```bash
-swift scripts/og.swift public/og.png public/favicon.png
+node scripts/og.mjs public/og.png public/favicon.png
 ```
 
 The text on the image is set in the script.
@@ -241,7 +241,7 @@ The `gh-pages` branch serves saturn-technology-project.github.io, which only red
 | `src/style.css` | The site's styles |
 | `public/` | Files served as-is: `_headers`, `_redirects`, `robots.txt`, `.well-known/security.txt`, the web manifest, icons and `og.png` |
 | `scripts/prerender.mjs` | Writes the prerendered pages, their Markdown copies, the sitemap, `llms.txt` and `llms-full.txt` |
-| `scripts/og.swift` | Draws `public/og.png` |
+| `scripts/og.html`, `scripts/og.mjs` | Draw `public/og.png` |
 
 ## License
 

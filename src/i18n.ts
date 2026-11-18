@@ -663,7 +663,7 @@ const messages = {
       seriesDesc: 'One main line, and smaller siblings built for controlled comparison.',
       series: [
         ['Lilith', 'The main line: language models we pretrain from scratch, with training kept simple enough to repeat.'],
-        ['Lilim', 'Smaller siblings of each Lilith model, varying one thing at a time: size, seed or data order, so that one change can be compared against another.'],
+        ['Lilim', 'Named after Lilith’s children in later tradition: smaller siblings of each Lilith model, varying one thing at a time (size, seed or data order) so that one change can be compared against another.'],
       ],
       releaseTitle: 'What each model will come with.',
       release: [
@@ -1313,7 +1313,7 @@ const messages = {
       seriesDesc: '一條主線，以及為了對照比較而打造的較小手足。',
       series: [
         ['Lilith', '主線：我們從頭預訓練的語言模型，訓練流程保持簡單，好讓它可以重來。'],
-        ['Lilim', '每個 Lilith 模型的較小手足，一次只改變一件事：大小、隨機種子或資料順序，讓每一個改變都能和另一個比較。'],
+        ['Lilim', '名字取自後來傳統中 Lilith 的孩子：每個 Lilith 模型的較小手足，一次只改變一件事（大小、隨機種子或資料順序），讓每一個改變都能和另一個比較。'],
       ],
       releaseTitle: '每個模型會一起釋出什麼。',
       release: [

@@ -157,10 +157,10 @@ Markdown 版本、`llms.txt` 與 `llms-full.txt` 都由渲染出的頁面產生�
 
 ### OG 圖片
 
-`public/og.png` 由 [`scripts/og.swift`](scripts/og.swift) 以 AppKit 繪製，因此只能在 macOS 上執行。它接受輸出路徑與一張 logo 圖片作為參數：
+`public/og.png` 由 [`scripts/og.mjs`](scripts/og.mjs) 在無頭 Chromium 中渲染 [`scripts/og.html`](scripts/og.html) 產生。需要安裝 Playwright 與 Chromium，並能連上 Google Fonts。它接受輸出路徑與一張 logo 圖片作為參數：
 
 ```bash
-swift scripts/og.swift public/og.png public/favicon.png
+node scripts/og.mjs public/og.png public/favicon.png
 ```
 
 圖片上的文字寫在指令碼裡。
@@ -241,7 +241,7 @@ npm run deploy
 | `src/style.css` | 網站樣式 |
 | `public/` | 原樣提供的檔案：`_headers`、`_redirects`、`robots.txt`、`.well-known/security.txt`、web manifest、圖示與 `og.png` |
 | `scripts/prerender.mjs` | 寫出預先渲染的頁面、各頁的 Markdown 版本、sitemap、`llms.txt` 與 `llms-full.txt` |
-| `scripts/og.swift` | 繪製 `public/og.png` |
+| `scripts/og.html`、`scripts/og.mjs` | 繪製 `public/og.png` |
 
 ## 授權
 

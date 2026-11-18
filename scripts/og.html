@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+Hebrew:wght@400&display=block"
+      rel="stylesheet"
+    />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1200px; height: 630px; }
+      body {
+        background: #f7f2e7 repeating-linear-gradient(0deg, rgba(120, 96, 60, 0.03) 0 1px, transparent 1px 7px);
+        color: #1d1915;
+        font-family: "EB Garamond", Georgia, serif;
+        display: flex;
+        align-items: center;
+        padding: 0 96px;
+        position: relative;
+      }
+      .frame { position: absolute; inset: 28px; border: 1px solid #c4b292; outline: 1px solid #c4b292; outline-offset: -8px; }
+      .logo { width: 196px; height: 196px; border-radius: 40px; flex: none; }
+      .text { margin-left: 64px; }
+      .rubric { font-size: 20px; letter-spacing: 0.18em; text-transform: uppercase; color: #8b2617; }
+      h1 { margin-top: 10px; font-weight: 400; font-size: 104px; line-height: 1; }
+      .line { margin-top: 18px; font-style: italic; font-size: 34px; line-height: 1.25; color: #554b40; max-width: 20em; }
+      .he { position: absolute; right: 84px; bottom: 60px; font-family: "Noto Serif Hebrew", serif; font-size: 40px; color: #8b2617; }
+      .url { margin-top: 26px; font-size: 22px; letter-spacing: 0.06em; color: #887c6c; }
+    </style>
+  </head>
+  <body>
+    <div class="frame"></div>
+    <img class="logo" src="LOGO" alt="" />
+    <div class="text">
+      <p class="rubric">An independent AI research project</p>
+      <h1>Saturn</h1>
+      <p class="line">How models learn, and what they compute.</p>
+      <p class="url">saturn-core.com</p>
+    </div>
+    <p class="he">א</p>
+  </body>
+</html>
