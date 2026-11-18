@@ -41,7 +41,7 @@ const restOfText = rest.join(' ')
           <h2>{{ t.lilithPage.storyTitle }}</h2>
         </div>
         <figure class="original">
-          <blockquote lang="he" dir="rtl"><span class="rubric">{{ firstWord }}</span> {{ restOfText }}</blockquote>
+          <blockquote lang="he" dir="rtl"><span class="rubric">{{ firstWord }}</span> {{ restOfText }} …</blockquote>
           <figcaption>
             <a :href="BEN_SIRA_SOURCE_URL" target="_blank" rel="noopener noreferrer">{{ t.lilithPage.storySource }}</a>
           </figcaption>
