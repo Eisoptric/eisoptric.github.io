@@ -10,7 +10,8 @@ import { BEN_SIRA_LILITH, BEN_SIRA_SOURCE_URL } from '../ben-sira'
 
 const { t } = useI18n()
 // The opening word is set in rubric red, as a scribe would begin a passage.
-const [firstWord, ...rest] = BEN_SIRA_LILITH.split(' ')
+// Omissions are marked with an ellipsis, and so is the end of the excerpt.
+const [firstWord, ...rest] = `${BEN_SIRA_LILITH.join(' … ')} …`.split(' ')
 const restOfText = rest.join(' ')
 </script>
 
@@ -41,7 +42,7 @@ const restOfText = rest.join(' ')
           <h2>{{ t.lilithPage.storyTitle }}</h2>
         </div>
         <figure class="original">
-          <blockquote lang="he" dir="rtl"><span class="rubric">{{ firstWord }}</span> {{ restOfText }} …</blockquote>
+          <blockquote lang="he" dir="rtl"><span class="rubric">{{ firstWord }}</span> {{ restOfText }}</blockquote>
           <figcaption>
             <a :href="BEN_SIRA_SOURCE_URL" target="_blank" rel="noopener noreferrer">{{ t.lilithPage.storySource }}</a>
           </figcaption>
