@@ -323,7 +323,7 @@ const en = {
       'How Rick Weng handles personal data when you use the Saturn website, console, MCP backend, Saturn App, and Saturn App backend.',
     crumb: 'Privacy Policy',
     heading: 'Privacy Policy',
-    updated: 'Updated 31 October 2026',
+    updated: 'Updated 19 November 2026',
     relatedPath: '/terms',
     relatedLabel: 'Terms of Service',
     sections: [
@@ -411,6 +411,40 @@ const en = {
           {
             type: 'p',
             text: 'We do not sell personal data. We do not use it for advertising. Cloudflare, Resend, and GitHub may process the data they handle outside Taiwan, because that is how those services deliver the website, the email, the download, or the donation. If a competent authority restricts an international transfer under Article 21, we will comply with that restriction.',
+          },
+        ],
+      },
+      {
+        heading: 'Google user data',
+        blocks: [
+          {
+            type: 'p',
+            text: 'You can connect Google services to the MCP backend: Gmail, Google Calendar, Google Drive, Google Docs, Google Sheets, Google Slides, Cloud Run, Cloud SQL, and Memorystore for Redis. You start each connection and approve it on Google’s own sign-in page. Saturn asks each service only for the access its tools need, and you can see that access on Google’s consent screen.',
+          },
+          {
+            type: 'p',
+            text: 'Through that connection, Saturn receives an access token and a refresh token from Google, and the data a tool returns when an agent you connected calls it, such as a message, an event, a file, or a spreadsheet range. Saturn reads Google data only when such a call is made. Your organization’s policies and approvers decide whether a call runs.',
+          },
+          {
+            type: 'p',
+            text: 'Saturn uses Google user data only to carry out the tool calls you and your organization set up: it sends the request to Google and returns the result to the agent that asked. The tokens are sealed in the credential vault with ML-KEM-1024 and AES-256-GCM. The call’s arguments and Google’s response are recorded in your organization’s audit log, encrypted, so the people your organization lets review calls can see what ran. They are kept while your organization uses the Services, and deleted when you ask us to delete them or when the account is deleted.',
+          },
+          {
+            type: 'ul',
+            items: [
+              'We do not sell Google user data, and we do not transfer it to anyone except to provide the tool call you asked for, for security reasons, or to comply with law.',
+              'We do not use Google user data for advertising, including personalized, retargeted, or interest-based advertising.',
+              'We do not use Google user data to develop, improve, or train generalized or non-personalized AI or machine-learning models.',
+              'We do not let anyone at Saturn read Google user data, except with your permission for a specific item, when it is needed for security, such as investigating abuse, or to comply with law.',
+            ],
+          },
+          {
+            type: 'p',
+            text: 'Saturn’s use and transfer of information received from Google APIs to any other app will adhere to the Google API Services User Data Policy (https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.',
+          },
+          {
+            type: 'p',
+            text: 'Removing a Google connection in the console deletes the tokens Saturn holds for it. You can also revoke Saturn’s access at any time at https://myaccount.google.com/permissions. To delete the audit records of past calls, email hello@saturn-core.com.',
           },
         ],
       },
@@ -735,7 +769,7 @@ const zh = {
     description: '你使用 Saturn 網站、主控台、MCP 後端、Saturn App 與 Saturn App 後端時，Rick Weng 如何處理個人資料。',
     crumb: '隱私權政策',
     heading: '隱私權政策',
-    updated: '更新日期：2026 年 10 月 31 日',
+    updated: '更新日期：2026 年 11 月 19 日',
     relatedPath: '/terms',
     relatedLabel: '服務條款',
     sections: [
@@ -823,6 +857,40 @@ const zh = {
           {
             type: 'p',
             text: '我們不出售個人資料，也不把它用於廣告。Cloudflare、Resend 與 GitHub 為了提供網站、寄送郵件、提供下載或處理贊助，可能在台灣以外處理它們經手的資料。主管機關若依第21條限制特定國際傳輸，我們會遵守該限制。',
+          },
+        ],
+      },
+      {
+        heading: 'Google 使用者資料',
+        blocks: [
+          {
+            type: 'p',
+            text: '你可以把 Google 服務連接到 MCP 後端：Gmail、Google 日曆、Google 雲端硬碟、Google 文件、Google 試算表、Google 簡報、Cloud Run、Cloud SQL 與 Memorystore for Redis。每個連線都由你發起，並在 Google 自己的登入頁核准。Saturn 對每個服務只要求它的工具需要的權限，你可以在 Google 的同意畫面看到這些權限。',
+          },
+          {
+            type: 'p',
+            text: '透過這個連線，Saturn 會從 Google 取得存取權杖與更新權杖；當你連接的 agent 呼叫工具時，也會收到工具回傳的資料，例如一封郵件、一個行程、一個檔案或試算表的一個範圍。Saturn 只有在發生這樣的呼叫時才讀取 Google 資料。呼叫是否執行，由你組織的政策與核准人決定。',
+          },
+          {
+            type: 'p',
+            text: 'Saturn 只把 Google 使用者資料用於執行你與你的組織設定的工具呼叫：把請求送到 Google，再把結果交回提出呼叫的 agent。權杖以 ML-KEM-1024 與 AES-256-GCM 密封在憑證保管庫中。呼叫的參數與 Google 的回應會加密記錄在你組織的稽核紀錄裡，讓組織授權審查呼叫的人看到執行了什麼。這些紀錄在你的組織使用本服務期間保存，你請求刪除或帳號刪除時即刪除。',
+          },
+          {
+            type: 'ul',
+            items: [
+              '我們不出售 Google 使用者資料，除了為提供你要求的工具呼叫、為了安全或為遵守法律之外，也不傳輸給任何人。',
+              '我們不把 Google 使用者資料用於廣告，包括個人化、再行銷或依興趣投放的廣告。',
+              '我們不把 Google 使用者資料用於開發、改進或訓練通用或非個人化的 AI 或機器學習模型。',
+              '我們不讓 Saturn 的任何人閱讀 Google 使用者資料，除非你就特定項目同意、為了安全所需（例如調查濫用），或為遵守法律。',
+            ],
+          },
+          {
+            type: 'p',
+            text: 'Saturn 對自 Google API 取得之資訊的使用，以及傳輸至任何其他應用程式的行為，均遵守 Google API Services User Data Policy（https://developers.google.com/terms/api-services-user-data-policy），包括其中的 Limited Use（有限使用）要求。',
+          },
+          {
+            type: 'p',
+            text: '在主控台移除 Google 連線，會刪除 Saturn 為它保存的權杖。你也可以隨時在 https://myaccount.google.com/permissions 撤銷 Saturn 的存取權。要刪除過去呼叫的稽核紀錄，請寫信到 hello@saturn-core.com。',
           },
         ],
       },
