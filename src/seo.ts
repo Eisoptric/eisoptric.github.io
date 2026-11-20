@@ -82,7 +82,7 @@ function mcpApplication(lang: Locale) {
   const text = copy(lang)
   return {
     '@type': 'SoftwareApplication',
-    '@id': `${SITE_URL}/#saturn-mcp`,
+    '@id': `${SITE_URL}/#eisoptric-mcp`,
     name: 'Eisoptric MCP',
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
@@ -102,7 +102,7 @@ function desktopApplication(lang: Locale) {
   const text = copy(lang)
   return {
     '@type': 'SoftwareApplication',
-    '@id': `${SITE_URL}/#saturn-app`,
+    '@id': `${SITE_URL}/#eisoptric-workbench`,
     name: 'Eisoptric Workbench',
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'macOS, Windows',
