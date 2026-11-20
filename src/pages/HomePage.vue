@@ -1,57 +1,42 @@
 <script setup lang="ts">
-import Epigraph from '../components/Epigraph.vue'
-import SectionMark from '../components/SectionMark.vue'
-import Ornament from '../components/Ornament.vue'
 import { localePath, useI18n } from '../i18n'
 import { CONTACT_ADDRESS, ORG_GITHUB_URL } from '../config'
-import { roman } from '../roman'
 
 const { locale, t } = useI18n()
 </script>
 
 <template>
-  <section class="hero home-hero">
-    <div class="wrap hero-grid">
-      <div>
-        <p class="eyebrow accent">{{ t.hero.eyebrow }}</p>
-        <h1>{{ t.hero.title }}</h1>
-        <p class="lede">{{ t.hero.desc }}</p>
-        <div class="actions">
+  <section class="h-hero">
+    <div class="wrap">
+      <p class="h-kicker">{{ t.hero.eyebrow }}</p>
+      <h1 class="h-title">{{ t.hero.title }}</h1>
+      <div class="h-hero-foot">
+        <p class="h-lede">{{ t.hero.desc }}</p>
+        <div class="h-actions">
           <RouterLink class="btn btn-primary btn-lg" :to="localePath('/research', locale)">{{ t.hero.primary }}</RouterLink>
           <RouterLink class="btn btn-outline btn-lg" :to="localePath('/about', locale)">{{ t.hero.secondary }}</RouterLink>
         </div>
-        <p class="hero-note">{{ t.hero.note }}</p>
-      </div>
-      <div class="hero-aside">
-        <div class="questions">
-          <p class="eyebrow">{{ t.hero.questionsLabel }}</p>
-          <ol>
-            <li v-for="(q, i) in t.hero.questions" :key="q">
-              <span class="num">{{ roman(i + 1) }}</span>
-              <span>{{ q }}</span>
-            </li>
-          </ol>
-        </div>
       </div>
     </div>
   </section>
 
-  <section class="section band-oat epigraph-band">
-    <div class="wrap">
-      <Epigraph center />
+  <section class="h-section">
+    <div class="wrap h-split">
+      <h2 class="h-label">{{ t.hero.questionsLabel }}</h2>
+      <ul class="h-questions">
+        <li v-for="q in t.hero.questions" :key="q">{{ q }}</li>
+      </ul>
     </div>
   </section>
 
-  <section class="section">
+  <section class="h-section">
     <div class="wrap">
-      <div class="section-head">
-        <SectionMark :index="0" />
+      <div class="h-head">
         <h2>{{ t.areas.title }}</h2>
-        <p class="lede">{{ t.areas.desc }}</p>
+        <p>{{ t.areas.desc }}</p>
       </div>
-      <div class="three">
-        <article v-for="(item, i) in t.areas.items" :key="item[0]" class="benefit">
-          <span class="num">{{ roman(i + 1) }}</span>
+      <div class="h-grid3">
+        <article v-for="item in t.areas.items" :key="item[0]" class="h-area">
           <h3>{{ item[0] }}</h3>
           <p>{{ item[1] }}</p>
         </article>
@@ -59,50 +44,38 @@ const { locale, t } = useI18n()
     </div>
   </section>
 
-  <section class="section band-oat">
-    <div class="wrap two lilith-teaser">
-      <div class="section-head">
-        <SectionMark :index="1" />
-        <p class="eyebrow accent">{{ t.homeLilith.eyebrow }}</p>
-        <h2>{{ t.homeLilith.title }}</h2>
-      </div>
-      <div>
-        <p class="lede">{{ t.homeLilith.desc }}</p>
-        <p class="status-line">
+  <section class="h-section">
+    <div class="wrap h-grid2">
+      <article class="h-card">
+        <p class="h-card-label">
+          {{ t.homeLilith.eyebrow }}
           <span class="status-badge status-planned">{{ t.homeLilith.badge }}</span>
-          <RouterLink class="text-link" :to="localePath('/lilith', locale)">{{ t.homeLilith.link }} →</RouterLink>
         </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <SectionMark :index="2" />
-        <h2>{{ t.notes.title }}</h2>
-        <p class="lede">{{ t.notes.desc }}</p>
-      </div>
-      <div class="note-placeholder">
-        <span class="status-badge status-planned">{{ t.notes.badge }}</span>
+        <h3>{{ t.homeLilith.title }}</h3>
+        <p>{{ t.homeLilith.desc }}</p>
+        <RouterLink class="h-link" :to="localePath('/lilith', locale)">{{ t.homeLilith.link }} <span aria-hidden="true">→</span></RouterLink>
+      </article>
+      <article class="h-card">
+        <p class="h-card-label">
+          {{ t.notes.title.replace(/[.。]$/, '') }}
+          <span class="status-badge status-planned">{{ t.notes.badge }}</span>
+        </p>
         <h3>{{ t.notes.placeholderTitle }}</h3>
         <p>{{ t.notes.placeholderBody }}</p>
-        <RouterLink class="text-link" :to="localePath('/research', locale)">{{ t.notes.link }} →</RouterLink>
-      </div>
+        <RouterLink class="h-link" :to="localePath('/research', locale)">{{ t.notes.link }} <span aria-hidden="true">→</span></RouterLink>
+      </article>
     </div>
   </section>
 
-  <section id="tools" class="section band-oat product">
+  <section id="tools" class="h-section h-band">
     <div class="wrap">
-      <div class="section-head">
-        <SectionMark :index="3" />
-        <p class="eyebrow accent">{{ t.tools.eyebrow }}</p>
+      <div class="h-head">
         <h2>{{ t.tools.title }}</h2>
-        <p class="lede">{{ t.tools.desc }}</p>
+        <p>{{ t.tools.desc }}</p>
       </div>
-      <div class="two tool-cards">
-        <RouterLink class="hero-product dark" :to="localePath('/app', locale)">
-          <svg class="art" viewBox="0 0 72 72" aria-hidden="true">
+      <div class="h-grid2">
+        <RouterLink class="h-tile h-tile-dark" :to="localePath('/app', locale)">
+          <svg class="h-tile-art" viewBox="0 0 72 72" aria-hidden="true">
             <line x1="10" y1="58" x2="10" y2="46" />
             <line x1="20" y1="58" x2="20" y2="36" />
             <line x1="30" y1="58" x2="30" y2="40" />
@@ -110,50 +83,43 @@ const { locale, t } = useI18n()
             <line x1="57" y1="40" x2="66" y2="50" />
             <circle class="fill" cx="46" cy="28" r="5" />
           </svg>
-          <span class="eyebrow">{{ t.tools.appKind }}</span>
+          <span class="h-tile-kind">{{ t.tools.appKind }}</span>
           <strong>Eisoptric Workbench</strong>
-          <span>{{ t.tools.app }}</span>
-          <span class="arrow" aria-hidden="true">→</span>
+          <span class="h-tile-text">{{ t.tools.app }}</span>
+          <span class="h-tile-arrow" aria-hidden="true">→</span>
         </RouterLink>
-        <RouterLink class="hero-product" :to="localePath('/mcp', locale)">
-          <svg class="art" viewBox="0 0 72 72" aria-hidden="true">
+        <RouterLink class="h-tile" :to="localePath('/mcp', locale)">
+          <svg class="h-tile-art" viewBox="0 0 72 72" aria-hidden="true">
             <path d="M12 62V22a24 24 0 0 1 48 0v40" />
             <path d="M24 62V26a12 12 0 0 1 24 0v36" />
             <line x1="6" y1="62" x2="66" y2="62" />
             <circle class="fill" cx="36" cy="44" r="5" />
           </svg>
-          <span class="eyebrow">{{ t.tools.mcpKind }}</span>
+          <span class="h-tile-kind">{{ t.tools.mcpKind }}</span>
           <strong>Eisoptric MCP</strong>
-          <span>{{ t.tools.mcp }}</span>
-          <span class="arrow" aria-hidden="true">→</span>
+          <span class="h-tile-text">{{ t.tools.mcp }}</span>
+          <span class="h-tile-arrow" aria-hidden="true">→</span>
         </RouterLink>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <SectionMark :index="4" />
-        <h2>{{ t.principles.title }}</h2>
-      </div>
-      <ul class="principles">
-        <li v-for="(item, i) in t.principles.items" :key="item[0]">
-          <span class="roman">{{ roman(i + 1) }}</span>
-          <h3>{{ item[0] }}</h3>
-          <p>{{ item[1] }}</p>
-        </li>
-      </ul>
+  <section class="h-section">
+    <div class="wrap h-split">
+      <h2 class="h-split-title">{{ t.principles.title }}</h2>
+      <dl class="h-rows">
+        <div v-for="item in t.principles.items" :key="item[0]">
+          <dt>{{ item[0] }}</dt>
+          <dd>{{ item[1] }}</dd>
+        </div>
+      </dl>
     </div>
   </section>
 
-  <section class="section band-oat" id="faq">
-    <div class="wrap">
-      <div class="section-head">
-        <SectionMark :index="5" />
-        <h2>{{ t.homeFaq.title }}</h2>
-      </div>
-      <dl class="faq">
+  <section id="faq" class="h-section">
+    <div class="wrap h-split">
+      <h2 class="h-split-title">{{ t.homeFaq.title }}</h2>
+      <dl class="h-rows h-faq">
         <div v-for="item in t.homeFaq.items" :key="item[0]">
           <dt>{{ item[0] }}</dt>
           <dd>{{ item[1] }}</dd>
@@ -162,12 +128,11 @@ const { locale, t } = useI18n()
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap cta">
-      <Ornament />
+  <section class="h-section h-cta">
+    <div class="wrap">
       <h2>{{ t.cta.title }}</h2>
-      <p class="lede">{{ t.cta.body }}</p>
-      <div class="actions">
+      <p>{{ t.cta.body }}</p>
+      <div class="h-actions">
         <a class="btn btn-primary btn-lg" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{ t.cta.primary }}</a>
         <a class="btn btn-outline btn-lg" :href="`mailto:${CONTACT_ADDRESS}`">{{ t.cta.secondary }}</a>
       </div>
