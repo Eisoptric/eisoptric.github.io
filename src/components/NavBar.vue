@@ -40,13 +40,15 @@ onBeforeUnmount(() => {
   document.removeEventListener('keydown', onKeydown)
 })
 
-const links = computed(() => [
+// The research and the tools sit left of the centred wordmark, About sits right; the phone menu lists them all.
+const leftLinks = computed(() => [
   { label: t.value.nav.research, to: localePath('/research', locale.value) },
   { label: t.value.nav.lilith, to: localePath('/lilith', locale.value) },
   { label: t.value.nav.app, to: localePath('/app', locale.value) },
   { label: t.value.nav.mcp, to: localePath('/mcp', locale.value) },
-  { label: t.value.nav.about, to: localePath('/about', locale.value) },
 ])
+const aboutLink = computed(() => ({ label: t.value.nav.about, to: localePath('/about', locale.value) }))
+const links = computed(() => [...leftLinks.value, aboutLink.value])
 const enTo = computed(() => localePath(route.path, 'en'))
 const zhTo = computed(() => localePath(route.path, 'zh'))
 </script>
@@ -54,14 +56,15 @@ const zhTo = computed(() => localePath(route.path, 'zh'))
 <template>
   <header class="site-header">
     <div class="wrap bar">
-      <Brand />
-
       <nav class="nav-links" :aria-label="locale === 'zh' ? '主要' : 'Main'">
-        <RouterLink v-for="link in links" :key="link.to" :to="link.to" :aria-current="route.path === link.to ? 'page' : undefined">{{ link.label }}</RouterLink>
+        <RouterLink v-for="link in leftLinks" :key="link.to" class="pill" :to="link.to" :aria-current="route.path === link.to ? 'page' : undefined">{{ link.label }}</RouterLink>
       </nav>
 
+      <Brand />
+
       <div class="nav-end">
-        <a class="btn btn-primary btn-sm" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{ t.nav.cta }}</a>
+        <RouterLink class="pill" :to="aboutLink.to" :aria-current="route.path === aboutLink.to ? 'page' : undefined">{{ aboutLink.label }}</RouterLink>
+        <a class="pill" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{ t.nav.cta }}</a>
         <div class="lang" @click.stop>
           <button
             class="lang-btn"
@@ -89,7 +92,7 @@ const zhTo = computed(() => localePath(route.path, 'zh'))
       </div>
 
       <div class="mobile-tools">
-        <a class="btn btn-primary btn-sm mobile-start" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{ t.nav.cta }}</a>
+        <a class="pill mobile-start" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{ t.nav.cta }}</a>
         <div class="lang" @click.stop>
           <button
             class="lang-btn"
@@ -128,6 +131,7 @@ const zhTo = computed(() => localePath(route.path, 'zh'))
 
     <div v-if="menuOpen" class="mobile-menu wrap">
       <RouterLink v-for="link in links" :key="link.to" :to="link.to" :aria-current="route.path === link.to ? 'page' : undefined">{{ link.label }}</RouterLink>
+      <a class="mobile-only" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{ t.nav.cta }}</a>
     </div>
   </header>
 </template>
