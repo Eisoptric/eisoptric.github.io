@@ -4,7 +4,7 @@
 
 # Eisoptric website
 
-**The source of [saturn-core.com](https://saturn-core.com).**
+**The source of [eisoptric.com](https://eisoptric.com).**
 
 Eisoptric is a small, independent AI research project founded by Rick Weng in Taiwan. The site holds the landing page, Research, About, the pages of the two tools it releases (Eisoptric Workbench and Eisoptric MCP), Trust (with the whitepaper), Pricing, Terms and Privacy, in English and 繁體中文, prerendered to static HTML.
 
@@ -136,7 +136,7 @@ Chinese copy uses Taiwan terms and full-width punctuation, as the existing text 
 
 [`src/seo.ts`](src/seo.ts) produces every page's head, for both the prerendered HTML (`headTags()`) and client-side navigation (`applyHead()`):
 
-- **Canonical and alternates.** A canonical URL on `https://saturn-core.com`, `hreflang` links for `en` and `zh-Hant`, and `x-default` pointing at the English page.
+- **Canonical and alternates.** A canonical URL on `https://eisoptric.com`, `hreflang` links for `en` and `zh-Hant`, and `x-default` pointing at the English page.
 - **Open Graph and Twitter cards.** Title, description, locale (`en_US` or `zh_TW`) and `og.png` at 1200 × 630, with alt text in the page's language.
 - **Robots.** `index, follow, max-image-preview:large`.
 - **JSON-LD.** One `@graph` per page with the `Organization` and `WebSite`, the page's `WebPage` (with a `BreadcrumbList` on every page but home), `FAQPage` on Home, Trust and Pricing built from the FAQ copy, and `SoftwareApplication` entries for Eisoptric MCP (Home, MCP, Pricing) and Eisoptric Workbench (Home, App, Pricing).
@@ -217,7 +217,7 @@ The deploy passes `--commit-dirty=true`, so uncommitted changes go live without 
 
 ## github.io
 
-The `gh-pages` branch serves saturn-technology-project.github.io, which only redirects to saturn-core.com. GitHub does not let an organization's `.github.io` repository turn Pages off. The site source on `main` is not published from GitHub.
+The `gh-pages` branch serves saturn-technology-project.github.io, which only redirects to eisoptric.com. GitHub does not let an organization's `.github.io` repository turn Pages off. The site source on `main` is not published from GitHub.
 
 ## Project layout
 

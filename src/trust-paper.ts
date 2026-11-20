@@ -671,8 +671,8 @@ export const trustPaper: Record<Locale, TrustPaper> = {
             type: 'ul',
             items: [
               '通報信箱：security@saturn-core.com',
-              '標準 security.txt：https://saturn-core.com/.well-known/security.txt',
-              '公開說明段落：Trust 頁面的 #disclosure 段落（https://saturn-core.com/trust#disclosure）',
+              '標準 security.txt：https://eisoptric.com/.well-known/security.txt',
+              '公開說明段落：Trust 頁面的 #disclosure 段落（https://eisoptric.com/trust#disclosure）',
             ],
           },
           {
@@ -1358,8 +1358,8 @@ export const trustPaper: Record<Locale, TrustPaper> = {
             type: 'ul',
             items: [
               'Email: security@saturn-core.com',
-              'Standard security.txt: https://saturn-core.com/.well-known/security.txt',
-              'Public disclosure section: The #disclosure section on the Trust page (https://saturn-core.com/trust#disclosure)',
+              'Standard security.txt: https://eisoptric.com/.well-known/security.txt',
+              'Public disclosure section: The #disclosure section on the Trust page (https://eisoptric.com/trust#disclosure)',
             ],
           },
           {

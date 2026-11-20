@@ -4,7 +4,7 @@
 
 # Eisoptric 網站
 
-**[saturn-core.com](https://saturn-core.com) 的原始碼。**
+**[eisoptric.com](https://eisoptric.com) 的原始碼。**
 
 首頁、Eisoptric MCP、Eisoptric Workbench、Trust（含白皮書）、方案與定價、服務條款與隱私權政策，提供英文與繁體中文，並預先渲染成靜態 HTML。
 
@@ -136,7 +136,7 @@ const { t } = useI18n()
 
 [`src/seo.ts`](src/seo.ts) 產生每一頁的 head，預先渲染的 HTML 用 `headTags()`，瀏覽器端切換頁面用 `applyHead()`：
 
-- **Canonical 與替代語言。** 以 `https://saturn-core.com` 為準的 canonical URL、`en` 與 `zh-Hant` 的 `hreflang` 連結，以及指向英文頁的 `x-default`。
+- **Canonical 與替代語言。** 以 `https://eisoptric.com` 為準的 canonical URL、`en` 與 `zh-Hant` 的 `hreflang` 連結，以及指向英文頁的 `x-default`。
 - **Open Graph 與 Twitter 卡片。** 標題、描述、語系（`en_US` 或 `zh_TW`），以及 1200 × 630 的 `og.png`，替代文字使用該頁的語言。
 - **Robots。** `index, follow, max-image-preview:large`。
 - **JSON-LD。** 每頁一個 `@graph`，包含 `Organization` 與 `WebSite`、該頁的 `WebPage`（首頁以外都附 `BreadcrumbList`）、首頁、Trust 與方案頁由常見問題文案產生的 `FAQPage`，以及 Eisoptric MCP（首頁、MCP、方案頁）與 Eisoptric Workbench（首頁、App、方案頁）的 `SoftwareApplication`。
@@ -217,7 +217,7 @@ npm run deploy
 
 ## github.io
 
-`gh-pages` 分支提供 saturn-technology-project.github.io，它只會轉址到 saturn-core.com。GitHub 不允許組織的 `.github.io` 儲存庫關閉 Pages。`main` 上的網站原始碼不由 GitHub 發佈。
+`gh-pages` 分支提供 saturn-technology-project.github.io，它只會轉址到 eisoptric.com。GitHub 不允許組織的 `.github.io` 儲存庫關閉 Pages。`main` 上的網站原始碼不由 GitHub 發佈。
 
 ## 專案結構
 

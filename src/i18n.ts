@@ -219,7 +219,7 @@ const messages = {
     },
     notFound: {
       title: 'Page not found — Eisoptric',
-      description: 'This page does not exist on saturn-core.com.',
+      description: 'This page does not exist on eisoptric.com.',
       eyebrow: '404 · Page not found',
       heading: 'This page doesn’t exist.',
       lede: 'The link may be out of date, or the address may have a typo. These pages are good places to start.',
@@ -867,7 +867,7 @@ const messages = {
     },
     notFound: {
       title: '找不到頁面 — Eisoptric',
-      description: 'saturn-core.com 上沒有這個頁面。',
+      description: 'eisoptric.com 上沒有這個頁面。',
       eyebrow: '404 · 找不到頁面',
       heading: '這個頁面不存在。',
       lede: '連結可能已經過期，或是網址打錯了。可以從下面這幾頁開始。',

@@ -107,7 +107,7 @@ const en = {
           {
             type: 'ul',
             items: [
-              'The website at https://saturn-core.com.',
+              'The website at https://eisoptric.com.',
               'The MCP console at https://dashboard.saturn-core.com.',
               'The MCP backend at https://api.saturn-core.com, which is the server for the gateway, accounts, policies, approvals, and the audit trail.',
               'Eisoptric Workbench, the desktop application for macOS and Windows.',
@@ -358,7 +358,7 @@ const en = {
           },
           {
             type: 'p',
-            text: 'The website at https://saturn-core.com has no forms and does not ask you for personal data. The page language is part of the address. The website does not use advertising cookies or a separate analytics product.',
+            text: 'The website at https://eisoptric.com has no forms and does not ask you for personal data. The page language is part of the address. The website does not use advertising cookies or a separate analytics product.',
           },
           {
             type: 'p',
@@ -554,7 +554,7 @@ const zh = {
           {
             type: 'ul',
             items: [
-              '網站 https://saturn-core.com。',
+              '網站 https://eisoptric.com。',
               'MCP 主控台 https://dashboard.saturn-core.com。',
               'MCP 後端伺服器 https://api.saturn-core.com，提供 Gateway、帳號、政策、核准與審計。',
               'Eisoptric Workbench，供 macOS 與 Windows 使用的桌面應用程式。',
@@ -804,7 +804,7 @@ const zh = {
           },
           {
             type: 'p',
-            text: '網站 https://saturn-core.com 沒有表單，不會要求你提供個人資料。頁面語言寫在網址裡。本網站不使用廣告 cookie，也沒有另外的分析工具。',
+            text: '網站 https://eisoptric.com 沒有表單，不會要求你提供個人資料。頁面語言寫在網址裡。本網站不使用廣告 cookie，也沒有另外的分析工具。',
           },
           {
             type: 'p',
