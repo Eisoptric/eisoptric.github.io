@@ -245,4 +245,4 @@ Cloudflare Workers Builds 也會在每次推送到正式分支時，從這個 re
 
 ## 授權
 
-本儲存庫未採用開放原始碼授權。
+Copyright © 2026 Rick Weng。版權所有。本儲存庫未採用開放原始碼授權，詳見 [`LICENSE`](LICENSE)。

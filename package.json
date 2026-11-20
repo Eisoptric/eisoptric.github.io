@@ -1,6 +1,7 @@
 {
   "name": "eisoptric-website",
   "private": true,
+  "license": "UNLICENSED",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

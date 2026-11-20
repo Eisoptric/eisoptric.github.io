@@ -245,4 +245,4 @@ The `gh-pages` branch serves eisoptric.github.io, which only redirects to eisopt
 
 ## License
 
-This repository is not open-source licensed.
+Copyright © 2026 Rick Weng. All rights reserved. This repository is not open-source licensed: see [`LICENSE`](LICENSE).
