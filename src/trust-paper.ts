@@ -122,8 +122,8 @@ export const trustPaper: Record<Locale, TrustPaper> = {
               'tools/call 送出呼叫：代理人針對某個工具送出 tools/call 與參數。若代理人處於暫停狀態，呼叫立即被擋下。',
               'Policy 判定：gateway 取出適用於該代理人的有效 policy（依規則順序比對工具名稱與參數條件）以及工具本身的預設模式（Call 或 Approval），給出「允許（allow）」、「拒絕（deny）」或「需審批（approval required）」三種判定之一；若代理人完全沒有任何適用的 policy，預設判定為拒絕。',
               '分流處理（允許／拒絕／需審批）：若判定為「允許」，直接進入第 9 步轉送上游；若判定為「拒絕」，呼叫絕不送往上流，立即寫入拒絕稽核紀錄，並回傳結構化錯誤（含 reason、policy_id、how_to_allow）。',
-              '進入審批佇列（含群組 quorum）：若判定為「需審批」，gateway 產生唯一的 action ID（即 saturnRunId），將當下參數計算正規化 SHA-256 摘要，並將待審參數以每組織 KMS 推導金鑰加密保存（7 天到期）。呼叫進入審批佇列等待單一審核者核准，或等待所有必要審核群組（groups）達到法定門檻人數（quorum），同時回傳含審批連結與原因的結構化回應給代理人。',
-              '以同一 action ID 重送並重新檢查：審核者按下核准不會直接觸發工具執行（「審批是許可，不是命令」）。代理人必須帶上同一個 saturnRunId 重新呼叫同一工具；gateway 會重新檢查三件事：核准與重送視窗是否尚未過期、重送當下的有效 policy 是否仍允許、以及重送的參數摘要是否與核准時綁定的參數完全一致。任一項不符即拒絕。',
+              '進入審批佇列（含群組 quorum）：若判定為「需審批」，gateway 產生唯一的 action ID（即 gatewayRunId），將當下參數計算正規化 SHA-256 摘要，並將待審參數以每組織 KMS 推導金鑰加密保存（7 天到期）。呼叫進入審批佇列等待單一審核者核准，或等待所有必要審核群組（groups）達到法定門檻人數（quorum），同時回傳含審批連結與原因的結構化回應給代理人。',
+              '以同一 action ID 重送並重新檢查：審核者按下核准不會直接觸發工具執行（「審批是許可，不是命令」）。代理人必須帶上同一個 gatewayRunId 重新呼叫同一工具；gateway 會重新檢查三件事：核准與重送視窗是否尚未過期、重送當下的有效 policy 是否仍允許、以及重送的參數摘要是否與核准時綁定的參數完全一致。任一項不符即拒絕。',
               '以 vault 憑證轉送上游：通過檢查後，gateway 從後量子憑證庫（vault）解密該上游 MCP 伺服器的憑證（僅在此次呼叫期間於記憶體中開啟），代代理人向上游發送工具呼叫並取得回應；若上游回傳 401 且具備 refresh token，gateway 自動完成續期後重試一次。',
               '零存取封存：寫入長期稽核紀錄前，gateway 抽取一次性隨機 32-byte AES-256-GCM 資料金鑰，將工具參數、上游請求、上游回應、伺服器結果與代理人結果一起加密，再用 ML-KEM-1024 + HKDF-SHA384 將資料金鑰分別包裝給組織公鑰與每位有效成員的公鑰，寫入完成後立即刪除資料金鑰。若組織尚無可用的 ML-KEM 金鑰，內容不寫入，僅標記「加密不可用」。',
               '寫入稽核紀錄：gateway 以原子計數器取得該組織遞增序號，將明文中繼資料（呼叫者、工具、policy 版本、判定結果、加密狀態、內容雜湊）與零存取密文信封寫入稽核表。',
@@ -165,7 +165,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
               ['每組織處理中內容金鑰（s2.）', 'KMS MAC 依組織 ID 推導 32-byte 對稱金鑰 → AES-256-GCM（記憶體快取 300 秒）', '執行期由 Gateway 向 KMS 請求推導，不寫入資料庫', '加密等待核准的參數與執行中 run 的狀態（保存 7 天後到期）'],
               ['組織 ML-KEM 金鑰對', 'ML-KEM-1024（FIPS 203），公鑰 1,568 bytes、私鑰種子 64 bytes', '瀏覽器端產生；Gateway 僅存公鑰與加密備份', '接收零存取稽核紀錄的資料金鑰封裝，並供新成員加入或密碼重設後重包金鑰'],
               ['成員 ML-KEM 金鑰對', 'ML-KEM-1024（FIPS 203），私鑰種子以密碼衍生金鑰（PBKDF2 600,000 次 + AES-256-GCM）包裝', '瀏覽器端產生與解鎖（僅駐留頁面記憶體）', '成員在瀏覽器內解開零存取稽核內容與組織金鑰副本'],
-              ['組織 Recovery Key', '256-bit 隨機金鑰 → HKDF-SHA256（saturn-recovery-v1）→ AES-256-GCM', '建立組織金鑰時於瀏覽器顯示一次，永不上傳至伺服器', '管理員或全體成員遺失密碼備份時，於瀏覽器離線解開組織金鑰備份密文'],
+              ['組織 Recovery Key', '256-bit 隨機金鑰 → HKDF-SHA256（eisoptric-recovery-v1）→ AES-256-GCM', '建立組織金鑰時於瀏覽器顯示一次，永不上傳至伺服器', '管理員或全體成員遺失密碼備份時，於瀏覽器離線解開組織金鑰備份密文'],
             ],
           },
           {
@@ -433,7 +433,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           {
             type: 'ol',
             items: [
-              'policy 判定為需要審批時，代理人會拿到一個 action ID（saturnRunId），呼叫進入審批佇列。',
+              'policy 判定為需要審批時，代理人會拿到一個 action ID（gatewayRunId），呼叫進入審批佇列。',
               '成員在主控台看到的是這一次、這組參數。',
               '核准不會直接執行工具。代理人要用同一個 action ID 重送，gateway 會重新檢查三件事：核准是否已過期、當下的 policy 是否還允許、參數是否和核准的那組一致。參數不一致就拒絕。',
               '審批結果用簽章 webhook 通知。webhook 只負責通知，不會觸發執行。',
@@ -499,7 +499,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           {
             type: 'ul',
             items: [
-              '【現況】第一層（已儲存的稽核內容，零存取加密）：gateway 對每筆稽核紀錄抽取隨機 32-byte 資料金鑰，以 AES-256-GCM 加密正規化 JSON（附加驗證資料 AAD 為組織 ID、紀錄 ID、欄位類型與格式版本 1），接著以 ML-KEM-1024 封裝並透過 HKDF-SHA384（info 為 saturn-payload-mlkem1024-v1）衍生包裝金鑰，將資料金鑰分別包給組織公鑰與每位有效成員公鑰，寫入後立即刪除資料金鑰。平台管理員 API 亦會過濾掉所有密文信封。',
+              '【現況】第一層（已儲存的稽核內容，零存取加密）：gateway 對每筆稽核紀錄抽取隨機 32-byte 資料金鑰，以 AES-256-GCM 加密正規化 JSON（附加驗證資料 AAD 為組織 ID、紀錄 ID、欄位類型與格式版本 1），接著以 ML-KEM-1024 封裝並透過 HKDF-SHA384（info 為 eisoptric-payload-mlkem1024-v1）衍生包裝金鑰，將資料金鑰分別包給組織公鑰與每位有效成員公鑰，寫入後立即刪除資料金鑰。平台管理員 API 亦會過濾掉所有密文信封。',
               '【現況】第二層（等待核准與執行中的處理中內容，7 天伺服器端加密）：等待人工審批的參數與執行中 run 的狀態，因為 gateway 在核准後必須讀取參數並轉送上游，所以使用由 Cloud KMS MAC 依組織推導的對稱金鑰進行 AES-256-GCM 加密（前綴 s2.），保存 7 天後自動到期失效。',
             ],
           },
@@ -809,8 +809,8 @@ export const trustPaper: Record<Locale, TrustPaper> = {
               'tools/call Submission: The agent submits tools/call with tool name and arguments. If the agent is paused, the call is rejected immediately.',
               'Policy Evaluation: The gateway evaluates the active policies applicable to the agent (matching tool name and argument conditions in order) together with the tool’s mode (Call or Approval), producing allow, deny, or approval required. If an agent has no applicable policy at all, evaluation defaults to deny.',
               'Decision Branching (Allow / Deny / Approval Required): If allowed, execution proceeds to Step 9; if denied, the call never leaves Eisoptric, a denial audit event is written immediately, and the agent receives a structured error containing reason, policy_id, and how_to_allow.',
-              'Approval Queue (with Group Quorum): If approval is required, the gateway issues a unique action ID (saturnRunId), computes the canonical SHA-256 digest of the arguments, and encrypts the pending arguments with the per-organization KMS-derived key (7-day TTL). The call enters the approval queue waiting for a single reviewer or until every required group reaches its quorum, and returns a structured response with the approval URL to the agent.',
-              'Resubmission with the Same Action ID & Re-Verification: Reviewer approval never executes the tool directly (“approval is permission, not a command”). The agent must resubmit the tool call with the same saturnRunId; the gateway re-verifies that the approval and resubmission windows have not expired, that currently active policies still permit the call, and that the resubmitted argument digest matches the approved arguments. Any mismatch is rejected.',
+              'Approval Queue (with Group Quorum): If approval is required, the gateway issues a unique action ID (gatewayRunId), computes the canonical SHA-256 digest of the arguments, and encrypts the pending arguments with the per-organization KMS-derived key (7-day TTL). The call enters the approval queue waiting for a single reviewer or until every required group reaches its quorum, and returns a structured response with the approval URL to the agent.',
+              'Resubmission with the Same Action ID & Re-Verification: Reviewer approval never executes the tool directly (“approval is permission, not a command”). The agent must resubmit the tool call with the same gatewayRunId; the gateway re-verifies that the approval and resubmission windows have not expired, that currently active policies still permit the call, and that the resubmitted argument digest matches the approved arguments. Any mismatch is rejected.',
               'Forwarding Upstream with Vault Credentials: Once verified, the gateway unseals the upstream MCP server’s credential from the post-quantum vault in memory for the duration of the call and forwards the request upstream; if the upstream returns HTTP 401 and a refresh token is available, the gateway refreshes the token automatically and retries once.',
               'Zero-Access Archival Sealing: Before writing the permanent audit record, the gateway generates a random 32-byte AES-256-GCM data key, encrypts the arguments, raw request, raw response, server result, and agent result, wraps the data key with ML-KEM-1024 + HKDF-SHA384 to the organization public key and each active member’s public key, and immediately deletes the data key. If the organization has no usable ML-KEM key, payload content is omitted and the row is marked encryption unavailable.',
               'Audit Log Persistence: Using an atomic per-organization sequence counter, the gateway writes the plaintext governance metadata (caller, tool, policy version, decision, encryption status, content SHA-256 hash) alongside the zero-access ciphertext envelope.',
@@ -852,7 +852,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
               ['Per-Organization In-Flight Key (s2.)', 'KMS MAC over organization ID → 32-byte AES-256-GCM key (cached 300s in memory)', 'Derived on demand by Gateway via KMS; never stored in database', 'Encrypts arguments waiting for approval and active run state (expires after 7 days)'],
               ['Organization ML-KEM Keypair', 'ML-KEM-1024 (FIPS 203), 1,568-byte public key, 64-byte private seed', 'Generated in browser; Gateway stores only public key and encrypted backups', 'Receives wrapped data keys for zero-access audit records and enables member key re-wrapping'],
               ['Member ML-KEM Keypair', 'ML-KEM-1024 (FIPS 203), private seed wrapped via password-derived key (PBKDF2 600,000 iterations + AES-256-GCM)', 'Generated and unlocked in browser (held only in page memory)', 'Unlocks zero-access audit payloads and organization key copies in the member’s browser'],
-              ['Organization Recovery Key', '256-bit random key → HKDF-SHA256 (saturn-recovery-v1) → AES-256-GCM', 'Displayed once in browser at org key creation; never uploaded', 'Offline recovery of the encrypted organization key backup if member password backups are lost'],
+              ['Organization Recovery Key', '256-bit random key → HKDF-SHA256 (eisoptric-recovery-v1) → AES-256-GCM', 'Displayed once in browser at org key creation; never uploaded', 'Offline recovery of the encrypted organization key backup if member password backups are lost'],
             ],
           },
           {
@@ -1120,7 +1120,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           {
             type: 'ol',
             items: [
-              'When policy evaluation requires approval, the agent receives an action ID (saturnRunId) and the call enters the approval queue.',
+              'When policy evaluation requires approval, the agent receives an action ID (gatewayRunId) and the call enters the approval queue.',
               'Reviewers in the console inspect that specific call and its exact arguments.',
               'Approving the request does not execute the tool. The agent must resubmit with the same action ID, and the gateway re-checks three invariants: whether the approval has expired, whether current policy still allows the call, and whether the resubmitted arguments match the approved arguments. Any mismatch is rejected.',
               'Approval outcomes trigger signed webhooks. Webhooks only notify; they never execute the tool.',
@@ -1186,7 +1186,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           {
             type: 'ul',
             items: [
-              '[Current] Layer 1 (Stored audit payloads, zero-access encryption): For each audit event, the gateway draws a random 32-byte data key, encrypts the canonical JSON with AES-256-GCM (binding organization ID, record ID, payload type, and format version 1 as AAD), encapsulates to the organization public key and each active member public key via ML-KEM-1024 and HKDF-SHA384 (info saturn-payload-mlkem1024-v1), and deletes the data key immediately after writing. Platform admin APIs also strip all sealed envelopes.',
+              '[Current] Layer 1 (Stored audit payloads, zero-access encryption): For each audit event, the gateway draws a random 32-byte data key, encrypts the canonical JSON with AES-256-GCM (binding organization ID, record ID, payload type, and format version 1 as AAD), encapsulates to the organization public key and each active member public key via ML-KEM-1024 and HKDF-SHA384 (info eisoptric-payload-mlkem1024-v1), and deletes the data key immediately after writing. Platform admin APIs also strip all sealed envelopes.',
               '[Current] Layer 2 (In-flight content waiting for approval or execution, 7-day server-side encryption): Because the gateway must display pending arguments for review and forward them upstream once approved, pending approval arguments and active run state are encrypted with AES-256-GCM (prefix s2.) using a symmetric key derived per organization via Cloud KMS MAC, expiring automatically after 7 days.',
             ],
           },

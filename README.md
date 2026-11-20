@@ -38,7 +38,7 @@ Every page exists twice: once at its English path and once under `/zh` in 繁體
 | `/terms` | `/zh/terms` | `LegalPage.vue` | Terms of Service |
 | `/privacy` | `/zh/privacy` | `LegalPage.vue` | Privacy Policy |
 
-The App page links to the releases at `RELEASES_URL` in [`src/config.ts`](src/config.ts). Eisoptric Workbench's releases are pre-releases with the version in their file names, so a stable `/releases/latest` address cannot point at one. The "Get started" buttons go to the console at `dashboard.saturn-core.com`.
+The App page links to the releases at `RELEASES_URL` in [`src/config.ts`](src/config.ts). Eisoptric Workbench's releases are pre-releases with the version in their file names, so a stable `/releases/latest` address cannot point at one. The "Get started" buttons go to the console at `console.eisoptric.com`.
 
 Old paths are redirected in two places:
 
