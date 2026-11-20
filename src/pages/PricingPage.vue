@@ -24,10 +24,10 @@ const f = useFreePricing()
         <p class="hero-note">{{ f.plansDesc }}</p>
       </div>
       <div class="hero-aside">
-        <pre class="code code-wrap"><span class="k">saturn</span>    <span class="ok">{{ f.free.price }}</span> <span class="k">{{ f.free.period }}</span>
+        <pre class="code code-wrap"><span class="k">eisoptric</span>  <span class="ok">{{ f.free.price }}</span> <span class="k">{{ f.free.period }}</span>
 <span class="v">{{ f.free.tagline }}</span>
 
-<span class="k">donate</span>    <span class="a">{{ f.donate.points[0] }}</span>
+<span class="k">donate</span>     <span class="a">{{ f.donate.points[0] }}</span>
 <span class="v">{{ f.donate.points[1] }}</span></pre>
         <p class="code-caption">{{ f.page.includedTitle }}</p>
       </div>
