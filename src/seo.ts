@@ -45,8 +45,8 @@ function ogLocale(lang: Locale): string {
 
 function imageAlt(lang: Locale): string {
   return lang === 'zh'
-    ? 'Saturn，研究 AI 模型如何學習、內部在算什麼'
-    : 'Saturn, research on how AI models learn and what they compute'
+    ? 'Eisoptric，研究 AI 模型如何學習、內部在算什麼'
+    : 'Eisoptric, research on how AI models learn and what they compute'
 }
 
 function crumbLabel(page: PageName, lang: Locale): string {
@@ -59,7 +59,7 @@ function crumbLabel(page: PageName, lang: Locale): string {
   if (page === 'trust') return nav.trust
   if (page === 'pricing') return nav.pricing
   if (page === 'terms' || page === 'privacy') return legalCopy[lang][page].crumb
-  return 'Saturn'
+  return 'Eisoptric'
 }
 
 function faqFor(page: PageName, lang: Locale) {
@@ -83,7 +83,7 @@ function mcpApplication(lang: Locale) {
   return {
     '@type': 'SoftwareApplication',
     '@id': `${SITE_URL}/#saturn-mcp`,
-    name: 'Saturn MCP',
+    name: 'Eisoptric MCP',
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
     url: canonicalUrl('mcp', lang),
@@ -103,7 +103,7 @@ function desktopApplication(lang: Locale) {
   return {
     '@type': 'SoftwareApplication',
     '@id': `${SITE_URL}/#saturn-app`,
-    name: 'Saturn App',
+    name: 'Eisoptric App',
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'macOS, Windows',
     url: canonicalUrl('app', lang),
@@ -140,8 +140,8 @@ export function jsonLd(page: PageName, lang: Locale) {
     {
       '@type': ['Organization', 'ResearchProject'],
       '@id': ORG_ID,
-      name: 'Saturn',
-      alternateName: 'Saturn Technology Project',
+      name: 'Eisoptric',
+      alternateName: 'Eisoptric Research',
       url: SITE_URL,
       logo: new URL('/favicon.png', SITE_URL).href,
       image: OG_IMAGE,
@@ -154,7 +154,7 @@ export function jsonLd(page: PageName, lang: Locale) {
     {
       '@type': 'WebSite',
       '@id': SITE_ID,
-      name: 'Saturn',
+      name: 'Eisoptric',
       url: SITE_URL,
       inLanguage: ['en', 'zh-Hant'],
       publisher: { '@id': ORG_ID },
@@ -165,7 +165,7 @@ export function jsonLd(page: PageName, lang: Locale) {
     pageNode.breadcrumb = {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Saturn', item: canonicalUrl('home', lang) },
+        { '@type': 'ListItem', position: 1, name: 'Eisoptric', item: canonicalUrl('home', lang) },
         { '@type': 'ListItem', position: 2, name: crumbLabel(page, lang), item: url },
       ],
     }
@@ -208,7 +208,7 @@ export function headTags(page: PageName, lang: Locale): string {
     ...alternates,
     `<link rel="alternate" type="text/markdown" href="${markdownUrl(page, lang)}" title="${lang === 'zh' ? 'Markdown 版本' : 'Markdown version'}" />`,
     `<meta property="og:type" content="website" />`,
-    `<meta property="og:site_name" content="Saturn" />`,
+    `<meta property="og:site_name" content="Eisoptric" />`,
     `<meta property="og:locale" content="${ogLocale(lang)}" />`,
     `<meta property="og:locale:alternate" content="${other}" />`,
     `<meta property="og:title" content="${esc(meta.title)}" />`,
@@ -322,7 +322,7 @@ export function applyHead(page: PageName, lang: Locale) {
   fallback.href = canonicalUrl(page, 'en')
   document.head.appendChild(fallback)
   upsertMeta('property', 'og:type', 'website')
-  upsertMeta('property', 'og:site_name', 'Saturn')
+  upsertMeta('property', 'og:site_name', 'Eisoptric')
   upsertMeta('property', 'og:locale', ogLocale(lang))
   upsertMeta('property', 'og:locale:alternate', lang === 'zh' ? 'en_US' : 'zh_TW')
   upsertMeta('property', 'og:title', meta.title)

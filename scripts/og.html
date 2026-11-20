@@ -3,40 +3,31 @@
   <head>
     <meta charset="utf-8" />
     <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+Hebrew:wght@400&display=block"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=EB+Garamond:ital,wght@0,500;1,400&display=block"
       rel="stylesheet"
     />
     <style>
+      /* Eisoptric social card, 1200 x 630, Vellum pigments. The mark is the outlined SVG from public/brand. */
       * { margin: 0; padding: 0; box-sizing: border-box; }
       html, body { width: 1200px; height: 630px; }
-      body {
-        background: #f7f2e7 repeating-linear-gradient(0deg, rgba(120, 96, 60, 0.03) 0 1px, transparent 1px 7px);
-        color: #1d1915;
-        font-family: "EB Garamond", Georgia, serif;
-        display: flex;
-        align-items: center;
-        padding: 0 96px;
-        position: relative;
-      }
-      .frame { position: absolute; inset: 28px; border: 1px solid #c4b292; outline: 1px solid #c4b292; outline-offset: -8px; }
-      .logo { width: 196px; height: 196px; border-radius: 40px; flex: none; }
-      .text { margin-left: 64px; }
-      .rubric { font-size: 20px; letter-spacing: 0.18em; text-transform: uppercase; color: #8b2617; }
-      h1 { margin-top: 10px; font-weight: 400; font-size: 104px; line-height: 1; }
-      .line { margin-top: 18px; font-style: italic; font-size: 34px; line-height: 1.25; color: #554b40; max-width: 20em; }
-      .he { position: absolute; right: 84px; bottom: 60px; font-family: "Noto Serif Hebrew", serif; font-size: 40px; color: #8b2617; }
-      .url { margin-top: 26px; font-size: 22px; letter-spacing: 0.06em; color: #887c6c; }
+      body { background: #f4ede0; color: #1f1a14; font-family: "EB Garamond", Georgia, serif; position: relative; overflow: hidden; }
+      .mark { position: absolute; left: 780px; top: 155px; width: 320px; height: 320px; }
+      .text { position: absolute; left: 96px; top: 0; bottom: 0; width: 620px; display: flex; flex-direction: column; justify-content: center; }
+      .label { font-size: 20px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #5e5446; }
+      h1 { margin-top: 18px; font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: 120px; line-height: 0.95; letter-spacing: 0.02em; }
+      .line { margin-top: 26px; font-style: italic; font-size: 36px; line-height: 1.25; color: #5e5446; }
+      .rule { margin-top: 34px; width: 64px; height: 2px; background: #9c7a2e; }
+      .url { margin-top: 20px; font-size: 22px; letter-spacing: 0.06em; color: #5e5446; }
     </style>
   </head>
   <body>
-    <div class="frame"></div>
-    <img class="logo" src="LOGO" alt="" />
+    <img class="mark" src="LOGO" alt="" />
     <div class="text">
-      <p class="rubric">An independent AI research project</p>
-      <h1>Saturn</h1>
-      <p class="line">How models learn, and what they compute.</p>
+      <p class="label">Pretraining · Interpretability</p>
+      <h1>Eisoptric</h1>
+      <p class="line">Looking into the minds we train.</p>
+      <div class="rule"></div>
       <p class="url">saturn-core.com</p>
     </div>
-    <p class="he">א</p>
   </body>
 </html>

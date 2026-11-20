@@ -12,7 +12,7 @@ export type TrustPaper = {
 export const trustPaper: Record<Locale, TrustPaper> = {
   zh: {
     eyebrow: '白皮書',
-    heading: 'Saturn MCP Gateway 系統白皮書',
+    heading: 'Eisoptric MCP Gateway 系統白皮書',
     updated: '2026 年 10 月 18 日',
     lede: '狀態以 2026 年 10 月 18 日（台北時間）的產品為準。本文不是認證，也不是第三方稽核。白皮書和行銷文案說法不一致時，以本文為準。第二部分每個狀態只用四個標籤之一：【現況】（產品今天的實際行為）、【已修正】（之前發現的問題，修正已部署並複驗）、【未解決】（已知、還沒修好的問題）、【規劃中】（打算做、但還沒上線的改變；未列時程代表尚未承諾時程）。',
     sections: [
@@ -25,7 +25,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           },
           {
             type: 'p',
-            text: 'Saturn MCP Gateway 站在代理人和 MCP 伺服器之間。每一次工具呼叫都會經過四步：',
+            text: 'Eisoptric MCP Gateway 站在代理人和 MCP 伺服器之間。每一次工具呼叫都會經過四步：',
           },
           {
             type: 'ol',
@@ -47,7 +47,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
         blocks: [
           {
             type: 'p',
-            text: '本文寫給要評估 Saturn 的技術負責人、資安和工程團隊。內容涵蓋：系統架構、代理人身分、policy、審批、上游憑證、金鑰階層與加密設計、資料分級與第三方資料流向、稽核、部署與營運，以及目前已知的邊界。',
+            text: '本文寫給要評估 Eisoptric 的技術負責人、資安和工程團隊。內容涵蓋：系統架構、代理人身分、policy、審批、上游憑證、金鑰階層與加密設計、資料分級與第三方資料流向、稽核、部署與營運，以及目前已知的邊界。',
           },
           {
             type: 'p',
@@ -63,7 +63,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
             head: ['項目', '所有帳號'],
             rows: [
               ['適用對象', '個人（Personal）與組織（Organization）'],
-              ['Saturn App（AI 研究工作台）', 'Apache 2.0 開源免費'],
+              ['Eisoptric App（AI 研究工作台）', 'Apache 2.0 開源免費'],
               ['MCP Gateway 與工具集（Tool sets）', '有（工具集數量無上限）'],
               ['逐工具呼叫模式（Call／Approval）', '有'],
               ['參數層級 Policy 規則與版本控制', '有'],
@@ -76,7 +76,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           },
           {
             type: 'p',
-            text: 'Saturn 完全免費，沒有付費方案。本文提到的參數層級 policy、簽章 webhook、群組與多人審批門檻，每個帳號都能使用；成員邀請與角色管理用於組織帳號。',
+            text: 'Eisoptric 完全免費，沒有付費方案。本文提到的參數層級 policy、簽章 webhook、群組與多人審批門檻，每個帳號都能使用；成員邀請與角色管理用於組織帳號。',
           },
         ],
       },
@@ -85,7 +85,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
         blocks: [
           {
             type: 'p',
-            text: '參與方與信任邊界見第二部分 S2.1。Saturn 系統由下列十二個元件組成：',
+            text: '參與方與信任邊界見第二部分 S2.1。Eisoptric 系統由下列十二個元件組成：',
           },
           {
             type: 'ul',
@@ -100,8 +100,8 @@ export const trustPaper: Record<Locale, TrustPaper> = {
               '寄信服務：僅用於發送帳號驗證、密碼重設、成員邀請與審批通知信件，不傳送工具呼叫的原始回應內容。',
               'Policy 草擬用的 LLM：供成員在主控台以自然語言輔助草擬或最佳化 policy 規則；產出的規則草案必須由成員人工確認並儲存後才會生效（傳送欄位見第 8 章）。',
               '主控台（瀏覽器端解密）：成員登入、管理代理人與工具集、撰寫 policy、核准或駁回敏感呼叫，並在瀏覽器記憶體內解鎖成員 ML-KEM-1024 私鑰以解密零存取稽核內容。',
-              'Saturn App（Apache 2.0 開源桌面應用）：在本機運行、內含程式 Agent 的 AI 研究工作台（含獨立的本機 Runtime，只監聽本機迴路位址），可離線搭配本機模型運作，亦可連上 Saturn MCP Gateway 納入治理。',
-              '客戶自己的 MCP 上游伺服器：客戶實際提供工具能力的外部或內部 MCP 伺服器（如帳務、CRM、資料庫、部署系統），只接收經 Saturn 授權並轉送的請求。',
+              'Eisoptric App（Apache 2.0 開源桌面應用）：在本機運行、內含程式 Agent 的 AI 研究工作台（含獨立的本機 Runtime，只監聽本機迴路位址），可離線搭配本機模型運作，亦可連上 Eisoptric MCP Gateway 納入治理。',
+              '客戶自己的 MCP 上游伺服器：客戶實際提供工具能力的外部或內部 MCP 伺服器（如帳務、CRM、資料庫、部署系統），只接收經 Eisoptric 授權並轉送的請求。',
             ],
           },
         ],
@@ -117,7 +117,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
             type: 'ol',
             items: [
               'OAuth 2.1 + PKCE 認證：代理人透過 OAuth 2.1 授權碼流程（強制 PKCE S256）取得綁定至該代理人與組織（或個人 profile）的存取權杖。未帶有效權杖呼叫 MCP 端點時回傳 401 與 RFC 9728 資源中繼資料。',
-              'initialize 交握：代理人向 Saturn MCP 端點發送 initialize，建立綁定至該代理人身分的 MCP session（狀態寫入共用 Redis）。',
+              'initialize 交握：代理人向 Eisoptric MCP 端點發送 initialize，建立綁定至該代理人身分的 MCP session（狀態寫入共用 Redis）。',
               'tools/list（依 tool set 過濾）：代理人請求工具清單時，gateway 僅回傳該代理人獲派工具集（tool set）內、且該成員獲准存取之 MCP 伺服器上的有效工具；不在工具集內的工具對代理人而言不存在。',
               'tools/call 送出呼叫：代理人針對某個工具送出 tools/call 與參數。若代理人處於暫停狀態，呼叫立即被擋下。',
               'Policy 判定：gateway 取出適用於該代理人的有效 policy（依規則順序比對工具名稱與參數條件）以及工具本身的預設模式（Call 或 Approval），給出「允許（allow）」、「拒絕（deny）」或「需審批（approval required）」三種判定之一；若代理人完全沒有任何適用的 policy，預設判定為拒絕。',
@@ -137,14 +137,14 @@ export const trustPaper: Record<Locale, TrustPaper> = {
         blocks: [
           {
             type: 'p',
-            text: '客戶將外部或內部的 MCP 伺服器接入 Saturn 時，gateway 負責網路邊界檢查、工具探索與上游 OAuth 生命週期管理：',
+            text: '客戶將外部或內部的 MCP 伺服器接入 Eisoptric 時，gateway 負責網路邊界檢查、工具探索與上游 OAuth 生命週期管理：',
           },
           {
             type: 'ul',
             items: [
               '註冊與網路邊界檢查：以 URL 註冊上游 MCP 伺服器時，gateway 強制要求 HTTPS（僅本機開發允許 localhost 的 HTTP），並解析主機名稱以封鎖私有網段、迴路位址、link-local 與雲端 metadata 位址，防止伺服器端請求偽造（SSRF）。',
               '自動工具探索：連線建立或手動重新整理時，gateway 對上游依序發送 MCP 標準的 initialize 與 tools/list，擷取每個工具的名稱、描述與 JSON inputSchema。若不同伺服器有同名工具，gateway 會自動加上伺服器名稱前綴以防命名衝突；上游已移除的工具則自動停用。',
-              '代管上游 OAuth（動態註冊與自動續期）：若上游 MCP 伺服器需要 OAuth 授權，Saturn 會自動探索上游的 OAuth 授權伺服器中繼資料，在支援時執行 Dynamic Client Registration（DCR），並透過帶 PKCE 的授權流程取得權杖。取得的 access token、refresh token 與 client secret 會個別以每租戶 ML-KEM-1024 金鑰封存入庫；當上游在呼叫或探索期間回傳 401 時，gateway 會自動使用 refresh token 更新權杖並重新封存。',
+              '代管上游 OAuth（動態註冊與自動續期）：若上游 MCP 伺服器需要 OAuth 授權，Eisoptric 會自動探索上游的 OAuth 授權伺服器中繼資料，在支援時執行 Dynamic Client Registration（DCR），並透過帶 PKCE 的授權流程取得權杖。取得的 access token、refresh token 與 client secret 會個別以每租戶 ML-KEM-1024 金鑰封存入庫；當上游在呼叫或探索期間回傳 401 時，gateway 會自動使用 refresh token 更新權杖並重新封存。',
             ],
           },
         ],
@@ -154,7 +154,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
         blocks: [
           {
             type: 'p',
-            text: 'Saturn 的密碼學設計分為兩棵彼此獨立的金鑰樹：一棵是由 Cloud KMS 根金鑰推導的「伺服器端金鑰樹」（用於上游憑證與 7 天處理中內容），另一棵是由瀏覽器端產生並保護的「零存取金鑰樹」（用於長期封存的稽核內容與成員私鑰）。兩棵樹不共用任何秘密。',
+            text: 'Eisoptric 的密碼學設計分為兩棵彼此獨立的金鑰樹：一棵是由 Cloud KMS 根金鑰推導的「伺服器端金鑰樹」（用於上游憑證與 7 天處理中內容），另一棵是由瀏覽器端產生並保護的「零存取金鑰樹」（用於長期封存的稽核內容與成員私鑰）。兩棵樹不共用任何秘密。',
           },
           {
             type: 'table',
@@ -197,7 +197,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           },
           {
             type: 'p',
-            text: '當成員在主控台主動使用「AI 輔助草擬」或「最佳化 policy」功能時，gateway 會將產生規則所需的最小欄位送往由 Saturn 設定的 LLM 服務供應商（透過相容於 OpenAI Chat Completions 的 HTTPS API 呼叫）：',
+            text: '當成員在主控台主動使用「AI 輔助草擬」或「最佳化 policy」功能時，gateway 會將產生規則所需的最小欄位送往由 Eisoptric 設定的 LLM 服務供應商（透過相容於 OpenAI Chat Completions 的 HTTPS API 呼叫）：',
           },
           {
             type: 'ul',
@@ -215,11 +215,11 @@ export const trustPaper: Record<Locale, TrustPaper> = {
         blocks: [
           {
             type: 'h3',
-            text: 'S1.1 Saturn 保護什麼',
+            text: 'S1.1 Eisoptric 保護什麼',
           },
           {
             type: 'p',
-            text: 'AI 代理人開始直接呼叫真實系統：付款、寄信、改資料、開工單。Saturn 站在代理人和 MCP 上游伺服器之間，每一次工具呼叫都要經過四步：',
+            text: 'AI 代理人開始直接呼叫真實系統：付款、寄信、改資料、開工單。Eisoptric 站在代理人和 MCP 上游伺服器之間，每一次工具呼叫都要經過四步：',
           },
           {
             type: 'ol',
@@ -238,7 +238,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
             type: 'ul',
             items: [
               '代理人拿到的是結果，不是秘密。上游的 access token 和 client secret 不會交給代理人。',
-              '代理人不被信任。Saturn 預設代理人可能被操控，或本身就是惡意的。它不能自己挑工具、不能持有上游憑證，也不能核准自己的呼叫。',
+              '代理人不被信任。Eisoptric 預設代理人可能被操控，或本身就是惡意的。它不能自己挑工具、不能持有上游憑證，也不能核准自己的呼叫。',
               '審批是許可，不是命令。人按下核准不會讓工具直接執行。代理人要用同一個 action ID 重送，gateway 重新檢查期限、當下的 policy 和參數，全部符合才執行。',
               '讀不到金鑰就不運作（fail-closed）。讀不到所需的金鑰材料時，gateway 不會啟動，也不會用明文寫入內容。',
             ],
@@ -249,7 +249,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           },
           {
             type: 'p',
-            text: 'Saturn 限制的是代理人做得到什麼，不是代理人怎麼想。Saturn 看不到代理人的推理，也不檢查參數內容的語意。Saturn 的部分保證要靠平台營運方誠實運作，以及成員的瀏覽器沒有被入侵。這些前提和目前還沒修好的問題，第 S2 節和第 S10 節會逐條列出。',
+            text: 'Eisoptric 限制的是代理人做得到什麼，不是代理人怎麼想。Eisoptric 看不到代理人的推理，也不檢查參數內容的語意。Eisoptric 的部分保證要靠平台營運方誠實運作，以及成員的瀏覽器沒有被入侵。這些前提和目前還沒修好的問題，第 S2 節和第 S10 節會逐條列出。',
           },
         ],
       },
@@ -265,16 +265,16 @@ export const trustPaper: Record<Locale, TrustPaper> = {
             head: ['參與方', '信任它做什麼', '不信任它做什麼'],
             rows: [
               ['代理人（Agent）', '不信任。視為可能被操控或惡意。', '自己挑工具、持有上游憑證、核准自己的呼叫'],
-              ['MCP 上游伺服器', '回應已授權的呼叫', '看到被轉送的請求以外的任何東西，包括 Saturn 的憑證庫'],
-              ['Gateway（Saturn 服務）', '認證呼叫者、執行 policy、完成已授權的呼叫、寫稽核紀錄', '讀取成員私鑰，或解密已刪除資料金鑰的零存取稽核內容'],
+              ['MCP 上游伺服器', '回應已授權的呼叫', '看到被轉送的請求以外的任何東西，包括 Eisoptric 的憑證庫'],
+              ['Gateway（Eisoptric 服務）', '認證呼叫者、執行 policy、完成已授權的呼叫、寫稽核紀錄', '讀取成員私鑰，或解密已刪除資料金鑰的零存取稽核內容'],
               ['平台營運方（有基礎設施存取權的人）', '誠實運行服務', '見 S2.3。實際上，營運方目前被信任的範圍包括：KMS 簽章權限的管理、呼叫當下轉送環境的完整性、稽核紀錄的保存和順序。'],
-              ['成員的瀏覽器', '執行未被竄改的 Saturn 程式，持有成員私鑰', '其他一律不信任。瀏覽器被入侵時，該成員的金鑰會外洩。'],
-              ['Saturn 網域與建置流程', '提供未被竄改的前端程式', '這是隱性信任方，見第 S7 節'],
+              ['成員的瀏覽器', '執行未被竄改的 Eisoptric 程式，持有成員私鑰', '其他一律不信任。瀏覽器被入侵時，該成員的金鑰會外洩。'],
+              ['Eisoptric 網域與建置流程', '提供未被竄改的前端程式', '這是隱性信任方，見第 S7 節'],
             ],
           },
           {
             type: 'h3',
-            text: 'S2.2 範圍內：Saturn 設計上要防的',
+            text: 'S2.2 範圍內：Eisoptric 設計上要防的',
           },
           {
             type: 'ul',
@@ -287,13 +287,13 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           },
           {
             type: 'h3',
-            text: 'S2.3 範圍外：Saturn 不防的',
+            text: 'S2.3 範圍外：Eisoptric 不防的',
           },
           {
             type: 'ul',
             items: [
-              '代理人自身推理被提示注入（prompt injection）。被注入的內容說服代理人送出一個 policy 允許的呼叫，Saturn 會放行。Saturn 能限制被操控的代理人做到什麼，但不能阻止它被操控。',
-              '內容層檢查與 DLP。policy 只檢查你宣告的條件。Saturn 不做 DLP，不辨識機密或個資，也不檢查參數內容的語意。',
+              '代理人自身推理被提示注入（prompt injection）。被注入的內容說服代理人送出一個 policy 允許的呼叫，Eisoptric 會放行。Eisoptric 能限制被操控的代理人做到什麼，但不能阻止它被操控。',
+              '內容層檢查與 DLP。policy 只檢查你宣告的條件。Eisoptric 不做 DLP，不辨識機密或個資，也不檢查參數內容的語意。',
               '能讀取 gateway 金鑰材料、或能用 KMS 金鑰做簽章運算的營運方。擁有 KMS MAC 簽章權限的服務身分，可以推導任何一個租戶的上游憑證金鑰與 7 天處理中內容金鑰（見第 S4 節與第 S6 節）。這樣的人也能刪除或重排稽核紀錄而不被發現（見第 S6.3 節）。',
               '成員的電腦或瀏覽器被入侵。惡意程式、惡意擴充功能或被劫持的 session，可以讀到該成員能解開的所有東西，包括私鑰解鎖後的內容。',
             ],
@@ -335,7 +335,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           },
           {
             type: 'p',
-            text: '【現況】伺服器端：真正的保護。伺服器收到登入值後，用每個帳號各自隨機的 salt 再做一次 Argon2id，才寫入儲存。Saturn 不儲存密碼。登入後拿到的是伺服器端不透明的 session token，不是 JWT，所以沒有離線竄改或 alg=none 的攻擊面。登出會讓 token 立刻失效。成員私鑰解開後只放在頁面記憶體，token 也不寫進 localStorage。',
+            text: '【現況】伺服器端：真正的保護。伺服器收到登入值後，用每個帳號各自隨機的 salt 再做一次 Argon2id，才寫入儲存。Eisoptric 不儲存密碼。登入後拿到的是伺服器端不透明的 session token，不是 JWT，所以沒有離線竄改或 alg=none 的攻擊面。登出會讓 token 立刻失效。成員私鑰解開後只放在頁面記憶體，token 也不寫進 localStorage。',
           },
           {
             type: 'p',
@@ -379,7 +379,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
               'KMS 簽章權限就是控制點。每租戶金鑰防的是資料庫外洩，防不了持有權限的人。凡是有 KMS MAC 簽章權限的服務身分，都能推導出任何一個租戶的金鑰。所以真正的防線是 IAM：只有 gateway 的執行身分有這項權限，而且要嚴格控管、記錄每一次存取。',
               '「只在呼叫期間開啟」是軟體在限制，不是密碼學在限制。這條規則靠程式邏輯和存取控制執行。密碼學本身沒有限制 gateway 什麼時候能打開憑證。',
               '等待審批的參數。等待審批的參數在儲存時是封存的（見第 S6 節的處理中內容）。核准後，gateway 要用明文參數才能完成呼叫。gateway 只在完成這次已核准的呼叫時處理明文，這一點同樣是軟體限制。',
-              '建議客戶的作法。存進 Saturn 的上游憑證，請只給它需要的最小權限。',
+              '建議客戶的作法。存進 Eisoptric 的上游憑證，請只給它需要的最小權限。',
             ],
           },
           {
@@ -400,9 +400,9 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           {
             type: 'ul',
             items: [
-              '【現況】每個成員在每個組織裡有自己的 ML-KEM-1024 私鑰。私鑰在瀏覽器裡用密碼推導的金鑰包裝後才上傳，Saturn 伺服器不保存能解開它的金鑰。',
+              '【現況】每個成員在每個組織裡有自己的 ML-KEM-1024 私鑰。私鑰在瀏覽器裡用密碼推導的金鑰包裝後才上傳，Eisoptric 伺服器不保存能解開它的金鑰。',
               '【現況】包裝金鑰和登入值用不同的材料推導，所以登入值解不開私鑰。解開後的私鑰只放在頁面記憶體，分頁關掉就消失。',
-              '【現況】可以用 256-bit 的 recovery key 救回組織金鑰。成員備份和 recovery key 都遺失時，私鑰與封存內容就救不回來，包括 Saturn 在內沒有人打得開。這是刻意的設計。',
+              '【現況】可以用 256-bit 的 recovery key 救回組織金鑰。成員備份和 recovery key 都遺失時，私鑰與封存內容就救不回來，包括 Eisoptric 在內沒有人打得開。這是刻意的設計。',
               '【已修正】成員協助重設後重包組織金鑰時，瀏覽器會先重新向伺服器取得目標成員的公鑰並比對 SHA-256 公鑰指紋，指紋不符即拒絕封裝，防止替換公鑰的中間人攻擊。',
               '【現況】限制：成員被移除後，不會再有新內容包給他的金鑰。但已經包給他的舊內容，持有他私鑰和備份的人仍然打得開。移除成員能阻止未來的存取，收不回過去的存取。',
               '【未解決】目前一般成員也能透過 API 下載組織金鑰備份的密文（不是明文）。如果包裝用的密碼或備份保護不足，這會擴大離線攻擊面。',
@@ -465,7 +465,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
         blocks: [
           {
             type: 'p',
-            text: 'Saturn 對已儲存的稽核內容採用零存取加密（zero-access encryption）。Gateway 在轉送工具呼叫時會處理明文；寫入稽核紀錄前，內容以 ML-KEM-1024 包裝至組織金鑰與各成員公鑰，資料金鑰隨即刪除。此後，Saturn 伺服器無法解密已儲存的內容，僅成員可於瀏覽器內開啟。',
+            text: 'Eisoptric 對已儲存的稽核內容採用零存取加密（zero-access encryption）。Gateway 在轉送工具呼叫時會處理明文；寫入稽核紀錄前，內容以 ML-KEM-1024 包裝至組織金鑰與各成員公鑰，資料金鑰隨即刪除。此後，Eisoptric 伺服器無法解密已儲存的內容，僅成員可於瀏覽器內開啟。',
           },
           {
             type: 'p',
@@ -512,7 +512,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
             items: [
               '【現況】逐筆雜湊。每筆紀錄都存一個 SHA-256 內容雜湊，成員在瀏覽器解密後可核對該筆內容有沒有被改。',
               '【已修正】序號原子產生。之前序號是用「目前筆數加一」算出來的，併發寫入時可能撞號，紀錄被刪除後也可能出現重複或藏住缺口。現在序號由一張原子計數表產生，併發寫入也不會重複。',
-              '【未解決】沒有雜湊鏈，也沒有外部錨定。紀錄之間沒有密碼學上的串連。能直接存取資料庫的人，可以刪除、重排或截斷紀錄而不被發現。所以 Saturn 的稽核日誌目前不是防竄改的：完整性只保護到每一筆，不保護整份日誌。',
+              '【未解決】沒有雜湊鏈，也沒有外部錨定。紀錄之間沒有密碼學上的串連。能直接存取資料庫的人，可以刪除、重排或截斷紀錄而不被發現。所以 Eisoptric 的稽核日誌目前不是防竄改的：完整性只保護到每一筆，不保護整份日誌。',
               '【未解決】內容雜湊沒有加金鑰。這個雜湊是不加鹽、不加金鑰的 SHA-256。能讀資料庫的人可以拿它比對猜測，對低熵內容（固定金額、是或否、簡短列舉值）特別有效。',
               '【規劃中】加上防竄改的雜湊鏈，讓每一筆都承諾前一筆的雜湊，並定期把鏈頭錨定到營運方控制不了的外部儲存；同時把內容雜湊改成帶金鑰的 MAC，或改由 AES-GCM 驗證標籤負責，不再另存明文摘要。',
             ],
@@ -530,7 +530,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
             type: 'ul',
             items: [
               '【現況】服務跑在 Google Cloud Run，對外的公開網域前面是 Cloudflare（WAF、機器人防護、邊緣速率限制）。只開放 HTTPS，TLS 只接受 1.2 和 1.3。',
-              '【現況】API 和 dashboard 的每個回應都帶完整的安全標頭：嚴格的 CSP、HSTS、X-Frame-Options: DENY、鎖死的 Permissions-Policy、X-Content-Type-Options。API 的 CORS 只允許 Saturn 自己的 dashboard 來源。互動式 API 文件沒有對外開放。',
+              '【現況】API 和 dashboard 的每個回應都帶完整的安全標頭：嚴格的 CSP、HSTS、X-Frame-Options: DENY、鎖死的 Permissions-Policy、X-Content-Type-Options。API 的 CORS 只允許 Eisoptric 自己的 dashboard 來源。互動式 API 文件沒有對外開放。',
             ],
           },
           {
@@ -541,7 +541,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
             type: 'ul',
             items: [
               '【已修正】行銷網站安全標頭。之前行銷網站缺少 HSTS、CSP、防點擊劫持和 Permissions-Policy，現在全部補上。CSP 限制 script-src \'self\'，禁止 object-src，也禁止被嵌入框架。',
-              '【已修正】密碼學程式自行託管。之前部分密碼學程式從外部 CDN 載入，而且沒有 Subresource Integrity。現在外部 CDN 已完全移除，密碼學程式和應用程式碼都由 Saturn 自己的網域打包提供，CSP 也不允許載入遠端腳本。OAuth 登入頁的雜湊程式同樣改成自行託管，載入失敗時直接擋下登入，不會退回舊格式。',
+              '【已修正】密碼學程式自行託管。之前部分密碼學程式從外部 CDN 載入，而且沒有 Subresource Integrity。現在外部 CDN 已完全移除，密碼學程式和應用程式碼都由 Eisoptric 自己的網域打包提供，CSP 也不允許載入遠端腳本。OAuth 登入頁的雜湊程式同樣改成自行託管，載入失敗時直接擋下登入，不會退回舊格式。',
               '【已修正】應用層驗證 Cloudflare 來源標頭。過去若直接連線 Cloud Run 原始服務（origin）可跳過 Cloudflare WAF；現在後端與前端都在應用層以常數時間驗證 Cloudflare 邊緣注入的來源驗證 header，缺少或不符就立即回傳 403 拒絕。精確地說：origin 在網路層仍可連線，只是未經 Cloudflare 邊緣的請求會在應用層被拒絕。',
               '【已修正】速率限制以 Cloudflare 提供的真實客戶端 IP 計算，並透過 Redis 跨實例共用計數；當共用儲存（Redis）無法連線時，登入、遷移登入、註冊與動態用戶端註冊等驗證端點會直接拒絕請求（fail-closed），不會退回單機記憶體放行。',
               '【已修正】部署流程必須等待自動化測試與檢查工作流程通過後才會觸發上線。',
@@ -553,7 +553,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           },
           {
             type: 'p',
-            text: '密碼學程式改為自行託管後，我們假設 Saturn 自己網域提供的打包程式是可信的。剩下的邊界是 Saturn 建置與發布流程的供應鏈完整性。',
+            text: '密碼學程式改為自行託管後，我們假設 Eisoptric 自己網域提供的打包程式是可信的。剩下的邊界是 Eisoptric 建置與發布流程的供應鏈完整性。',
           },
           {
             type: 'ul',
@@ -584,7 +584,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           {
             type: 'ul',
             items: [
-              'FIPS 203 不等於 FIPS 140。我們使用 FIPS 203 標準化的 ML-KEM-1024，代表我們實作了這個演算法，不代表 Saturn 或它的密碼模組通過了 FIPS 140 驗證。',
+              'FIPS 203 不等於 FIPS 140。我們使用 FIPS 203 標準化的 ML-KEM-1024，代表我們實作了這個演算法，不代表 Eisoptric 或它的密碼模組通過了 FIPS 140 驗證。',
               '還不支援金鑰輪替。推導租戶與組織金鑰的 KMS 金鑰版本目前是固定的，而且還沒有輪替後把現有密文重新包裝的自動化流程。在流程完成並寫進本章之前，目前不支援 KMS 金鑰輪替，請勿假設支援。',
               '記憶體清除。執行環境不保證敏感資料用完後一定會從記憶體清掉。所以我們的說法是「用完就丟棄、不保存」，不是「保證硬體抹除」。',
               '舊信封。早期用 X25519 包裝的稽核內容維持原狀，不會自動轉成 ML-KEM。',
@@ -598,10 +598,10 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           {
             type: 'ul',
             items: [
-              '本章是 Saturn 對自身設計與限制的說明，不是認證，也不是第三方稽核。',
-              'Saturn 目前沒有任何認證。我們沒有 SOC 2 報告，也不聲稱符合 ISO 27001、HIPAA、FedRAMP 或其他框架。',
+              '本章是 Eisoptric 對自身設計與限制的說明，不是認證，也不是第三方稽核。',
+              'Eisoptric 目前沒有任何認證。我們沒有 SOC 2 報告，也不聲稱符合 ISO 27001、HIPAA、FedRAMP 或其他框架。',
               'SOC 2 與 ISO 27001 目前處於準備階段，尚未簽訂稽核機構。在簽約之前，不對外聲稱「SOC 2 進行中」或放置任何徽章。我們已備妥就緒路線圖，第一個目標是定點式的 Type I 報告，待補救項目完成後啟動。',
-              '本章提到的紅隊測試都是 Saturn 內部進行的，不能拿來代替獨立的第三方評估。',
+              '本章提到的紅隊測試都是 Eisoptric 內部進行的，不能拿來代替獨立的第三方評估。',
               '請不要從本章推論出任何合規聲明。使用 FIPS 203 演算法，不代表通過 FIPS 140 驗證（見第 S8 節）。',
             ],
           },
@@ -612,7 +612,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
         blocks: [
           {
             type: 'p',
-            text: '下面這些，Saturn 今天沒有做。有的是刻意的設計選擇，有的是還沒完成的工作，我們分開標示。',
+            text: '下面這些，Eisoptric 今天沒有做。有的是刻意的設計選擇，有的是還沒完成的工作，我們分開標示。',
           },
           {
             type: 'h3',
@@ -621,7 +621,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           {
             type: 'ul',
             items: [
-              '不防代理人自身推理被提示注入。Saturn 限制的是呼叫，不是想法。',
+              '不防代理人自身推理被提示注入。Eisoptric 限制的是呼叫，不是想法。',
               '不做內容檢查或 DLP。只檢查你宣告的 policy 條件。',
               '不防成員的電腦或瀏覽器被入侵。',
               '不防持有 KMS 簽章權限的營運方。這一層靠 IAM 控管，不靠密碼學。',
@@ -665,7 +665,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
         blocks: [
           {
             type: 'p',
-            text: '若您在 Saturn MCP Gateway、主控台或 Saturn App 發現潛在的資安漏洞，請透過以下管道通報：',
+            text: '若您在 Eisoptric MCP Gateway、主控台或 Eisoptric App 發現潛在的資安漏洞，請透過以下管道通報：',
           },
           {
             type: 'ul',
@@ -699,7 +699,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
   },
   en: {
     eyebrow: 'Whitepaper',
-    heading: 'Saturn MCP Gateway: System Whitepaper',
+    heading: 'Eisoptric MCP Gateway: System Whitepaper',
     updated: '18 October 2026',
     lede: 'Status reflects the product as of 18 October 2026 (Taipei time). This paper is neither a certification nor a third-party audit. Where marketing copy differs from this paper, this paper governs. Every status statement in Part II uses one of four labels: [Current] (actual behavior of the product today), [Fixed] (a previously identified issue whose fix is deployed and verified), [Open] (a known issue not yet resolved), or [Planned] (an intended change not yet live; items without a timeline have no committed schedule).',
     sections: [
@@ -712,7 +712,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           },
           {
             type: 'p',
-            text: 'Saturn MCP Gateway sits between AI agents and MCP servers. Every tool call passes through four steps:',
+            text: 'Eisoptric MCP Gateway sits between AI agents and MCP servers. Every tool call passes through four steps:',
           },
           {
             type: 'ol',
@@ -734,7 +734,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
         blocks: [
           {
             type: 'p',
-            text: 'This document is written for technical leaders, security teams, and engineering teams evaluating Saturn. It covers system architecture, agent identity, policies, human approvals, upstream credentials, key hierarchy and cryptographic design, data classification and third-party data flows, audit logging, deployment and operations, and known boundaries.',
+            text: 'This document is written for technical leaders, security teams, and engineering teams evaluating Eisoptric. It covers system architecture, agent identity, policies, human approvals, upstream credentials, key hierarchy and cryptographic design, data classification and third-party data flows, audit logging, deployment and operations, and known boundaries.',
           },
           {
             type: 'p',
@@ -750,7 +750,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
             head: ['Feature', 'Every account'],
             rows: [
               ['Account Kind', 'Personal and Organization'],
-              ['Saturn App (Research Workbench)', 'Free, Apache 2.0 open source'],
+              ['Eisoptric App (Research Workbench)', 'Free, Apache 2.0 open source'],
               ['MCP Gateway & Tool Sets', 'Included (unlimited tool sets)'],
               ['Per-Tool Mode (Call / Approval)', 'Included'],
               ['Argument-Level Policy Rules & Versioning', 'Included'],
@@ -763,7 +763,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           },
           {
             type: 'p',
-            text: 'Saturn is free and has no paid plans. Argument-level policies, signed webhooks, groups, and multi-approver quorum described in this paper are available on every account; member invitations and role management apply to organization accounts.',
+            text: 'Eisoptric is free and has no paid plans. Argument-level policies, signed webhooks, groups, and multi-approver quorum described in this paper are available on every account; member invitations and role management apply to organization accounts.',
           },
         ],
       },
@@ -772,7 +772,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
         blocks: [
           {
             type: 'p',
-            text: 'Parties and trust boundaries are detailed in Part II (S2.1). The Saturn system consists of twelve components:',
+            text: 'Parties and trust boundaries are detailed in Part II (S2.1). The Eisoptric system consists of twelve components:',
           },
           {
             type: 'ul',
@@ -787,8 +787,8 @@ export const trustPaper: Record<Locale, TrustPaper> = {
               'Email Delivery Service: Used solely for account verification, password reset, member invitations, and approval notification emails; never carries raw tool call responses.',
               'Policy Drafting LLM: Assists members in drafting or optimizing policy rules from natural language in the console; generated drafts never take effect automatically and must be reviewed and saved by a human member (see Chapter 8 for exact fields sent).',
               'Console (Browser-Side Decryption): Web interface where members sign in, manage agents and tool sets, author policies, approve or reject sensitive calls, and unlock their ML-KEM-1024 private key in browser memory to decrypt zero-access audit payloads.',
-              'Saturn App (Apache 2.0 Open-Source Desktop Application): Local workbench for AI research, with coding agents (with an independent local Runtime listening only on loopback), capable of running offline with local models or connecting to Saturn MCP Gateway for governance.',
-              'Customer Upstream MCP Servers: External or internal MCP servers operated by or for the customer (such as billing, CRM, databases, or deployment systems) that receive only authorized calls forwarded by Saturn.',
+              'Eisoptric App (Apache 2.0 Open-Source Desktop Application): Local workbench for AI research, with coding agents (with an independent local Runtime listening only on loopback), capable of running offline with local models or connecting to Eisoptric MCP Gateway for governance.',
+              'Customer Upstream MCP Servers: External or internal MCP servers operated by or for the customer (such as billing, CRM, databases, or deployment systems) that receive only authorized calls forwarded by Eisoptric.',
             ],
           },
         ],
@@ -804,11 +804,11 @@ export const trustPaper: Record<Locale, TrustPaper> = {
             type: 'ol',
             items: [
               'OAuth 2.1 + PKCE Authentication: The agent obtains an access token bound to that agent and organization (or personal profile) via OAuth 2.1 authorization code flow with mandatory PKCE S256. Unauthenticated calls to the MCP endpoint receive HTTP 401 with RFC 9728 resource metadata.',
-              'initialize Handshake: The agent sends initialize to the Saturn MCP endpoint, establishing an MCP session bound to the agent identity in shared Redis.',
+              'initialize Handshake: The agent sends initialize to the Eisoptric MCP endpoint, establishing an MCP session bound to the agent identity in shared Redis.',
               'tools/list (Filtered by Tool Set): When the agent requests tools/list, the gateway returns only active tools included in that agent’s assigned tool set and hosted on MCP servers mapped to the acting member; tools outside the set are invisible to the agent.',
               'tools/call Submission: The agent submits tools/call with tool name and arguments. If the agent is paused, the call is rejected immediately.',
               'Policy Evaluation: The gateway evaluates the active policies applicable to the agent (matching tool name and argument conditions in order) together with the tool’s mode (Call or Approval), producing allow, deny, or approval required. If an agent has no applicable policy at all, evaluation defaults to deny.',
-              'Decision Branching (Allow / Deny / Approval Required): If allowed, execution proceeds to Step 9; if denied, the call never leaves Saturn, a denial audit event is written immediately, and the agent receives a structured error containing reason, policy_id, and how_to_allow.',
+              'Decision Branching (Allow / Deny / Approval Required): If allowed, execution proceeds to Step 9; if denied, the call never leaves Eisoptric, a denial audit event is written immediately, and the agent receives a structured error containing reason, policy_id, and how_to_allow.',
               'Approval Queue (with Group Quorum): If approval is required, the gateway issues a unique action ID (saturnRunId), computes the canonical SHA-256 digest of the arguments, and encrypts the pending arguments with the per-organization KMS-derived key (7-day TTL). The call enters the approval queue waiting for a single reviewer or until every required group reaches its quorum, and returns a structured response with the approval URL to the agent.',
               'Resubmission with the Same Action ID & Re-Verification: Reviewer approval never executes the tool directly (“approval is permission, not a command”). The agent must resubmit the tool call with the same saturnRunId; the gateway re-verifies that the approval and resubmission windows have not expired, that currently active policies still permit the call, and that the resubmitted argument digest matches the approved arguments. Any mismatch is rejected.',
               'Forwarding Upstream with Vault Credentials: Once verified, the gateway unseals the upstream MCP server’s credential from the post-quantum vault in memory for the duration of the call and forwards the request upstream; if the upstream returns HTTP 401 and a refresh token is available, the gateway refreshes the token automatically and retries once.',
@@ -824,14 +824,14 @@ export const trustPaper: Record<Locale, TrustPaper> = {
         blocks: [
           {
             type: 'p',
-            text: 'When a customer connects an external or internal MCP server to Saturn, the gateway enforces network boundaries, discovers tools, and manages the upstream OAuth lifecycle:',
+            text: 'When a customer connects an external or internal MCP server to Eisoptric, the gateway enforces network boundaries, discovers tools, and manages the upstream OAuth lifecycle:',
           },
           {
             type: 'ul',
             items: [
               'Registration & Network Boundary Enforcement: Upstream MCP server URLs must use HTTPS (HTTP is permitted only on localhost for local development). The gateway resolves hostnames and blocks private IP ranges, loopback addresses, link-local addresses, and cloud metadata endpoints to prevent Server-Side Request Forgery (SSRF).',
               'Automated Tool Discovery: Upon connection or manual refresh, the gateway sends MCP initialize and tools/list requests upstream, recording each tool’s name, description, and JSON inputSchema. Name collisions across servers are automatically namespaced with the server slug, and tools removed upstream are automatically disabled.',
-              'Managed Upstream OAuth (Dynamic Registration & Token Refresh): When an upstream MCP server requires OAuth, Saturn discovers its OAuth authorization server metadata, performs Dynamic Client Registration (DCR) where supported, and completes an authorization code flow with PKCE. Resulting access tokens, refresh tokens, and client secrets are individually sealed with the per-tenant ML-KEM-1024 vault key; if an upstream later returns HTTP 401, the gateway automatically refreshes the token using the stored refresh token and reseals the updated credentials.',
+              'Managed Upstream OAuth (Dynamic Registration & Token Refresh): When an upstream MCP server requires OAuth, Eisoptric discovers its OAuth authorization server metadata, performs Dynamic Client Registration (DCR) where supported, and completes an authorization code flow with PKCE. Resulting access tokens, refresh tokens, and client secrets are individually sealed with the per-tenant ML-KEM-1024 vault key; if an upstream later returns HTTP 401, the gateway automatically refreshes the token using the stored refresh token and reseals the updated credentials.',
             ],
           },
         ],
@@ -841,7 +841,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
         blocks: [
           {
             type: 'p',
-            text: 'Saturn separates its cryptography into two independent key trees: a server-side KMS-rooted tree (protecting upstream credentials and 7-day in-flight content) and a browser-generated zero-access tree (protecting archived audit payloads and member private keys). The two trees share no secrets.',
+            text: 'Eisoptric separates its cryptography into two independent key trees: a server-side KMS-rooted tree (protecting upstream credentials and 7-day in-flight content) and a browser-generated zero-access tree (protecting archived audit payloads and member private keys). The two trees share no secrets.',
           },
           {
             type: 'table',
@@ -884,7 +884,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           },
           {
             type: 'p',
-            text: 'When a member explicitly uses the AI-assisted policy drafting or policy optimization feature in the console, the gateway sends only the minimum schema fields required to draft rules to the LLM service provider configured by Saturn (over an HTTPS OpenAI-compatible Chat Completions API):',
+            text: 'When a member explicitly uses the AI-assisted policy drafting or policy optimization feature in the console, the gateway sends only the minimum schema fields required to draft rules to the LLM service provider configured by Eisoptric (over an HTTPS OpenAI-compatible Chat Completions API):',
           },
           {
             type: 'ul',
@@ -902,11 +902,11 @@ export const trustPaper: Record<Locale, TrustPaper> = {
         blocks: [
           {
             type: 'h3',
-            text: 'S1.1 What Saturn Protects',
+            text: 'S1.1 What Eisoptric Protects',
           },
           {
             type: 'p',
-            text: 'AI agents now call real systems directly: payments, email, databases, and ticketing. Saturn stands between the agent and upstream MCP servers so every tool call passes through four steps:',
+            text: 'AI agents now call real systems directly: payments, email, databases, and ticketing. Eisoptric stands between the agent and upstream MCP servers so every tool call passes through four steps:',
           },
           {
             type: 'ol',
@@ -925,7 +925,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
             type: 'ul',
             items: [
               'Agents receive results, not secrets. Upstream access tokens and client secrets are never handed to agents.',
-              'Agents are untrusted. Saturn assumes an agent may be manipulated or malicious. An agent cannot choose its own tools, hold upstream credentials, or approve its own calls.',
+              'Agents are untrusted. Eisoptric assumes an agent may be manipulated or malicious. An agent cannot choose its own tools, hold upstream credentials, or approve its own calls.',
               'Approval is permission, not a command. A human clicking Approve does not execute the tool directly. The agent must resubmit with the same action ID, and the gateway re-checks expiration, current policy, and argument consistency before executing.',
               'Fail-closed on missing keys. When required key material is unavailable, the gateway refuses to start and refuses to write plaintext payloads.',
             ],
@@ -936,7 +936,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           },
           {
             type: 'p',
-            text: 'Saturn constrains what an agent can do, not what an agent thinks. Saturn does not inspect an agent’s internal reasoning or the semantic meaning of parameter values. Several guarantees depend on honest operation by the platform operator and on an uncompromised member browser. These assumptions and remaining open items are listed explicitly in S2 and S10.',
+            text: 'Eisoptric constrains what an agent can do, not what an agent thinks. Eisoptric does not inspect an agent’s internal reasoning or the semantic meaning of parameter values. Several guarantees depend on honest operation by the platform operator and on an uncompromised member browser. These assumptions and remaining open items are listed explicitly in S2 and S10.',
           },
         ],
       },
@@ -952,16 +952,16 @@ export const trustPaper: Record<Locale, TrustPaper> = {
             head: ['Party', 'Trusted To', 'Not Trusted To'],
             rows: [
               ['Agent', 'Nothing. Treated as potentially manipulated or malicious.', 'Select its own tools, hold upstream credentials, or approve its own calls'],
-              ['Upstream MCP Server', 'Respond to authorized calls', 'See anything beyond the forwarded request, including Saturn’s credential vault'],
-              ['Gateway (Saturn Service)', 'Authenticate callers, enforce policy, complete authorized calls, write audit records', 'Read member private keys, or decrypt archived zero-access audit payloads after data key deletion'],
+              ['Upstream MCP Server', 'Respond to authorized calls', 'See anything beyond the forwarded request, including Eisoptric’s credential vault'],
+              ['Gateway (Eisoptric Service)', 'Authenticate callers, enforce policy, complete authorized calls, write audit records', 'Read member private keys, or decrypt archived zero-access audit payloads after data key deletion'],
               ['Platform Operator (infrastructure access)', 'Operate the service honestly', 'See S2.3. In practice, the operator is currently trusted with KMS MAC signing permissions, the integrity of the in-flight execution environment, and audit record retention and ordering.'],
-              ['Member Browser', 'Execute unmodified Saturn code and hold the member private key in memory', 'Anything else. If the browser is compromised, that member’s keys and decrypted view are exposed.'],
-              ['Saturn Domain & Build Pipeline', 'Serve unmodified frontend code', 'An implicit root of trust; see S7'],
+              ['Member Browser', 'Execute unmodified Eisoptric code and hold the member private key in memory', 'Anything else. If the browser is compromised, that member’s keys and decrypted view are exposed.'],
+              ['Eisoptric Domain & Build Pipeline', 'Serve unmodified frontend code', 'An implicit root of trust; see S7'],
             ],
           },
           {
             type: 'h3',
-            text: 'S2.2 In Scope: What Saturn Is Designed to Prevent',
+            text: 'S2.2 In Scope: What Eisoptric Is Designed to Prevent',
           },
           {
             type: 'ul',
@@ -974,13 +974,13 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           },
           {
             type: 'h3',
-            text: 'S2.3 Out of Scope: What Saturn Does Not Prevent',
+            text: 'S2.3 Out of Scope: What Eisoptric Does Not Prevent',
           },
           {
             type: 'ul',
             items: [
-              'Prompt injection of the agent’s own reasoning. If injected content convinces an agent to issue a call that your policy permits, Saturn will allow it. Saturn bounds what a manipulated agent can execute, not whether it can be manipulated.',
-              'Content-layer inspection and DLP. Policies evaluate only the conditions you declare. Saturn does not perform DLP, classify secrets or PII, or inspect the semantic meaning of arguments.',
+              'Prompt injection of the agent’s own reasoning. If injected content convinces an agent to issue a call that your policy permits, Eisoptric will allow it. Eisoptric bounds what a manipulated agent can execute, not whether it can be manipulated.',
+              'Content-layer inspection and DLP. Policies evaluate only the conditions you declare. Eisoptric does not perform DLP, classify secrets or PII, or inspect the semantic meaning of arguments.',
               'A platform operator with gateway key access or KMS MAC signing permissions. A service identity with KMS MAC signing permission can derive any tenant’s upstream credential key and 7-day in-flight content key (see S4 and S6), and anyone with direct database write access can delete or reorder audit rows without cryptographic detection (see S6.3).',
               'Compromise of a member’s computer or browser. Malware, malicious browser extensions, or hijacked sessions can read anything that member can unlock, including payloads decrypted in memory.',
             ],
@@ -1022,7 +1022,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           },
           {
             type: 'p',
-            text: '[Current] Server-side protection. Upon receiving the login verifier, the server hashes it again with Argon2id using a unique random salt per account before storing it. Saturn never stores plaintext passwords. Successful sign-in issues an opaque server-side session token rather than a JWT, eliminating offline token tampering or alg=none attacks. Signing out invalidates the token immediately. Unlocked member private keys live only in page memory, and tokens are never written to localStorage.',
+            text: '[Current] Server-side protection. Upon receiving the login verifier, the server hashes it again with Argon2id using a unique random salt per account before storing it. Eisoptric never stores plaintext passwords. Successful sign-in issues an opaque server-side session token rather than a JWT, eliminating offline token tampering or alg=none attacks. Signing out invalidates the token immediately. Unlocked member private keys live only in page memory, and tokens are never written to localStorage.',
           },
           {
             type: 'p',
@@ -1066,7 +1066,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
               'KMS signing permission is the control point. Per-tenant keys defend against database exfiltration, not against an actor holding KMS permissions. Any service identity permitted to call KMS MAC sign can derive any tenant’s credential key. The real boundary is IAM: only the gateway runtime identity holds this permission, and access must be tightly restricted and audited.',
               '“Opened only during an authorized call” is a software invariant, not a cryptographic constraint. Program logic and access controls enforce when the gateway unseals a credential.',
               'Arguments waiting for approval. Arguments held in the approval queue are encrypted at rest using the per-organization KMS-derived key (see S6). After approval, the gateway must decrypt them into plaintext to forward the call upstream; restricting that decryption to approved calls is likewise a software invariant.',
-              'Customer recommendation. Grant upstream credentials stored in Saturn the minimum scopes required for the intended tools.',
+              'Customer recommendation. Grant upstream credentials stored in Eisoptric the minimum scopes required for the intended tools.',
             ],
           },
           {
@@ -1087,9 +1087,9 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           {
             type: 'ul',
             items: [
-              '[Current] Every member has a distinct ML-KEM-1024 private key per organization. The private key seed is wrapped in the browser using a password-derived key before upload; Saturn servers never hold the key needed to unwrap it.',
+              '[Current] Every member has a distinct ML-KEM-1024 private key per organization. The private key seed is wrapped in the browser using a password-derived key before upload; Eisoptric servers never hold the key needed to unwrap it.',
               '[Current] The member wrapping key and the login verifier are derived with distinct domain-separation labels, so the login verifier cannot decrypt the private key. Unlocked private keys remain only in page memory and vanish when the tab closes.',
-              '[Current] A 256-bit recovery key can restore the organization key offline in the browser. If both member password backups and the recovery key are lost, the private keys and sealed audit payloads cannot be recovered by anyone, including Saturn. This is an intentional design choice.',
+              '[Current] A 256-bit recovery key can restore the organization key offline in the browser. If both member password backups and the recovery key are lost, the private keys and sealed audit payloads cannot be recovered by anyone, including Eisoptric. This is an intentional design choice.',
               '[Fixed] When a member assists another member by re-wrapping the organization key after a password reset, the browser fetches a fresh copy of the target member’s public key and verifies its SHA-256 fingerprint before encapsulating, aborting on any mismatch to prevent key-substitution attacks.',
               '[Current] Limitation on member removal: Removing a member prevents future audit records from being wrapped to their key, but historical records already wrapped to their public key remain readable to anyone holding that member’s private key and backup. Removal revokes future access, not past access.',
               '[Open] Regular authenticated members of an organization can currently download the encrypted ciphertext (not plaintext) of the organization key backup via the API. If the wrapping secret were weak, this would widen the offline attack surface.',
@@ -1152,7 +1152,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
         blocks: [
           {
             type: 'p',
-            text: 'Saturn uses zero-access encryption for stored audit payloads. The gateway processes plaintext while forwarding a tool call; before writing the audit record, the payload is wrapped with ML-KEM-1024 to the organization key and each member’s public key, and the data key is deleted immediately. Thereafter, Saturn servers cannot decrypt the stored payload — only authorized members can open it in the browser.',
+            text: 'Eisoptric uses zero-access encryption for stored audit payloads. The gateway processes plaintext while forwarding a tool call; before writing the audit record, the payload is wrapped with ML-KEM-1024 to the organization key and each member’s public key, and the data key is deleted immediately. Thereafter, Eisoptric servers cannot decrypt the stored payload — only authorized members can open it in the browser.',
           },
           {
             type: 'p',
@@ -1217,7 +1217,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
             type: 'ul',
             items: [
               '[Current] Services run on Google Cloud Run behind Cloudflare on public domains (WAF, bot protection, edge rate limiting). Only HTTPS is exposed, accepting only TLS 1.2 and 1.3.',
-              '[Current] Every API and dashboard response includes strict security headers: CSP, HSTS, X-Frame-Options: DENY, locked-down Permissions-Policy, and X-Content-Type-Options. API CORS permits only Saturn’s own dashboard origin, and interactive API documentation is disabled in production.',
+              '[Current] Every API and dashboard response includes strict security headers: CSP, HSTS, X-Frame-Options: DENY, locked-down Permissions-Policy, and X-Content-Type-Options. API CORS permits only Eisoptric’s own dashboard origin, and interactive API documentation is disabled in production.',
             ],
           },
           {
@@ -1228,7 +1228,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
             type: 'ul',
             items: [
               '[Fixed] Marketing site security headers. HSTS, CSP (script-src \'self\', object-src \'none\', frame-ancestors \'none\'), clickjacking protection, and Permissions-Policy are enforced across the public website.',
-              '[Fixed] Self-hosted cryptography bundles. External CDN script dependencies have been removed; all cryptographic and application scripts are bundled and served from Saturn’s own domain under strict CSP. The OAuth sign-in page likewise self-hosts its hashing bundle and fails closed if the bundle cannot load.',
+              '[Fixed] Self-hosted cryptography bundles. External CDN script dependencies have been removed; all cryptographic and application scripts are bundled and served from Eisoptric’s own domain under strict CSP. The OAuth sign-in page likewise self-hosts its hashing bundle and fails closed if the bundle cannot load.',
               '[Fixed] Application-layer Cloudflare origin header verification. Previously, requests sent directly to the Cloud Run origin bypassed Cloudflare WAF; now both backend and frontend verify a Cloudflare-injected origin header in constant time at the application layer and reject requests without it with HTTP 403. Stated precisely: the origin remains reachable at the network layer, and requests bypassing Cloudflare are rejected at the application layer.',
               '[Fixed] Rate limiting uses the real client IP header provided by Cloudflare and shares counters across instances in Redis; when shared storage (Redis) is unreachable, authentication endpoints (sign-in, migration sign-in, registration, and dynamic client registration) fail closed and reject requests rather than falling back to per-instance memory.',
               '[Fixed] Deployment workflows are gated on automated test and type-check jobs passing before deploying to Cloud Run.',
@@ -1240,7 +1240,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           },
           {
             type: 'p',
-            text: 'With self-hosted cryptography bundles in place, we assume the code served from Saturn’s own domain is trustworthy; the remaining boundary is supply-chain integrity of Saturn’s build and release pipeline.',
+            text: 'With self-hosted cryptography bundles in place, we assume the code served from Eisoptric’s own domain is trustworthy; the remaining boundary is supply-chain integrity of Eisoptric’s build and release pipeline.',
           },
           {
             type: 'ul',
@@ -1271,7 +1271,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           {
             type: 'ul',
             items: [
-              'FIPS 203 is not FIPS 140. Using the FIPS 203 standardized ML-KEM-1024 algorithm means we implement that specification; it does not mean Saturn or its cryptographic modules are FIPS 140 validated.',
+              'FIPS 203 is not FIPS 140. Using the FIPS 203 standardized ML-KEM-1024 algorithm means we implement that specification; it does not mean Eisoptric or its cryptographic modules are FIPS 140 validated.',
               'Key rotation is not yet supported. The KMS key version used to derive tenant and organization keys is currently fixed, and there is no automated re-wrapping pipeline for existing ciphertexts. Until that pipeline is built and documented here, KMS key rotation is not supported — please do not assume rotation support.',
               'Memory zeroization. Managed runtime environments do not guarantee deterministic hardware memory erasure after use. We describe keys as discarded and not retained after use, rather than guaranteeing physical memory zeroization.',
               'Legacy envelopes. Earlier audit envelopes wrapped with X25519 remain as-is and are not automatically migrated to ML-KEM.',
@@ -1285,10 +1285,10 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           {
             type: 'ul',
             items: [
-              'This document explains Saturn’s architecture and limitations; it is neither a certification nor a third-party audit.',
-              'Saturn currently holds no compliance certifications. We do not have a SOC 2 report, nor do we claim alignment with ISO 27001, HIPAA, FedRAMP, or any other regulatory framework.',
+              'This document explains Eisoptric’s architecture and limitations; it is neither a certification nor a third-party audit.',
+              'Eisoptric currently holds no compliance certifications. We do not have a SOC 2 report, nor do we claim alignment with ISO 27001, HIPAA, FedRAMP, or any other regulatory framework.',
               'SOC 2 and ISO 27001 readiness work is in preparation, and no external auditor has been engaged yet. Until an auditor is engaged, we do not claim “SOC 2 in progress” or display compliance badges. Our initial target is a point-in-time Type I report once remaining remediation items are complete.',
-              'All red-team testing referenced in this paper was conducted internally by Saturn and does not substitute for an independent third-party assessment.',
+              'All red-team testing referenced in this paper was conducted internally by Eisoptric and does not substitute for an independent third-party assessment.',
               'Do not infer any compliance claim from this document. Implementing the FIPS 203 algorithm does not constitute FIPS 140 validation (see S8).',
             ],
           },
@@ -1299,7 +1299,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
         blocks: [
           {
             type: 'p',
-            text: 'The items below are things Saturn does not do today. We distinguish between intentional architectural non-goals and work that is not yet complete.',
+            text: 'The items below are things Eisoptric does not do today. We distinguish between intentional architectural non-goals and work that is not yet complete.',
           },
           {
             type: 'h3',
@@ -1308,7 +1308,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
           {
             type: 'ul',
             items: [
-              'We do not prevent prompt injection of an agent’s internal reasoning. Saturn governs tool calls, not thoughts.',
+              'We do not prevent prompt injection of an agent’s internal reasoning. Eisoptric governs tool calls, not thoughts.',
               'We do not perform content inspection or DLP. Only declared policy conditions are evaluated.',
               'We do not defend against a compromised member computer or browser.',
               'We do not cryptographically defend against a platform operator holding KMS signing permissions; that boundary is governed by IAM.',
@@ -1327,7 +1327,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
               '[Planned] Origin requests verify the Cloudflare origin header at the application layer (rejecting direct requests with 403), while network-layer ingress lockdown on Cloud Run remains planned.',
               '[Planned] Automated KMS key rotation and ciphertext re-wrapping are not yet supported.',
               '[Planned] The transmitted login verifier remains password-equivalent; sign-in relies on TLS, server-side Argon2id, and the legacy migration deadline, while PAKE remains under evaluation.',
-              '[Current] Saturn holds no third-party certifications or external audit reports.',
+              '[Current] Eisoptric holds no third-party certifications or external audit reports.',
             ],
           },
         ],
@@ -1352,7 +1352,7 @@ export const trustPaper: Record<Locale, TrustPaper> = {
         blocks: [
           {
             type: 'p',
-            text: 'If you discover a potential security vulnerability in Saturn MCP Gateway, the console, or Saturn App, please report it through the following channels:',
+            text: 'If you discover a potential security vulnerability in Eisoptric MCP Gateway, the console, or Eisoptric App, please report it through the following channels:',
           },
           {
             type: 'ul',

@@ -1,12 +1,12 @@
 <div align="center">
 
-<img src="public/favicon.png" alt="Saturn" width="112" height="112" />
+<img src="public/favicon.png" alt="Eisoptric" width="112" height="112" />
 
-# Saturn 網站
+# Eisoptric 網站
 
 **[saturn-core.com](https://saturn-core.com) 的原始碼。**
 
-首頁、Saturn MCP、Saturn App、Trust（含白皮書）、方案與定價、服務條款與隱私權政策，提供英文與繁體中文，並預先渲染成靜態 HTML。
+首頁、Eisoptric MCP、Eisoptric App、Trust（含白皮書）、方案與定價、服務條款與隱私權政策，提供英文與繁體中文，並預先渲染成靜態 HTML。
 
 ![Vue](https://img.shields.io/badge/Vue-3.5-4FC08D.svg?logo=vuedotjs&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-8-646CFF.svg?logo=vite&logoColor=white)
@@ -29,16 +29,16 @@
 | --- | --- | --- | --- |
 | `/` | `/zh` | `HomePage.vue` | 研究問題、三條研究主線、最新研究筆記（第一篇發表前為佔位）、研究途中做出來的工具（`#tools`）、我們怎麼做研究、常見問題（`#faq`）與追蹤 GitHub 的行動呼籲 |
 | `/research` | `/zh/research` | `ResearchPage.vue` | 研究方向（`#agenda`）、研究筆記列表（`#notes`，目前為佔位）與每篇筆記包含的內容 |
-| `/lilith` | `/zh/lilith` | `LilithPage.vue` | Saturn 自己的小型模型 Lilith（準備中）：名字與它在《便西拉字母書》中的出處（`#name`）、Lilith 與 Lilim（`#series`）、每個模型會一起釋出什麼（`#release`），以及為什麼是小模型（`#scale`） |
+| `/lilith` | `/zh/lilith` | `LilithPage.vue` | Eisoptric 自己的小型模型 Lilith（準備中）：名字與它在《便西拉字母書》中的出處（`#name`）、Lilith 與 Lilim（`#series`）、每個模型會一起釋出什麼（`#release`），以及為什麼是小模型（`#scale`） |
 | `/about` | `/zh/about` | `AboutPage.vue` | 使命、我們是誰、為什麼做工具，以及聯絡方式（`#contact`） |
-| `/mcp` | `/zh/mcp` | `McpPage.vue` | Saturn MCP，也就是 Gateway：政策範例、四個設定步驟、使用情境、功能、安全、為什麼需要專屬 Gateway 與主控台 |
-| `/app` | `/zh/app` | `AppPage.vue` | Saturn App，AI 研究工作台：GitHub 儲存庫連結、發行版本連結、功能與系統需求 |
+| `/mcp` | `/zh/mcp` | `McpPage.vue` | Eisoptric MCP，也就是 Gateway：政策範例、四個設定步驟、使用情境、功能、安全、為什麼需要專屬 Gateway 與主控台 |
+| `/app` | `/zh/app` | `AppPage.vue` | Eisoptric App，AI 研究工作台：GitHub 儲存庫連結、發行版本連結、功能與系統需求 |
 | `/trust` | `/zh/trust` | `TrustPage.vue` | 金鑰、原始內容與憑證如何受到保護、常見問題、系統白皮書（`#whitepaper`）與漏洞回報（`#disclosure`） |
-| `/pricing` | `/zh/pricing` | `PricingPage.vue` | Saturn 完全免費；包含的內容、常見問題（`#faq`），以及透過 GitHub Sponsors 贊助 |
+| `/pricing` | `/zh/pricing` | `PricingPage.vue` | Eisoptric 完全免費；包含的內容、常見問題（`#faq`），以及透過 GitHub Sponsors 贊助 |
 | `/terms` | `/zh/terms` | `LegalPage.vue` | 服務條款 |
 | `/privacy` | `/zh/privacy` | `LegalPage.vue` | 隱私權政策 |
 
-App 頁連到 [`src/config.ts`](src/config.ts) 的 `RELEASES_URL`。Saturn App 的版本都是 pre-release，檔名也含版本號，所以固定的 `/releases/latest` 網址指不到它們。「開始使用」按鈕連到 `dashboard.saturn-core.com` 的主控台。
+App 頁連到 [`src/config.ts`](src/config.ts) 的 `RELEASES_URL`。Eisoptric App 的版本都是 pre-release，檔名也含版本號，所以固定的 `/releases/latest` 網址指不到它們。「開始使用」按鈕連到 `dashboard.saturn-core.com` 的主控台。
 
 舊路徑在兩個地方轉址：
 
@@ -89,7 +89,7 @@ npm run dev
 4. 把兩種語言的 404 頁渲染成 `dist/404.html` 與 `dist/zh/404.html`。
 5. 以 `sitemapXml()` 寫出 `dist/sitemap.xml`，並以 [`src/llms.ts`](src/llms.ts) 的 `llmsIndex()` 與 `llmsFull()` 寫出 `dist/llms.txt` 與 `dist/llms-full.txt`。
 
-範本缺少任一標記、渲染出的頁面沒有 `<h1>`，或頁面的 Markdown 沒有標題、少於 500 個字元、仍含有 HTML，或寫出 `v1.2.3` 這類 Saturn App 版號（App 經常更新，網站一律連到 releases 頁面），指令碼都會報錯停止。
+範本缺少任一標記、渲染出的頁面沒有 `<h1>`，或頁面的 Markdown 沒有標題、少於 500 個字元、仍含有 HTML，或寫出 `v1.2.3` 這類 Eisoptric App 版號（App 經常更新，網站一律連到 releases 頁面），指令碼都會報錯停止。
 
 在瀏覽器裡，[`src/main.ts`](src/main.ts) 在正式環境使用 `createSSRApp`，因此 Vue 會 hydrate 預先渲染的 HTML，而不是重新繪製；開發伺服器則用 `createApp`。之後網站以單頁應用程式的方式切換頁面，[`src/App.vue`](src/App.vue) 在每次路由或語言改變時呼叫 `applyHead()`，讓標題、meta 標籤、canonical 連結與結構化資料保持一致。
 
@@ -139,7 +139,7 @@ const { t } = useI18n()
 - **Canonical 與替代語言。** 以 `https://saturn-core.com` 為準的 canonical URL、`en` 與 `zh-Hant` 的 `hreflang` 連結，以及指向英文頁的 `x-default`。
 - **Open Graph 與 Twitter 卡片。** 標題、描述、語系（`en_US` 或 `zh_TW`），以及 1200 × 630 的 `og.png`，替代文字使用該頁的語言。
 - **Robots。** `index, follow, max-image-preview:large`。
-- **JSON-LD。** 每頁一個 `@graph`，包含 `Organization` 與 `WebSite`、該頁的 `WebPage`（首頁以外都附 `BreadcrumbList`）、首頁、Trust 與方案頁由常見問題文案產生的 `FAQPage`，以及 Saturn MCP（首頁、MCP、方案頁）與 Saturn App（首頁、App、方案頁）的 `SoftwareApplication`。
+- **JSON-LD。** 每頁一個 `@graph`，包含 `Organization` 與 `WebSite`、該頁的 `WebPage`（首頁以外都附 `BreadcrumbList`）、首頁、Trust 與方案頁由常見問題文案產生的 `FAQPage`，以及 Eisoptric MCP（首頁、MCP、方案頁）與 Eisoptric App（首頁、App、方案頁）的 `SoftwareApplication`。
 - **Sitemap。** `sitemapXml()` 列出全部二十個網址及其替代語言、每頁的優先順序，並以建置日期作為 `lastmod`。
 
 提供給搜尋引擎爬蟲與語言模型的檔案：
@@ -147,7 +147,7 @@ const { t } = useI18n()
 | 檔案 | 用途 |
 | --- | --- |
 | `public/robots.txt` | 允許所有爬蟲、逐一列出 AI 爬蟲，並指向 sitemap、`llms.txt` 與 Markdown 版本 |
-| `llms.txt`（建置產生） | Saturn 的摘要、重要資訊，以及每個頁面中英文 Markdown 版本的連結 |
+| `llms.txt`（建置產生） | Eisoptric 的摘要、重要資訊，以及每個頁面中英文 Markdown 版本的連結 |
 | `llms-full.txt`（建置產生） | 所有頁面的 Markdown 合併成一個檔案，包含白皮書、服務條款與隱私權政策 |
 | `<頁面>.md`（建置產生） | 每個頁面的 Markdown 版本，HTML 以 `<link rel="alternate" type="text/markdown">` 指向它 |
 | `public/site.webmanifest` | 名稱、顏色與圖示 |
@@ -160,7 +160,7 @@ Markdown 版本、`llms.txt` 與 `llms-full.txt` 都由渲染出的頁面產生�
 `public/og.png` 由 [`scripts/og.mjs`](scripts/og.mjs) 在無頭 Chromium 中渲染 [`scripts/og.html`](scripts/og.html) 產生。需要安裝 Playwright 與 Chromium，並能連上 Google Fonts。它接受輸出路徑與一張 logo 圖片作為參數：
 
 ```bash
-node scripts/og.mjs public/og.png public/favicon.png
+node scripts/og.mjs public/og.png public/brand/eisoptric-mark-vellum.svg
 ```
 
 圖片上的文字寫在指令碼裡。

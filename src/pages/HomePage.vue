@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Epigraph from '../components/Epigraph.vue'
-import LetterMark from '../components/LetterMark.vue'
+import SectionMark from '../components/SectionMark.vue'
 import Ornament from '../components/Ornament.vue'
 import { localePath, useI18n } from '../i18n'
 import { CONTACT_ADDRESS, ORG_GITHUB_URL } from '../config'
@@ -45,7 +45,7 @@ const { locale, t } = useI18n()
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <LetterMark :index="0" />
+        <SectionMark :index="0" />
         <h2>{{ t.areas.title }}</h2>
         <p class="lede">{{ t.areas.desc }}</p>
       </div>
@@ -62,7 +62,7 @@ const { locale, t } = useI18n()
   <section class="section band-oat">
     <div class="wrap two lilith-teaser">
       <div class="section-head">
-        <LetterMark :index="1" />
+        <SectionMark :index="1" />
         <p class="eyebrow accent">{{ t.homeLilith.eyebrow }}</p>
         <h2>{{ t.homeLilith.title }}</h2>
       </div>
@@ -79,7 +79,7 @@ const { locale, t } = useI18n()
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <LetterMark :index="2" />
+        <SectionMark :index="2" />
         <h2>{{ t.notes.title }}</h2>
         <p class="lede">{{ t.notes.desc }}</p>
       </div>
@@ -95,7 +95,7 @@ const { locale, t } = useI18n()
   <section id="tools" class="section band-oat product">
     <div class="wrap">
       <div class="section-head">
-        <LetterMark :index="3" />
+        <SectionMark :index="3" />
         <p class="eyebrow accent">{{ t.tools.eyebrow }}</p>
         <h2>{{ t.tools.title }}</h2>
         <p class="lede">{{ t.tools.desc }}</p>
@@ -111,7 +111,7 @@ const { locale, t } = useI18n()
             <circle class="fill" cx="46" cy="28" r="5" />
           </svg>
           <span class="eyebrow">{{ t.tools.appKind }}</span>
-          <strong>Saturn App</strong>
+          <strong>Eisoptric App</strong>
           <span>{{ t.tools.app }}</span>
           <span class="arrow" aria-hidden="true">→</span>
         </RouterLink>
@@ -123,7 +123,7 @@ const { locale, t } = useI18n()
             <circle class="fill" cx="36" cy="44" r="5" />
           </svg>
           <span class="eyebrow">{{ t.tools.mcpKind }}</span>
-          <strong>Saturn MCP</strong>
+          <strong>Eisoptric MCP</strong>
           <span>{{ t.tools.mcp }}</span>
           <span class="arrow" aria-hidden="true">→</span>
         </RouterLink>
@@ -134,7 +134,7 @@ const { locale, t } = useI18n()
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <LetterMark :index="4" />
+        <SectionMark :index="4" />
         <h2>{{ t.principles.title }}</h2>
       </div>
       <ul class="principles">
@@ -150,7 +150,7 @@ const { locale, t } = useI18n()
   <section class="section band-oat" id="faq">
     <div class="wrap">
       <div class="section-head">
-        <LetterMark :index="5" />
+        <SectionMark :index="5" />
         <h2>{{ t.homeFaq.title }}</h2>
       </div>
       <dl class="faq">
