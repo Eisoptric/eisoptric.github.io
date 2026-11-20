@@ -258,7 +258,7 @@ const messages = {
         ['Why does a research project ship software?', 'Because the research needs it. Eisoptric Workbench is what we use for experiments and interpretability, and Eisoptric MCP is the gateway we needed before letting agents act on their own. We release them because they are useful beyond our own work.'],
         ['Are the tools free?', 'Yes. Eisoptric Workbench and Eisoptric MCP are both free, with every feature on every account. Eisoptric Workbench is open source under the Apache License 2.0.'],
         ['Where are the research results?', 'Our first notes are in progress. They will be published on the research page, each with its question, method, code and data.'],
-        ['Can I collaborate or ask a question?', 'Yes. Write to hello@saturn-core.com, or open an issue on GitHub.'],
+        ['Can I collaborate or ask a question?', 'Yes. Write to hello@eisoptric.com, or open an issue on GitHub.'],
       ],
     },
     mcpPage: {
@@ -532,7 +532,7 @@ const messages = {
       paperLink: 'Read the whitepaper',
       disclosureTitle: 'Disclosure',
       disclosureBody:
-        'Vulnerability reporting instructions will be published here. Until then, email security@saturn-core.com.',
+        'Vulnerability reporting instructions will be published here. Until then, email security@eisoptric.com.',
     },
     researchPage: {
       title: 'Eisoptric Research — Pretraining dynamics, interpretability and agent oversight',
@@ -625,8 +625,8 @@ const messages = {
       ],
       contactTitle: 'Get in touch.',
       contact: [
-        ['General and collaboration', 'hello@saturn-core.com'],
-        ['Security reports', 'security@saturn-core.com'],
+        ['General and collaboration', 'hello@eisoptric.com'],
+        ['Security reports', 'security@eisoptric.com'],
       ],
       github: 'Eisoptric on GitHub',
       donate: 'Support the project',
@@ -906,7 +906,7 @@ const messages = {
         ['研究計劃為什麼要發行軟體？', '因為研究需要。Eisoptric Workbench 是我們做實驗與可解釋性分析的工作台；Eisoptric MCP 是我們讓 Agent 自主行動之前需要的 Gateway。它們在我們自己的研究之外也有用，所以我們把它們釋出。'],
         ['工具是免費的嗎？', '是的。Eisoptric Workbench 與 Eisoptric MCP 都免費，每個帳號都有全部功能。Eisoptric Workbench 以 Apache License 2.0 授權開源。'],
         ['研究成果在哪裡？', '第一批筆記正在撰寫中。發表後會放在研究頁，每篇都附上問題、方法、程式碼與資料。'],
-        ['可以合作或提問嗎？', '可以。請寄信到 hello@saturn-core.com，或在 GitHub 上開 issue。'],
+        ['可以合作或提問嗎？', '可以。請寄信到 hello@eisoptric.com，或在 GitHub 上開 issue。'],
       ],
     },
     mcpPage: {
@@ -1179,7 +1179,7 @@ const messages = {
       ctaBody: '接上一台 MCP Server，再到瀏覽器打開一筆加密的審計紀錄。',
       paperLink: '閱讀白皮書',
       disclosureTitle: '漏洞回報',
-      disclosureBody: '漏洞回報方式會寫在這裡。在正式說明公布前，請寄到 security@saturn-core.com。',
+      disclosureBody: '漏洞回報方式會寫在這裡。在正式說明公布前，請寄到 security@eisoptric.com。',
     },
     researchPage: {
       title: 'Eisoptric 研究 — 預訓練動態、可解釋性與 Agent 監督',
@@ -1272,8 +1272,8 @@ const messages = {
       ],
       contactTitle: '聯絡我們。',
       contact: [
-        ['一般事務與合作', 'hello@saturn-core.com'],
-        ['安全性回報', 'security@saturn-core.com'],
+        ['一般事務與合作', 'hello@eisoptric.com'],
+        ['安全性回報', 'security@eisoptric.com'],
       ],
       github: 'Eisoptric 的 GitHub',
       donate: '支持這個計劃',
