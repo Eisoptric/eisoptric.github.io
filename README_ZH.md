@@ -38,7 +38,7 @@
 | `/terms` | `/zh/terms` | `LegalPage.vue` | 服務條款 |
 | `/privacy` | `/zh/privacy` | `LegalPage.vue` | 隱私權政策 |
 
-App 頁連到 [`src/config.ts`](src/config.ts) 的 `RELEASES_URL`。Eisoptric Workbench 的版本都是 pre-release，檔名也含版本號，所以固定的 `/releases/latest` 網址指不到它們。「開始使用」按鈕連到 `dashboard.saturn-core.com` 的主控台。
+App 頁連到 [`src/config.ts`](src/config.ts) 的 `RELEASES_URL`。Eisoptric Workbench 的版本都是 pre-release，檔名也含版本號，所以固定的 `/releases/latest` 網址指不到它們。「開始使用」按鈕連到 `console.eisoptric.com` 的主控台。
 
 舊路徑在兩個地方轉址：
 

@@ -109,7 +109,7 @@ const en = {
             items: [
               'The website at https://eisoptric.com.',
               'The MCP console at https://console.eisoptric.com.',
-              'The MCP backend at https://api.saturn-core.com, which is the server for the gateway, accounts, policies, approvals, and the audit trail.',
+              'The MCP backend at https://api.eisoptric.com, which is the server for the gateway, accounts, policies, approvals, and the audit trail.',
               'Eisoptric Workbench, the desktop application for macOS and Windows.',
               'The Eisoptric Workbench backend, a server separate from the MCP backend, which Eisoptric Workbench uses to sign in, sync, and run agents.',
             ],
@@ -362,7 +362,7 @@ const en = {
           },
           {
             type: 'p',
-            text: 'On the MCP console at https://console.eisoptric.com and the MCP backend at https://api.saturn-core.com, we process the account and the gateway records needed to run the service:',
+            text: 'On the MCP console at https://console.eisoptric.com and the MCP backend at https://api.eisoptric.com, we process the account and the gateway records needed to run the service:',
           },
           {
             type: 'ul',
@@ -556,7 +556,7 @@ const zh = {
             items: [
               '網站 https://eisoptric.com。',
               'MCP 主控台 https://console.eisoptric.com。',
-              'MCP 後端伺服器 https://api.saturn-core.com，提供 Gateway、帳號、政策、核准與審計。',
+              'MCP 後端伺服器 https://api.eisoptric.com，提供 Gateway、帳號、政策、核准與審計。',
               'Eisoptric Workbench，供 macOS 與 Windows 使用的桌面應用程式。',
               'Eisoptric Workbench 後端伺服器。它與 MCP 後端分開，供 Eisoptric Workbench 登入、同步並執行 Agent。',
             ],
@@ -808,7 +808,7 @@ const zh = {
           },
           {
             type: 'p',
-            text: '在 MCP 主控台 https://console.eisoptric.com 與 MCP 後端 https://api.saturn-core.com，我們處理運行服務所需的帳號與 Gateway 紀錄：',
+            text: '在 MCP 主控台 https://console.eisoptric.com 與 MCP 後端 https://api.eisoptric.com，我們處理運行服務所需的帳號與 Gateway 紀錄：',
           },
           {
             type: 'ul',
