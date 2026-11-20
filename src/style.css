@@ -2316,14 +2316,14 @@ html[lang="zh-Hant"] .mission-quote {
 
 :root {
   /* Pigments (the Eisoptric tokens, Vellum theme). */
-  --vellum: #f4ede0;
-  --vellum-deep: #e9dfcc;
+  --vellum: #faf8f4;
+  --vellum-deep: #f1ede6;
   --pigment-ink: #1f1a14;
   --ink-muted: #5e5446;
   --lapis: #23407a;
   --vermilion: #a8321f;
   --gilt: #9c7a2e;
-  --hairline: #cbbfa8;
+  --hairline: #d9d2c5;
   /* Nocturne, for the dark bands and the footer. */
   --nocturne: #14161f;
   --nocturne-deep: #1e2130;
