@@ -1,0 +1,9 @@
+/platform    /mcp    301
+/security    /trust  301
+/zh/security /zh/trust 301
+/product     /mcp    301
+/cloud       /mcp    301
+/approach    /mcp    301
+/developers  /app    301
+/demo        /       301
+/zh/demo     /zh     301

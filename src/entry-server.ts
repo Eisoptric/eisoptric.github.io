@@ -1,0 +1,29 @@
+import { createSSRApp } from 'vue'
+import { renderToString } from 'vue/server-renderer'
+import App from './App.vue'
+import { isPageName, locale, type Locale, type PageName } from './i18n'
+import { createAppRouter } from './router'
+import { headTags, notFoundHeadTags } from './seo'
+
+export { markdownPath, prerenderPaths, sitemapXml } from './seo'
+export { documentHeader, llmsFull, llmsIndex } from './llms'
+
+function localeFromUrl(url: string): Locale {
+  const path = url.split('?')[0] ?? '/'
+  return path === '/zh' || path.startsWith('/zh/') ? 'zh' : 'en'
+}
+
+export async function render(url: string) {
+  const lang = localeFromUrl(url)
+  locale.value = lang
+  const appRouter = createAppRouter()
+  const app = createSSRApp(App)
+  app.use(appRouter)
+  await appRouter.push(url)
+  await appRouter.isReady()
+  const html = await renderToString(app)
+  const meta = appRouter.currentRoute.value.meta
+  if (meta.notFound) return { html, head: notFoundHeadTags(lang), lang, page: null }
+  const current: PageName = isPageName(meta.page) ? meta.page : 'home'
+  return { html, head: headTags(current, lang), lang, page: current }
+}
