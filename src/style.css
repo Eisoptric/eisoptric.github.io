@@ -2496,14 +2496,15 @@ html[lang="zh-Hant"] .eyebrow {
 }
 
 .brand .mark {
-  width: 30px;
-  height: 30px;
+  width: 38px;
+  height: 38px;
   flex: none;
 }
 
 .mark .m-ink { fill: var(--ink); }
 .mark .m-lapis { fill: var(--link); }
 .mark .m-gilt { fill: var(--gold); }
+.mark .m-ring { fill: none; stroke: var(--gold); stroke-width: 8; }
 .mark .m-verm { fill: var(--rubric); }
 
 /* The wordmark: Cormorant Garamond 500, uppercase, 0.14em; its cap height matches the E in the glyph. */
@@ -3089,8 +3090,8 @@ html[lang="zh-Hant"] .status-badge {
   }
 
   .brand .mark {
-    width: 26px;
-    height: 26px;
+    width: 32px;
+    height: 32px;
   }
 
   .wordmark {
