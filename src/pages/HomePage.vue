@@ -111,7 +111,7 @@ const { locale, t } = useI18n()
             <circle class="fill" cx="46" cy="28" r="5" />
           </svg>
           <span class="eyebrow">{{ t.tools.appKind }}</span>
-          <strong>Eisoptric App</strong>
+          <strong>Eisoptric Workbench</strong>
           <span>{{ t.tools.app }}</span>
           <span class="arrow" aria-hidden="true">→</span>
         </RouterLink>
