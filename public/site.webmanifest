@@ -1,16 +1,16 @@
 {
-  "name": "Saturn",
-  "short_name": "Saturn",
-  "description": "Saturn is an independent AI research project on how models learn, and what they compute.",
+  "name": "Eisoptric",
+  "short_name": "Eisoptric",
+  "description": "Eisoptric is an independent AI research project on how models learn, and what they compute.",
   "start_url": "/",
   "display": "browser",
-  "background_color": "#f3ecdd",
-  "theme_color": "#f3ecdd",
+  "background_color": "#f4ede0",
+  "theme_color": "#f4ede0",
   "lang": "en",
   "icons": [
     {
       "src": "/favicon.png",
-      "sizes": "886x886",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }

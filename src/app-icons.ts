@@ -1,4 +1,4 @@
-// Saturn App's rail icons, in the order of its screens (outline paths on a 24-unit grid).
+// Eisoptric App's rail icons, in the order of its screens (outline paths on a 24-unit grid).
 export const RAIL_ICONS = [
   'M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z',
   'M8 7l-5 5 5 5M16 7l5 5-5 5',

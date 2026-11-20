@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Breadcrumb from '../components/Breadcrumb.vue'
-import LetterMark from '../components/LetterMark.vue'
+import SectionMark from '../components/SectionMark.vue'
 import Ornament from '../components/Ornament.vue'
 import { localePath, useI18n } from '../i18n'
 import { CONTACT_ADDRESS, ORG_GITHUB_URL } from '../config'
@@ -22,7 +22,7 @@ const { locale, t } = useI18n()
   <section class="section band-oat" id="agenda">
     <div class="wrap">
       <div class="section-head">
-        <LetterMark :index="0" />
+        <SectionMark :index="0" />
         <h2>{{ t.researchPage.agendaTitle }}</h2>
         <p class="lede">{{ t.researchPage.agendaDesc }}</p>
       </div>
@@ -42,7 +42,7 @@ const { locale, t } = useI18n()
   <section class="section" id="models">
     <div class="wrap two lilith-teaser">
       <div class="section-head">
-        <LetterMark :index="1" />
+        <SectionMark :index="1" />
         <h2>{{ t.researchPage.modelsTitle }}</h2>
       </div>
       <div>
@@ -58,7 +58,7 @@ const { locale, t } = useI18n()
   <section class="section band-oat" id="notes">
     <div class="wrap">
       <div class="section-head">
-        <LetterMark :index="2" />
+        <SectionMark :index="2" />
         <h2>{{ t.researchPage.notesTitle }}</h2>
         <p class="lede">{{ t.researchPage.notesDesc }}</p>
       </div>
@@ -74,7 +74,7 @@ const { locale, t } = useI18n()
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <LetterMark :index="3" />
+        <SectionMark :index="3" />
         <h2>{{ t.researchPage.standardTitle }}</h2>
       </div>
       <ul class="principles four-col">

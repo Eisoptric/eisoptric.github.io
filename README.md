@@ -1,12 +1,12 @@
 <div align="center">
 
-<img src="public/favicon.png" alt="Saturn" width="112" height="112" />
+<img src="public/favicon.png" alt="Eisoptric" width="112" height="112" />
 
-# Saturn website
+# Eisoptric website
 
 **The source of [saturn-core.com](https://saturn-core.com).**
 
-Saturn is a small, independent AI research project by Saturn Technology Project. The site holds the landing page, Research, About, the pages of the two tools it releases (Saturn App and Saturn MCP), Trust (with the whitepaper), Pricing, Terms and Privacy, in English and 繁體中文, prerendered to static HTML.
+Eisoptric is a small, independent AI research project founded by Rick Weng in Taiwan. The site holds the landing page, Research, About, the pages of the two tools it releases (Eisoptric App and Eisoptric MCP), Trust (with the whitepaper), Pricing, Terms and Privacy, in English and 繁體中文, prerendered to static HTML.
 
 ![Vue](https://img.shields.io/badge/Vue-3.5-4FC08D.svg?logo=vuedotjs&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-8-646CFF.svg?logo=vite&logoColor=white)
@@ -29,16 +29,16 @@ Every page exists twice: once at its English path and once under `/zh` in 繁體
 | --- | --- | --- | --- |
 | `/` | `/zh` | `HomePage.vue` | The research questions, the three research areas, the latest research notes (a placeholder until the first is published), the tools from our work (`#tools`), how we work, FAQ (`#faq`) and a call to follow on GitHub |
 | `/research` | `/zh/research` | `ResearchPage.vue` | The research agenda (`#agenda`), the list of research notes (`#notes`, a placeholder for now) and what every note includes |
-| `/lilith` | `/zh/lilith` | `LilithPage.vue` | Lilith, Saturn’s own small models (in preparation): the name and its source in the Alphabet of Ben Sira (`#name`), Lilith and the Lilim (`#series`), what each model will be released with (`#release`) and why small (`#scale`) |
+| `/lilith` | `/zh/lilith` | `LilithPage.vue` | Lilith, Eisoptric’s own small models (in preparation): the name and its source in the Alphabet of Ben Sira (`#name`), Lilith and the Lilim (`#series`), what each model will be released with (`#release`) and why small (`#scale`) |
 | `/about` | `/zh/about` | `AboutPage.vue` | Mission, who we are, why we build tools, and contact (`#contact`) |
-| `/mcp` | `/zh/mcp` | `McpPage.vue` | Saturn MCP, the gateway: an example policy, the four setup steps, use cases, capabilities, security, why a dedicated gateway and the console |
-| `/app` | `/zh/app` | `AppPage.vue` | Saturn App, the AI research workbench: a link to the GitHub repository, a link to its releases, features and requirements |
+| `/mcp` | `/zh/mcp` | `McpPage.vue` | Eisoptric MCP, the gateway: an example policy, the four setup steps, use cases, capabilities, security, why a dedicated gateway and the console |
+| `/app` | `/zh/app` | `AppPage.vue` | Eisoptric App, the AI research workbench: a link to the GitHub repository, a link to its releases, features and requirements |
 | `/trust` | `/zh/trust` | `TrustPage.vue` | How keys, payloads and credentials are protected, FAQ, the system whitepaper (`#whitepaper`) and vulnerability disclosure (`#disclosure`) |
-| `/pricing` | `/zh/pricing` | `PricingPage.vue` | Saturn is free; what is included, FAQ (`#faq`) and Donate through GitHub Sponsors |
+| `/pricing` | `/zh/pricing` | `PricingPage.vue` | Eisoptric is free; what is included, FAQ (`#faq`) and Donate through GitHub Sponsors |
 | `/terms` | `/zh/terms` | `LegalPage.vue` | Terms of Service |
 | `/privacy` | `/zh/privacy` | `LegalPage.vue` | Privacy Policy |
 
-The App page links to the releases at `RELEASES_URL` in [`src/config.ts`](src/config.ts). Saturn App's releases are pre-releases with the version in their file names, so a stable `/releases/latest` address cannot point at one. The "Get started" buttons go to the console at `dashboard.saturn-core.com`.
+The App page links to the releases at `RELEASES_URL` in [`src/config.ts`](src/config.ts). Eisoptric App's releases are pre-releases with the version in their file names, so a stable `/releases/latest` address cannot point at one. The "Get started" buttons go to the console at `dashboard.saturn-core.com`.
 
 Old paths are redirected in two places:
 
@@ -89,7 +89,7 @@ npm run dev
 4. It renders the 404 page in both languages to `dist/404.html` and `dist/zh/404.html`.
 5. It writes `dist/sitemap.xml` from `sitemapXml()`, and `dist/llms.txt` and `dist/llms-full.txt` from `llmsIndex()` and `llmsFull()` in [`src/llms.ts`](src/llms.ts).
 
-The script stops with an error if the template lacks either marker, if a rendered page has no `<h1>`, or if a page's Markdown has no title, is shorter than 500 characters, still contains HTML, or names a Saturn App release version such as `v1.2.3` (Saturn App ships often, so the site links to the releases page instead).
+The script stops with an error if the template lacks either marker, if a rendered page has no `<h1>`, or if a page's Markdown has no title, is shorter than 500 characters, still contains HTML, or names a Eisoptric App release version such as `v1.2.3` (Eisoptric App ships often, so the site links to the releases page instead).
 
 In the browser, [`src/main.ts`](src/main.ts) uses `createSSRApp` in production, so Vue hydrates the prerendered HTML instead of drawing it again; the development server uses `createApp`. From then on the site navigates as a single-page app, and [`src/App.vue`](src/App.vue) calls `applyHead()` on every route or language change to keep the title, meta tags, canonical link and structured data in step.
 
@@ -139,7 +139,7 @@ Chinese copy uses Taiwan terms and full-width punctuation, as the existing text 
 - **Canonical and alternates.** A canonical URL on `https://saturn-core.com`, `hreflang` links for `en` and `zh-Hant`, and `x-default` pointing at the English page.
 - **Open Graph and Twitter cards.** Title, description, locale (`en_US` or `zh_TW`) and `og.png` at 1200 × 630, with alt text in the page's language.
 - **Robots.** `index, follow, max-image-preview:large`.
-- **JSON-LD.** One `@graph` per page with the `Organization` and `WebSite`, the page's `WebPage` (with a `BreadcrumbList` on every page but home), `FAQPage` on Home, Trust and Pricing built from the FAQ copy, and `SoftwareApplication` entries for Saturn MCP (Home, MCP, Pricing) and Saturn App (Home, App, Pricing).
+- **JSON-LD.** One `@graph` per page with the `Organization` and `WebSite`, the page's `WebPage` (with a `BreadcrumbList` on every page but home), `FAQPage` on Home, Trust and Pricing built from the FAQ copy, and `SoftwareApplication` entries for Eisoptric MCP (Home, MCP, Pricing) and Eisoptric App (Home, App, Pricing).
 - **Sitemap.** `sitemapXml()` lists all twenty URLs with their alternates, a priority per page, and the build date as `lastmod`.
 
 Files that serve crawlers and language models:
@@ -147,7 +147,7 @@ Files that serve crawlers and language models:
 | File | Purpose |
 | --- | --- |
 | `public/robots.txt` | Allows every crawler, names the AI crawlers explicitly, and points to the sitemap, `llms.txt` and the Markdown copies |
-| `llms.txt` (generated) | A summary of Saturn, key facts, and a link to every page's Markdown copy in English and 中文 |
+| `llms.txt` (generated) | A summary of Eisoptric, key facts, and a link to every page's Markdown copy in English and 中文 |
 | `llms-full.txt` (generated) | Every page's Markdown in one file, including the whitepaper, Terms and Privacy |
 | `<page>.md` (generated) | A Markdown copy of each page, linked from its HTML with `<link rel="alternate" type="text/markdown">` |
 | `public/site.webmanifest` | Name, colours and icon |
@@ -160,7 +160,7 @@ The Markdown copies, `llms.txt` and `llms-full.txt` are built from the rendered 
 `public/og.png` is drawn from [`scripts/og.html`](scripts/og.html) by [`scripts/og.mjs`](scripts/og.mjs) in a headless Chromium. It needs Playwright with a Chromium installed, and network access for Google Fonts. It takes the output path and a logo image as arguments:
 
 ```bash
-node scripts/og.mjs public/og.png public/favicon.png
+node scripts/og.mjs public/og.png public/brand/eisoptric-mark-vellum.svg
 ```
 
 The text on the image is set in the script.

@@ -11,7 +11,7 @@ const home = computed(() => localePath('/', locale.value))
 <template>
   <nav class="crumbs" :aria-label="locale === 'zh' ? '導覽路徑' : 'Breadcrumb'">
     <ol>
-      <li><RouterLink :to="home">Saturn</RouterLink></li>
+      <li><RouterLink :to="home">Eisoptric</RouterLink></li>
       <li aria-current="page">{{ current }}</li>
     </ol>
   </nav>

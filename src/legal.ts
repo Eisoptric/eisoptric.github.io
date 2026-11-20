@@ -58,9 +58,9 @@ export type LegalDoc = {
 
 const en = {
   terms: {
-    title: 'Terms of Service — Saturn',
+    title: 'Terms of Service — Eisoptric',
     description:
-      'The agreement you accept by using Saturn. The services are provided by Rick Weng, who also owns the intellectual property.',
+      'The agreement you accept by using Eisoptric. The services are provided by Rick Weng, who also owns the intellectual property.',
     crumb: 'Terms of Service',
     heading: 'Terms of Service',
     updated: 'Updated 6 November 2026',
@@ -76,7 +76,7 @@ const en = {
           },
           {
             type: 'p',
-            text: 'Using the Services includes visiting the website, creating or using an account, signing in to the console, connecting to the MCP backend, and using Saturn App when it connects to our servers.',
+            text: 'Using the Services includes visiting the website, creating or using an account, signing in to the console, connecting to the MCP backend, and using Eisoptric App when it connects to our servers.',
           },
           {
             type: 'p',
@@ -93,7 +93,7 @@ const en = {
           },
           {
             type: 'p',
-            text: 'Rick Weng owns the Saturn name, software, website, console, and the other intellectual property in the Services, and operates, maintains, and develops the Services. Your contract is with Rick Weng.',
+            text: 'Rick Weng owns the Eisoptric name, software, website, console, and the other intellectual property in the Services, and operates, maintains, and develops the Services. Your contract is with Rick Weng.',
           },
         ],
       },
@@ -110,8 +110,8 @@ const en = {
               'The website at https://saturn-core.com.',
               'The MCP console at https://dashboard.saturn-core.com.',
               'The MCP backend at https://api.saturn-core.com, which is the server for the gateway, accounts, policies, approvals, and the audit trail.',
-              'Saturn App, the desktop application for macOS and Windows.',
-              'The Saturn App backend, a server separate from the MCP backend, which Saturn App uses to sign in, sync, and run agents.',
+              'Eisoptric App, the desktop application for macOS and Windows.',
+              'The Eisoptric App backend, a server separate from the MCP backend, which Eisoptric App uses to sign in, sync, and run agents.',
             ],
           },
           {
@@ -186,11 +186,11 @@ const en = {
           },
           {
             type: 'p',
-            text: 'The source code of Saturn App is offered under the Apache License, Version 2.0, and the source code of the Saturn SDK under the MIT License. Where we make the source code of the MCP backend and the console available, it is offered under the Functional Source License, Version 1.1, ALv2 Future License (FSL-1.1-ALv2). That license lets you read, audit, modify, and run the code for any purpose except a competing commercial product or service. Each version also becomes available under the Apache License 2.0 two years after we release it. The copyright holder of all of this code is Rick Weng.',
+            text: 'The source code of Eisoptric App is offered under the Apache License, Version 2.0, and the source code of the Eisoptric SDK under the MIT License. Where we make the source code of the MCP backend and the console available, it is offered under the Functional Source License, Version 1.1, ALv2 Future License (FSL-1.1-ALv2). That license lets you read, audit, modify, and run the code for any purpose except a competing commercial product or service. Each version also becomes available under the Apache License 2.0 two years after we release it. The copyright holder of all of this code is Rick Weng.',
           },
           {
             type: 'p',
-            text: 'Those licenses govern your rights in the source code. They do not replace these terms for the Services we operate. When you use the hosted console, the MCP backend, or Saturn App together with our servers, these terms apply.',
+            text: 'Those licenses govern your rights in the source code. They do not replace these terms for the Services we operate. When you use the hosted console, the MCP backend, or Eisoptric App together with our servers, these terms apply.',
           },
           {
             type: 'p',
@@ -207,7 +207,7 @@ const en = {
           },
           {
             type: 'p',
-            text: 'You may support Saturn with a donation through GitHub Sponsors. A donation is voluntary. It does not buy a plan, a feature, support, or any other service, and it does not change these terms. GitHub processes donations under its own terms, and refunds follow GitHub’s rules.',
+            text: 'You may support Eisoptric with a donation through GitHub Sponsors. A donation is voluntary. It does not buy a plan, a feature, support, or any other service, and it does not change these terms. GitHub processes donations under its own terms, and refunds follow GitHub’s rules.',
           },
         ],
       },
@@ -273,7 +273,7 @@ const en = {
           },
           {
             type: 'p',
-            text: 'Ending access does not revoke the Apache License 2.0, the MIT License or the FSL-1.1-ALv2 license you already have in Saturn’s source code. Sections that by their nature should continue, including those on customer data, intellectual property, confidentiality, disclaimers, liability, and indemnity, continue after the contract ends. The Privacy Policy states what happens to personal data when you ask for deletion.',
+            text: 'Ending access does not revoke the Apache License 2.0, the MIT License or the FSL-1.1-ALv2 license you already have in Eisoptric’s source code. Sections that by their nature should continue, including those on customer data, intellectual property, confidentiality, disclaimers, liability, and indemnity, continue after the contract ends. The Privacy Policy states what happens to personal data when you ask for deletion.',
           },
         ],
       },
@@ -318,9 +318,9 @@ const en = {
     ],
   },
   privacy: {
-    title: 'Privacy Policy — Saturn',
+    title: 'Privacy Policy — Eisoptric',
     description:
-      'How Rick Weng handles personal data when you use the Saturn website, console, MCP backend, Saturn App, and Saturn App backend.',
+      'How Rick Weng handles personal data when you use the Eisoptric website, console, MCP backend, Eisoptric App, and Eisoptric App backend.',
     crumb: 'Privacy Policy',
     heading: 'Privacy Policy',
     updated: 'Updated 19 November 2026',
@@ -367,7 +367,7 @@ const en = {
           {
             type: 'ul',
             items: [
-              'Identity and account data, including name, email address, organization name if you create an organization account, role, and sign-in credentials. When you sign up, we email a verification code to the address you gave. Signing in from Saturn App uses this same account.',
+              'Identity and account data, including name, email address, organization name if you create an organization account, role, and sign-in credentials. When you sign up, we email a verification code to the address you gave. Signing in from Eisoptric App uses this same account.',
               'What you configure: members, permissions, agents, tool sets, policies and their versions, and which MCP servers a person may connect.',
               'Each tool call the gateway evaluates: the agent, the tool, the arguments, the policy version, the decision, the reviewer when there is one, and whether the call was executed.',
               'Upstream credentials you store in the vault, sealed so the gateway can make a call you have allowed. The console does not return the secret itself.',
@@ -376,11 +376,11 @@ const en = {
           },
           {
             type: 'p',
-            text: 'Saturn App runs on your computer. Until it connects to our servers, agents, files, commands, chats, and model keys stay on that computer, and we do not receive them. When you sign in and use the Saturn App backend, that backend — a server separate from the MCP backend — processes the App data it syncs and runs: agents, conversations, tasks, scheduled wakes, memories, and the MCP servers you attach in the App.',
+            text: 'Eisoptric App runs on your computer. Until it connects to our servers, agents, files, commands, chats, and model keys stay on that computer, and we do not receive them. When you sign in and use the Eisoptric App backend, that backend — a server separate from the MCP backend — processes the App data it syncs and runs: agents, conversations, tasks, scheduled wakes, memories, and the MCP servers you attach in the App.',
           },
           {
             type: 'p',
-            text: 'Downloads of Saturn App and the source code are served by GitHub. If you donate through GitHub Sponsors, GitHub collects your payment details and shares with us what its Sponsors program shows, such as your GitHub username. GitHub processes those requests under its own terms.',
+            text: 'Downloads of Eisoptric App and the source code are served by GitHub. If you donate through GitHub Sponsors, GitHub collects your payment details and shares with us what its Sponsors program shows, such as your GitHub username. GitHub processes those requests under its own terms.',
           },
         ],
       },
@@ -402,11 +402,11 @@ const en = {
         blocks: [
           {
             type: 'p',
-            text: 'We keep account data, console data, MCP backend data, and Saturn App backend data while you use the Services. When the purpose ends, or you ask us to delete the data, we delete it or stop using it. We may keep what we still need to finish a request you already made, to resolve a dispute, or to comply with law (Article 11, paragraph 3).',
+            text: 'We keep account data, console data, MCP backend data, and Eisoptric App backend data while you use the Services. When the purpose ends, or you ask us to delete the data, we delete it or stop using it. We may keep what we still need to finish a request you already made, to resolve a dispute, or to comply with law (Article 11, paragraph 3).',
           },
           {
             type: 'p',
-            text: 'The console, the MCP backend, and the Saturn App backend are hosted on Google Cloud in Taiwan (asia-east1). The website is hosted by Cloudflare. Sign-up verification codes and account emails are sent through Resend. Saturn App downloads and donations are handled by GitHub. A tool call is sent to an upstream MCP server only when your own configuration allows it. People in your organization see what their roles allow.',
+            text: 'The console, the MCP backend, and the Eisoptric App backend are hosted on Google Cloud in Taiwan (asia-east1). The website is hosted by Cloudflare. Sign-up verification codes and account emails are sent through Resend. Eisoptric App downloads and donations are handled by GitHub. A tool call is sent to an upstream MCP server only when your own configuration allows it. People in your organization see what their roles allow.',
           },
           {
             type: 'p',
@@ -419,15 +419,15 @@ const en = {
         blocks: [
           {
             type: 'p',
-            text: 'You can connect Google services to the MCP backend: Gmail, Google Calendar, Google Drive, Google Docs, Google Sheets, Google Slides, Cloud Run, Cloud SQL, and Memorystore for Redis. You start each connection and approve it on Google’s own sign-in page. Saturn asks each service only for the access its tools need, and you can see that access on Google’s consent screen.',
+            text: 'You can connect Google services to the MCP backend: Gmail, Google Calendar, Google Drive, Google Docs, Google Sheets, Google Slides, Cloud Run, Cloud SQL, and Memorystore for Redis. You start each connection and approve it on Google’s own sign-in page. Eisoptric asks each service only for the access its tools need, and you can see that access on Google’s consent screen.',
           },
           {
             type: 'p',
-            text: 'Through that connection, Saturn receives an access token and a refresh token from Google, and the data a tool returns when an agent you connected calls it, such as a message, an event, a file, or a spreadsheet range. Saturn reads Google data only when such a call is made. Your organization’s policies and approvers decide whether a call runs.',
+            text: 'Through that connection, Eisoptric receives an access token and a refresh token from Google, and the data a tool returns when an agent you connected calls it, such as a message, an event, a file, or a spreadsheet range. Eisoptric reads Google data only when such a call is made. Your organization’s policies and approvers decide whether a call runs.',
           },
           {
             type: 'p',
-            text: 'Saturn uses Google user data only to carry out the tool calls you and your organization set up: it sends the request to Google and returns the result to the agent that asked. The tokens are sealed in the credential vault with ML-KEM-1024 and AES-256-GCM. The call’s arguments and Google’s response are recorded in your organization’s audit log, encrypted, so the people your organization lets review calls can see what ran. They are kept while your organization uses the Services, and deleted when you ask us to delete them or when the account is deleted.',
+            text: 'Eisoptric uses Google user data only to carry out the tool calls you and your organization set up: it sends the request to Google and returns the result to the agent that asked. The tokens are sealed in the credential vault with ML-KEM-1024 and AES-256-GCM. The call’s arguments and Google’s response are recorded in your organization’s audit log, encrypted, so the people your organization lets review calls can see what ran. They are kept while your organization uses the Services, and deleted when you ask us to delete them or when the account is deleted.',
           },
           {
             type: 'ul',
@@ -435,16 +435,16 @@ const en = {
               'We do not sell Google user data, and we do not transfer it to anyone except to provide the tool call you asked for, for security reasons, or to comply with law.',
               'We do not use Google user data for advertising, including personalized, retargeted, or interest-based advertising.',
               'We do not use Google user data to develop, improve, or train generalized or non-personalized AI or machine-learning models.',
-              'We do not let anyone at Saturn read Google user data, except with your permission for a specific item, when it is needed for security, such as investigating abuse, or to comply with law.',
+              'We do not let anyone at Eisoptric read Google user data, except with your permission for a specific item, when it is needed for security, such as investigating abuse, or to comply with law.',
             ],
           },
           {
             type: 'p',
-            text: 'Saturn’s use and transfer of information received from Google APIs to any other app will adhere to the Google API Services User Data Policy (https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.',
+            text: 'Eisoptric’s use and transfer of information received from Google APIs to any other app will adhere to the Google API Services User Data Policy (https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.',
           },
           {
             type: 'p',
-            text: 'Removing a Google connection in the console deletes the tokens Saturn holds for it. You can also revoke Saturn’s access at any time at https://myaccount.google.com/permissions. To delete the audit records of past calls, email hello@saturn-core.com.',
+            text: 'Removing a Google connection in the console deletes the tokens Eisoptric holds for it. You can also revoke Eisoptric’s access at any time at https://myaccount.google.com/permissions. To delete the audit records of past calls, email hello@saturn-core.com.',
           },
         ],
       },
@@ -453,7 +453,7 @@ const en = {
         blocks: [
           {
             type: 'p',
-            text: 'You choose what to provide. You can browse the website without providing anything. If you do not provide account information, you cannot use the console, the MCP backend, or the parts of Saturn App that require sign-in. Saturn App can still be used on your computer for functions that do not connect to our servers.',
+            text: 'You choose what to provide. You can browse the website without providing anything. If you do not provide account information, you cannot use the console, the MCP backend, or the parts of Eisoptric App that require sign-in. Eisoptric App can still be used on your computer for functions that do not connect to our servers.',
           },
         ],
       },
@@ -506,8 +506,8 @@ const en = {
 
 const zh = {
   terms: {
-    title: '服務條款 — Saturn',
-    description: '你使用 Saturn 時同意的契約。本服務由 Rick Weng 提供，智慧財產也由 Rick Weng 所有。',
+    title: '服務條款 — Eisoptric',
+    description: '你使用 Eisoptric 時同意的契約。本服務由 Rick Weng 提供，智慧財產也由 Rick Weng 所有。',
     crumb: '服務條款',
     heading: '服務條款',
     updated: '更新日期：2026 年 11 月 6 日',
@@ -523,7 +523,7 @@ const zh = {
           },
           {
             type: 'p',
-            text: '使用本服務，包括瀏覽網站、建立或使用帳號、登入主控台、連線 MCP 後端，以及使用會連上我們伺服器的 Saturn App。',
+            text: '使用本服務，包括瀏覽網站、建立或使用帳號、登入主控台、連線 MCP 後端，以及使用會連上我們伺服器的 Eisoptric App。',
           },
           {
             type: 'p',
@@ -540,7 +540,7 @@ const zh = {
           },
           {
             type: 'p',
-            text: 'Saturn 的名稱、軟體、網站、主控台及其他智慧財產，由 Rick Weng 所有，並由 Rick Weng 營運、維護與開發本服務。你的契約當事人是 Rick Weng。',
+            text: 'Eisoptric 的名稱、軟體、網站、主控台及其他智慧財產，由 Rick Weng 所有，並由 Rick Weng 營運、維護與開發本服務。你的契約當事人是 Rick Weng。',
           },
         ],
       },
@@ -557,8 +557,8 @@ const zh = {
               '網站 https://saturn-core.com。',
               'MCP 主控台 https://dashboard.saturn-core.com。',
               'MCP 後端伺服器 https://api.saturn-core.com，提供 Gateway、帳號、政策、核准與審計。',
-              'Saturn App，供 macOS 與 Windows 使用的桌面應用程式。',
-              'Saturn App 後端伺服器。它與 MCP 後端分開，供 Saturn App 登入、同步並執行 Agent。',
+              'Eisoptric App，供 macOS 與 Windows 使用的桌面應用程式。',
+              'Eisoptric App 後端伺服器。它與 MCP 後端分開，供 Eisoptric App 登入、同步並執行 Agent。',
             ],
           },
           {
@@ -633,11 +633,11 @@ const zh = {
           },
           {
             type: 'p',
-            text: 'Saturn App 的原始碼以 Apache License 2.0 版授權提供，Saturn SDK 的原始碼以 MIT 授權提供。MCP 後端與主控台的原始碼，於我們提供時，以 Functional Source License 1.1 版、Apache 2.0 為未來授權（FSL-1.1-ALv2）提供。依該授權，你可以為任何目的閱讀、稽核、修改並執行該程式碼，但不得用於與本服務競爭的商業產品或服務。每個版本自我們發布滿兩年起，另可依 Apache License 2.0 使用。上述程式碼的著作權人均為 Rick Weng。',
+            text: 'Eisoptric App 的原始碼以 Apache License 2.0 版授權提供，Eisoptric SDK 的原始碼以 MIT 授權提供。MCP 後端與主控台的原始碼，於我們提供時，以 Functional Source License 1.1 版、Apache 2.0 為未來授權（FSL-1.1-ALv2）提供。依該授權，你可以為任何目的閱讀、稽核、修改並執行該程式碼，但不得用於與本服務競爭的商業產品或服務。每個版本自我們發布滿兩年起，另可依 Apache License 2.0 使用。上述程式碼的著作權人均為 Rick Weng。',
           },
           {
             type: 'p',
-            text: '這些授權規範你對原始碼的權利，不取代本條款對我們營運之本服務的規範。你使用我們代管的主控台、MCP 後端，或會連上我們伺服器的 Saturn App 時，仍應遵守本條款。',
+            text: '這些授權規範你對原始碼的權利，不取代本條款對我們營運之本服務的規範。你使用我們代管的主控台、MCP 後端，或會連上我們伺服器的 Eisoptric App 時，仍應遵守本條款。',
           },
           {
             type: 'p',
@@ -654,7 +654,7 @@ const zh = {
           },
           {
             type: 'p',
-            text: '你可以透過 GitHub Sponsors 贊助 Saturn。贊助出於自願，不會換得任何方案、功能、支援或其他服務，也不改變本條款。贊助款項由 GitHub 依其條款處理，退款依 GitHub 的規則辦理。',
+            text: '你可以透過 GitHub Sponsors 贊助 Eisoptric。贊助出於自願，不會換得任何方案、功能、支援或其他服務，也不改變本條款。贊助款項由 GitHub 依其條款處理，退款依 GitHub 的規則辦理。',
           },
         ],
       },
@@ -720,7 +720,7 @@ const zh = {
           },
           {
             type: 'p',
-            text: '終止存取不會撤回你已依 Apache License 2.0、MIT 授權或 FSL-1.1-ALv2 授權取得的 Saturn 原始碼權利。依其性質應存續的條款，包括客戶資料、智慧財產、保密、免責、責任與補償，於契約結束後仍然有效。你請求刪除個人資料時如何處理，見隱私權政策。',
+            text: '終止存取不會撤回你已依 Apache License 2.0、MIT 授權或 FSL-1.1-ALv2 授權取得的 Eisoptric 原始碼權利。依其性質應存續的條款，包括客戶資料、智慧財產、保密、免責、責任與補償，於契約結束後仍然有效。你請求刪除個人資料時如何處理，見隱私權政策。',
           },
         ],
       },
@@ -765,8 +765,8 @@ const zh = {
     ],
   },
   privacy: {
-    title: '隱私權政策 — Saturn',
-    description: '你使用 Saturn 網站、主控台、MCP 後端、Saturn App 與 Saturn App 後端時，Rick Weng 如何處理個人資料。',
+    title: '隱私權政策 — Eisoptric',
+    description: '你使用 Eisoptric 網站、主控台、MCP 後端、Eisoptric App 與 Eisoptric App 後端時，Rick Weng 如何處理個人資料。',
     crumb: '隱私權政策',
     heading: '隱私權政策',
     updated: '更新日期：2026 年 11 月 19 日',
@@ -813,7 +813,7 @@ const zh = {
           {
             type: 'ul',
             items: [
-              '身份與帳號資料，包括姓名、Email、組織名稱（若你建立組織帳號）、角色與登入憑證。註冊時，我們會寄驗證碼到你填寫的 Email。從 Saturn App 登入，使用的是同一組帳號。',
+              '身份與帳號資料，包括姓名、Email、組織名稱（若你建立組織帳號）、角色與登入憑證。註冊時，我們會寄驗證碼到你填寫的 Email。從 Eisoptric App 登入，使用的是同一組帳號。',
               '你設定的內容：成員、權限、Agent、工具集、政策與其版本，以及某人可以連接哪些 MCP Server。',
               'Gateway 評估的每一筆工具呼叫：Agent、工具、參數、政策版本、判定、審核人員（若有），以及是否已執行。',
               '你存放在金庫中的上游憑證。憑證經封存，以便 Gateway 執行你允許的呼叫。主控台不回傳密鑰本身。',
@@ -822,11 +822,11 @@ const zh = {
           },
           {
             type: 'p',
-            text: 'Saturn App 在你的電腦上運行。在它連上我們的伺服器之前，Agent、檔案、指令、對話與模型金鑰都留在該電腦，我們不會收到。你登入並使用 Saturn App 後端時，該後端與 MCP 後端分開，並處理它所同步與執行的 App 資料：Agent、對話、任務、排程喚醒、記憶，以及你在 App 中掛載的 MCP Server。',
+            text: 'Eisoptric App 在你的電腦上運行。在它連上我們的伺服器之前，Agent、檔案、指令、對話與模型金鑰都留在該電腦，我們不會收到。你登入並使用 Eisoptric App 後端時，該後端與 MCP 後端分開，並處理它所同步與執行的 App 資料：Agent、對話、任務、排程喚醒、記憶，以及你在 App 中掛載的 MCP Server。',
           },
           {
             type: 'p',
-            text: 'Saturn App 與原始碼的下載由 GitHub 提供。你若透過 GitHub Sponsors 贊助，付款資料由 GitHub 蒐集，我們只會收到 Sponsors 計畫提供的資訊，例如你的 GitHub 使用者名稱。GitHub 依它自己的條款處理這些請求。',
+            text: 'Eisoptric App 與原始碼的下載由 GitHub 提供。你若透過 GitHub Sponsors 贊助，付款資料由 GitHub 蒐集，我們只會收到 Sponsors 計畫提供的資訊，例如你的 GitHub 使用者名稱。GitHub 依它自己的條款處理這些請求。',
           },
         ],
       },
@@ -848,11 +848,11 @@ const zh = {
         blocks: [
           {
             type: 'p',
-            text: '帳號、主控台、MCP 後端與 Saturn App 後端的資料，在你使用本服務期間保存。特定目的消失，或你請求刪除時，我們會刪除或停止利用。為完成你已經提出的請求、解決爭議或遵守法律所仍必要的部分，得依第11條第3項但書繼續保存。',
+            text: '帳號、主控台、MCP 後端與 Eisoptric App 後端的資料，在你使用本服務期間保存。特定目的消失，或你請求刪除時，我們會刪除或停止利用。為完成你已經提出的請求、解決爭議或遵守法律所仍必要的部分，得依第11條第3項但書繼續保存。',
           },
           {
             type: 'p',
-            text: '主控台、MCP 後端與 Saturn App 後端由 Google Cloud 於台灣區域（asia-east1）代管。網站由 Cloudflare 代管。註冊驗證碼與帳號通知信透過 Resend 寄送。Saturn App 的下載與贊助由 GitHub 處理。工具呼叫只有在你自己的設定允許時，才會送到上游 MCP Server。組織內的人依其角色看到對應的內容。',
+            text: '主控台、MCP 後端與 Eisoptric App 後端由 Google Cloud 於台灣區域（asia-east1）代管。網站由 Cloudflare 代管。註冊驗證碼與帳號通知信透過 Resend 寄送。Eisoptric App 的下載與贊助由 GitHub 處理。工具呼叫只有在你自己的設定允許時，才會送到上游 MCP Server。組織內的人依其角色看到對應的內容。',
           },
           {
             type: 'p',
@@ -865,15 +865,15 @@ const zh = {
         blocks: [
           {
             type: 'p',
-            text: '你可以把 Google 服務連接到 MCP 後端：Gmail、Google 日曆、Google 雲端硬碟、Google 文件、Google 試算表、Google 簡報、Cloud Run、Cloud SQL 與 Memorystore for Redis。每個連線都由你發起，並在 Google 自己的登入頁核准。Saturn 對每個服務只要求它的工具需要的權限，你可以在 Google 的同意畫面看到這些權限。',
+            text: '你可以把 Google 服務連接到 MCP 後端：Gmail、Google 日曆、Google 雲端硬碟、Google 文件、Google 試算表、Google 簡報、Cloud Run、Cloud SQL 與 Memorystore for Redis。每個連線都由你發起，並在 Google 自己的登入頁核准。Eisoptric 對每個服務只要求它的工具需要的權限，你可以在 Google 的同意畫面看到這些權限。',
           },
           {
             type: 'p',
-            text: '透過這個連線，Saturn 會從 Google 取得存取權杖與更新權杖；當你連接的 agent 呼叫工具時，也會收到工具回傳的資料，例如一封郵件、一個行程、一個檔案或試算表的一個範圍。Saturn 只有在發生這樣的呼叫時才讀取 Google 資料。呼叫是否執行，由你組織的政策與核准人決定。',
+            text: '透過這個連線，Eisoptric 會從 Google 取得存取權杖與更新權杖；當你連接的 agent 呼叫工具時，也會收到工具回傳的資料，例如一封郵件、一個行程、一個檔案或試算表的一個範圍。Eisoptric 只有在發生這樣的呼叫時才讀取 Google 資料。呼叫是否執行，由你組織的政策與核准人決定。',
           },
           {
             type: 'p',
-            text: 'Saturn 只把 Google 使用者資料用於執行你與你的組織設定的工具呼叫：把請求送到 Google，再把結果交回提出呼叫的 agent。權杖以 ML-KEM-1024 與 AES-256-GCM 密封在憑證保管庫中。呼叫的參數與 Google 的回應會加密記錄在你組織的稽核紀錄裡，讓組織授權審查呼叫的人看到執行了什麼。這些紀錄在你的組織使用本服務期間保存，你請求刪除或帳號刪除時即刪除。',
+            text: 'Eisoptric 只把 Google 使用者資料用於執行你與你的組織設定的工具呼叫：把請求送到 Google，再把結果交回提出呼叫的 agent。權杖以 ML-KEM-1024 與 AES-256-GCM 密封在憑證保管庫中。呼叫的參數與 Google 的回應會加密記錄在你組織的稽核紀錄裡，讓組織授權審查呼叫的人看到執行了什麼。這些紀錄在你的組織使用本服務期間保存，你請求刪除或帳號刪除時即刪除。',
           },
           {
             type: 'ul',
@@ -881,16 +881,16 @@ const zh = {
               '我們不出售 Google 使用者資料，除了為提供你要求的工具呼叫、為了安全或為遵守法律之外，也不傳輸給任何人。',
               '我們不把 Google 使用者資料用於廣告，包括個人化、再行銷或依興趣投放的廣告。',
               '我們不把 Google 使用者資料用於開發、改進或訓練通用或非個人化的 AI 或機器學習模型。',
-              '我們不讓 Saturn 的任何人閱讀 Google 使用者資料，除非你就特定項目同意、為了安全所需（例如調查濫用），或為遵守法律。',
+              '我們不讓 Eisoptric 的任何人閱讀 Google 使用者資料，除非你就特定項目同意、為了安全所需（例如調查濫用），或為遵守法律。',
             ],
           },
           {
             type: 'p',
-            text: 'Saturn 對自 Google API 取得之資訊的使用，以及傳輸至任何其他應用程式的行為，均遵守 Google API Services User Data Policy（https://developers.google.com/terms/api-services-user-data-policy），包括其中的 Limited Use（有限使用）要求。',
+            text: 'Eisoptric 對自 Google API 取得之資訊的使用，以及傳輸至任何其他應用程式的行為，均遵守 Google API Services User Data Policy（https://developers.google.com/terms/api-services-user-data-policy），包括其中的 Limited Use（有限使用）要求。',
           },
           {
             type: 'p',
-            text: '在主控台移除 Google 連線，會刪除 Saturn 為它保存的權杖。你也可以隨時在 https://myaccount.google.com/permissions 撤銷 Saturn 的存取權。要刪除過去呼叫的稽核紀錄，請寫信到 hello@saturn-core.com。',
+            text: '在主控台移除 Google 連線，會刪除 Eisoptric 為它保存的權杖。你也可以隨時在 https://myaccount.google.com/permissions 撤銷 Eisoptric 的存取權。要刪除過去呼叫的稽核紀錄，請寫信到 hello@saturn-core.com。',
           },
         ],
       },
@@ -899,7 +899,7 @@ const zh = {
         blocks: [
           {
             type: 'p',
-            text: '你可以選擇是否提供。瀏覽網站不需要提供任何資料。你若不提供帳號資料，就無法使用主控台、MCP 後端，以及 Saturn App 中需要登入的功能。Saturn App 不連線我們伺服器的功能，仍可在你的電腦上使用。',
+            text: '你可以選擇是否提供。瀏覽網站不需要提供任何資料。你若不提供帳號資料，就無法使用主控台、MCP 後端，以及 Eisoptric App 中需要登入的功能。Eisoptric App 不連線我們伺服器的功能，仍可在你的電腦上使用。',
           },
         ],
       },

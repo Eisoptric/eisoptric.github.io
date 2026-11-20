@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Breadcrumb from '../components/Breadcrumb.vue'
 import Epigraph from '../components/Epigraph.vue'
-import LetterMark from '../components/LetterMark.vue'
+import SectionMark from '../components/SectionMark.vue'
 import Ornament from '../components/Ornament.vue'
 import { localePath, useI18n } from '../i18n'
 import { DONATE_URL, ORG_GITHUB_URL } from '../config'
@@ -24,7 +24,7 @@ const toolPaths = ['/app', '/mcp']
   <section class="section band-oat">
     <div class="wrap two">
       <div class="section-head">
-        <LetterMark :index="0" />
+        <SectionMark :index="0" />
         <h2>{{ t.aboutPage.missionTitle }}</h2>
       </div>
       <div class="prose">
@@ -39,7 +39,7 @@ const toolPaths = ['/app', '/mcp']
       <Ornament />
       <div class="manuscript">
         <div class="section-head">
-          <LetterMark :index="1" />
+          <SectionMark :index="1" />
           <h2>{{ t.aboutPage.nameTitle }}</h2>
         </div>
         <div class="prose">
@@ -55,7 +55,7 @@ const toolPaths = ['/app', '/mcp']
   <section class="section band-oat">
     <div class="wrap">
       <div class="section-head">
-        <LetterMark :index="2" />
+        <SectionMark :index="2" />
         <h2>{{ t.aboutPage.teamTitle }}</h2>
       </div>
       <ul class="principles four-col">
@@ -71,7 +71,7 @@ const toolPaths = ['/app', '/mcp']
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <LetterMark :index="3" />
+        <SectionMark :index="3" />
         <h2>{{ t.aboutPage.toolsTitle }}</h2>
         <p class="lede">{{ t.aboutPage.toolsDesc }}</p>
       </div>
@@ -94,7 +94,7 @@ const toolPaths = ['/app', '/mcp']
   <section class="section band-oat" id="contact">
     <div class="wrap">
       <div class="section-head">
-        <LetterMark :index="4" />
+        <SectionMark :index="4" />
         <h2>{{ t.aboutPage.contactTitle }}</h2>
       </div>
       <dl class="faq">
