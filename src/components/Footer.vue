@@ -47,7 +47,7 @@ const columns = computed(() => [
           <RouterLink v-for="link in column.links" :key="link.to" :to="link.to">{{ link.label }}</RouterLink>
         </nav>
       </div>
-      <p class="legal">© {{ year }} {{ t.footer.project }}</p>
+      <p class="legal">© {{ year }} {{ t.footer.project }}{{ locale === 'zh' ? ' ' : '. ' }}{{ t.footer.rights }}</p>
     </div>
   </footer>
 </template>

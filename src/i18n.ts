@@ -255,6 +255,7 @@ const messages = {
       terms: 'Terms of Service',
       privacy: 'Privacy Policy',
       project: 'Eisoptric',
+      rights: 'All rights reserved.',
     },
     homeFaq: {
       title: 'Questions about Eisoptric',
@@ -909,6 +910,7 @@ const messages = {
       terms: '服務條款',
       privacy: '隱私權政策',
       project: 'Eisoptric',
+      rights: '版權所有',
     },
     homeFaq: {
       title: '關於 Eisoptric',
