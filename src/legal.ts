@@ -107,7 +107,7 @@ const en = {
           {
             type: 'ul',
             items: [
-              'The website at https://saturn-core.com.',
+              'The website at https://eisoptric.com.',
               'The MCP console at https://dashboard.saturn-core.com.',
               'The MCP backend at https://api.saturn-core.com, which is the server for the gateway, accounts, policies, approvals, and the audit trail.',
               'Eisoptric Workbench, the desktop application for macOS and Windows.',
@@ -125,7 +125,7 @@ const en = {
         blocks: [
           {
             type: 'p',
-            text: 'You must provide accurate account information and keep it current. You are responsible for protecting your credentials and for activity under your account. Tell us at hello@saturn-core.com if you believe your account is being misused.',
+            text: 'You must provide accurate account information and keep it current. You are responsible for protecting your credentials and for activity under your account. Tell us at hello@eisoptric.com if you believe your account is being misused.',
           },
           {
             type: 'p',
@@ -312,7 +312,7 @@ const en = {
         heading: 'Contact',
         blocks: [
           { type: 'p', text: 'Rick Weng' },
-          { type: 'p', text: 'hello@saturn-core.com' },
+          { type: 'p', text: 'hello@eisoptric.com' },
         ],
       },
     ],
@@ -341,7 +341,7 @@ const en = {
         blocks: [
           {
             type: 'p',
-            text: 'Rick Weng, an individual in Taiwan, decides the purposes and means of using personal data to provide the Services. Contact hello@saturn-core.com.',
+            text: 'Rick Weng, an individual in Taiwan, decides the purposes and means of using personal data to provide the Services. Contact hello@eisoptric.com.',
           },
           {
             type: 'p',
@@ -358,7 +358,7 @@ const en = {
           },
           {
             type: 'p',
-            text: 'The website at https://saturn-core.com has no forms and does not ask you for personal data. The page language is part of the address. The website does not use advertising cookies or a separate analytics product.',
+            text: 'The website at https://eisoptric.com has no forms and does not ask you for personal data. The page language is part of the address. The website does not use advertising cookies or a separate analytics product.',
           },
           {
             type: 'p',
@@ -444,7 +444,7 @@ const en = {
           },
           {
             type: 'p',
-            text: 'Removing a Google connection in the console deletes the tokens Eisoptric holds for it. You can also revoke Eisoptric’s access at any time at https://myaccount.google.com/permissions. To delete the audit records of past calls, email hello@saturn-core.com.',
+            text: 'Removing a Google connection in the console deletes the tokens Eisoptric holds for it. You can also revoke Eisoptric’s access at any time at https://myaccount.google.com/permissions. To delete the audit records of past calls, email hello@eisoptric.com.',
           },
         ],
       },
@@ -462,7 +462,7 @@ const en = {
         blocks: [
           {
             type: 'p',
-            text: 'Under Article 3 of the Personal Data Protection Act, you may ask to inquire or review, to receive a copy, to supplement or correct, to stop collection, processing, or use, and to delete. These rights cannot be waived in advance. Email hello@saturn-core.com. We may need to confirm that the request is yours. We will respond within the period the Act requires.',
+            text: 'Under Article 3 of the Personal Data Protection Act, you may ask to inquire or review, to receive a copy, to supplement or correct, to stop collection, processing, or use, and to delete. These rights cannot be waived in advance. Email hello@eisoptric.com. We may need to confirm that the request is yours. We will respond within the period the Act requires.',
           },
         ],
       },
@@ -497,7 +497,7 @@ const en = {
         heading: 'Contact',
         blocks: [
           { type: 'p', text: 'Rick Weng' },
-          { type: 'p', text: 'hello@saturn-core.com' },
+          { type: 'p', text: 'hello@eisoptric.com' },
         ],
       },
     ],
@@ -554,7 +554,7 @@ const zh = {
           {
             type: 'ul',
             items: [
-              '網站 https://saturn-core.com。',
+              '網站 https://eisoptric.com。',
               'MCP 主控台 https://dashboard.saturn-core.com。',
               'MCP 後端伺服器 https://api.saturn-core.com，提供 Gateway、帳號、政策、核准與審計。',
               'Eisoptric Workbench，供 macOS 與 Windows 使用的桌面應用程式。',
@@ -572,7 +572,7 @@ const zh = {
         blocks: [
           {
             type: 'p',
-            text: '你應提供正確的帳號資料並保持更新。你應保管自己的憑證，並對帳號下的活動負責。若你認為帳號遭人冒用，請寫信到 hello@saturn-core.com。',
+            text: '你應提供正確的帳號資料並保持更新。你應保管自己的憑證，並對帳號下的活動負責。若你認為帳號遭人冒用，請寫信到 hello@eisoptric.com。',
           },
           {
             type: 'p',
@@ -759,7 +759,7 @@ const zh = {
         heading: '聯絡',
         blocks: [
           { type: 'p', text: 'Rick Weng' },
-          { type: 'p', text: 'hello@saturn-core.com' },
+          { type: 'p', text: 'hello@eisoptric.com' },
         ],
       },
     ],
@@ -787,7 +787,7 @@ const zh = {
         blocks: [
           {
             type: 'p',
-            text: 'Rick Weng 是位於台灣的個人，決定為提供本服務而使用個人資料的目的與方式。請寫信到 hello@saturn-core.com。',
+            text: 'Rick Weng 是位於台灣的個人，決定為提供本服務而使用個人資料的目的與方式。請寫信到 hello@eisoptric.com。',
           },
           {
             type: 'p',
@@ -804,7 +804,7 @@ const zh = {
           },
           {
             type: 'p',
-            text: '網站 https://saturn-core.com 沒有表單，不會要求你提供個人資料。頁面語言寫在網址裡。本網站不使用廣告 cookie，也沒有另外的分析工具。',
+            text: '網站 https://eisoptric.com 沒有表單，不會要求你提供個人資料。頁面語言寫在網址裡。本網站不使用廣告 cookie，也沒有另外的分析工具。',
           },
           {
             type: 'p',
@@ -890,7 +890,7 @@ const zh = {
           },
           {
             type: 'p',
-            text: '在主控台移除 Google 連線，會刪除 Eisoptric 為它保存的權杖。你也可以隨時在 https://myaccount.google.com/permissions 撤銷 Eisoptric 的存取權。要刪除過去呼叫的稽核紀錄，請寫信到 hello@saturn-core.com。',
+            text: '在主控台移除 Google 連線，會刪除 Eisoptric 為它保存的權杖。你也可以隨時在 https://myaccount.google.com/permissions 撤銷 Eisoptric 的存取權。要刪除過去呼叫的稽核紀錄，請寫信到 hello@eisoptric.com。',
           },
         ],
       },
@@ -908,7 +908,7 @@ const zh = {
         blocks: [
           {
             type: 'p',
-            text: '依個人資料保護法第3條，你可以請求查詢或閱覽、製給複製本、補充或更正、停止蒐集、處理或利用，以及刪除。這些權利不得預先拋棄或限制。請寫信到 hello@saturn-core.com。我們可能需要確認提出請求的是你本人，並在該法所定期間內回覆。',
+            text: '依個人資料保護法第3條，你可以請求查詢或閱覽、製給複製本、補充或更正、停止蒐集、處理或利用，以及刪除。這些權利不得預先拋棄或限制。請寫信到 hello@eisoptric.com。我們可能需要確認提出請求的是你本人，並在該法所定期間內回覆。',
           },
         ],
       },
@@ -943,7 +943,7 @@ const zh = {
         heading: '聯絡',
         blocks: [
           { type: 'p', text: 'Rick Weng' },
-          { type: 'p', text: 'hello@saturn-core.com' },
+          { type: 'p', text: 'hello@eisoptric.com' },
         ],
       },
     ],

@@ -9,7 +9,7 @@ const dist = resolve(root, 'dist')
 const template = readFileSync(resolve(dist, 'index.html'), 'utf8')
 const serverPath = resolve(root, 'dist-ssr/entry-server.js')
 const server = await import(pathToFileURL(serverPath).href)
-const SITE_URL = 'https://saturn-core.com'
+const SITE_URL = 'https://eisoptric.com'
 const built = new Date().toISOString().slice(0, 10)
 
 if (!template.includes('<!--seo-->') || !template.includes('<!--app-html-->')) {

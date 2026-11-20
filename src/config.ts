@@ -1,6 +1,6 @@
-export const SITE_URL = 'https://saturn-core.com'
+export const SITE_URL = 'https://eisoptric.com'
 export const CONSOLE_URL = 'https://dashboard.saturn-core.com'
-export const CONTACT_ADDRESS = 'hello@saturn-core.com'
+export const CONTACT_ADDRESS = 'hello@eisoptric.com'
 // The organization that runs Eisoptric. Research notes and tool releases are announced here.
 export const ORG_GITHUB_URL = 'https://github.com/Eisoptric'
 export const GITHUB_URL = 'https://github.com/Eisoptric/Workbench'

@@ -4,14 +4,14 @@
 
 # Eisoptric website
 
-**The source of [saturn-core.com](https://saturn-core.com).**
+**The source of [eisoptric.com](https://eisoptric.com).**
 
 Eisoptric is a small, independent AI research project founded by Rick Weng in Taiwan. The site holds the landing page, Research, About, the pages of the two tools it releases (Eisoptric Workbench and Eisoptric MCP), Trust (with the whitepaper), Pricing, Terms and Privacy, in English and 繁體中文, prerendered to static HTML.
 
 ![Vue](https://img.shields.io/badge/Vue-3.5-4FC08D.svg?logo=vuedotjs&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-8-646CFF.svg?logo=vite&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6.svg?logo=typescript&logoColor=white)
-![Cloudflare Pages](https://img.shields.io/badge/hosted%20on-Cloudflare%20Pages-F38020.svg?logo=cloudflarepages&logoColor=white)
+![Cloudflare Workers](https://img.shields.io/badge/hosted%20on-Cloudflare%20Workers-F38020.svg?logo=cloudflareworkers&logoColor=white)
 
 [Pages](#pages) · [Quick start](#quick-start) · [Prerendering](#how-prerendering-works) · [i18n](#i18n) · [SEO](#seo-and-structured-data) · [Headers](#security-headers) · [Deploy](#deploy) · [中文](README_ZH.md)
 
@@ -19,7 +19,7 @@ Eisoptric is a small, independent AI research project founded by Rick Weng in Ta
 
 ---
 
-Built with Vue 3, Vite and TypeScript. Every page is prerendered to static HTML and hosted on Cloudflare Pages. There is no server code: the build output in `dist/` is the whole site.
+Built with Vue 3, Vite and TypeScript. Every page is prerendered to static HTML and served by a Cloudflare Worker as static assets ([`wrangler.jsonc`](wrangler.jsonc)). There is no server code: the build output in `dist/` is the whole site.
 
 ## Pages
 
@@ -52,7 +52,7 @@ Old paths are redirected in two places:
 
 Keep the two in step: a visitor who types an address gets Cloudflare's answer, and the router's only applies to links followed inside the site.
 
-Any other path is a 404. The build prerenders [`NotFoundPage.vue`](src/pages/NotFoundPage.vue) to `dist/404.html` and `dist/zh/404.html`. Cloudflare Pages serves the nearest `404.html` with status 404, so `/zh/anything` gets the Chinese page. `_redirects` has no `/* /index.html 200` fallback, because that rule would answer every unknown path with 200 and the home page. The 404 page has `noindex` and no canonical URL, and is not in the sitemap or `llms.txt`. In the browser, the router's catch-all routes show the same page.
+Any other path is a 404. The build prerenders [`NotFoundPage.vue`](src/pages/NotFoundPage.vue) to `dist/404.html` and `dist/zh/404.html`. Cloudflare serves the nearest `404.html` with status 404, so `/zh/anything` gets the Chinese page. `_redirects` has no `/* /index.html 200` fallback, because that rule would answer every unknown path with 200 and the home page. The 404 page has `noindex` and no canonical URL, and is not in the sitemap or `llms.txt`. In the browser, the router's catch-all routes show the same page.
 
 ## Quick start
 
@@ -71,8 +71,8 @@ npm run dev
 | --- | --- |
 | `npm run dev` | Starts the Vite dev server |
 | `npm run build` | Type-checks (`vue-tsc -b`), builds the client into `dist/`, builds a server bundle from `src/entry-server.ts` into `dist-ssr/`, then runs `scripts/prerender.mjs`, which writes every page and `sitemap.xml` into `dist/` |
-| `npm run preview` | Serves `dist/` locally with `vite preview`. Cloudflare's `_headers`, `_redirects` and 404 handling are not applied there; `npx wrangler pages dev dist` applies all three |
-| `npm run deploy` | Runs `npm run build`, then `wrangler pages deploy dist --project-name=saturn --commit-dirty=true` |
+| `npm run preview` | Serves `dist/` locally with `vite preview`. Cloudflare's `_headers`, `_redirects` and 404 handling are not applied there; `npx wrangler dev` applies all three |
+| `npm run deploy` | Runs `npm run build`, then `wrangler deploy` |
 
 `dist/` and `dist-ssr/` are build output and are ignored by git.
 
@@ -84,7 +84,7 @@ npm run dev
    - renders the page with `renderToString` on a router in memory history, with the locale taken from the path;
    - replaces the `<!--seo-->` block with the page's head tags from `headTags()` in `src/seo.ts`;
    - sets `<html lang>` to `en` or `zh-Hant`, and puts the rendered HTML in place of `<!--app-html-->`;
-   - writes `dist/index.html` for `/`, and `dist/<path>.html` for every other path (`dist/mcp.html`, `dist/zh/trust.html`), so Cloudflare Pages serves `/mcp` as it is instead of redirecting to `/mcp/`, and the canonical URLs need no redirect;
+   - writes `dist/index.html` for `/`, and `dist/<path>.html` for every other path (`dist/mcp.html`, `dist/zh/trust.html`), so Cloudflare serves `/mcp` as it is instead of redirecting to `/mcp/`, and the canonical URLs need no redirect;
    - converts the page's `<main>` to Markdown with [Turndown](https://github.com/mixmark-io/turndown) and writes it to the page's URL plus `.md` (`/mcp.md`, `/zh/trust.md`), or `index.md` for a home page.
 4. It renders the 404 page in both languages to `dist/404.html` and `dist/zh/404.html`.
 5. It writes `dist/sitemap.xml` from `sitemapXml()`, and `dist/llms.txt` and `dist/llms-full.txt` from `llmsIndex()` and `llmsFull()` in [`src/llms.ts`](src/llms.ts).
@@ -136,7 +136,7 @@ Chinese copy uses Taiwan terms and full-width punctuation, as the existing text 
 
 [`src/seo.ts`](src/seo.ts) produces every page's head, for both the prerendered HTML (`headTags()`) and client-side navigation (`applyHead()`):
 
-- **Canonical and alternates.** A canonical URL on `https://saturn-core.com`, `hreflang` links for `en` and `zh-Hant`, and `x-default` pointing at the English page.
+- **Canonical and alternates.** A canonical URL on `https://eisoptric.com`, `hreflang` links for `en` and `zh-Hant`, and `x-default` pointing at the English page.
 - **Open Graph and Twitter cards.** Title, description, locale (`en_US` or `zh_TW`) and `og.png` at 1200 × 630, with alt text in the page's language.
 - **Robots.** `index, follow, max-image-preview:large`.
 - **JSON-LD.** One `@graph` per page with the `Organization` and `WebSite`, the page's `WebPage` (with a `BreadcrumbList` on every page but home), `FAQPage` on Home, Trust and Pricing built from the FAQ copy, and `SoftwareApplication` entries for Eisoptric MCP (Home, MCP, Pricing) and Eisoptric Workbench (Home, App, Pricing).
@@ -211,13 +211,13 @@ When you change one language, change the other in the same commit, and update `u
 npm run deploy
 ```
 
-Builds and uploads `dist/` to the Cloudflare Pages project `saturn`. It needs a Wrangler login with access to that project (`npx wrangler login`). Pushing to `main` does not deploy.
+Builds the site and uploads `dist/` to the Worker `eisoptric-github-io`, as [`wrangler.jsonc`](wrangler.jsonc) describes. It needs a Wrangler login with access to that Worker (`npx wrangler login`), and uncommitted changes go live with it.
 
-The deploy passes `--commit-dirty=true`, so uncommitted changes go live without a warning. Commit first if the deployment should match a commit.
+Cloudflare Workers Builds also builds and deploys the Worker from this repository on each push to its production branch, running `npm run build` and then `npx wrangler deploy`. Keep `wrangler.jsonc` in the repository: without it, `wrangler deploy` configures the project by itself, adds Cloudflare's Vite plugin, and that plugin breaks the SSR build the prerender step reads.
 
 ## github.io
 
-The `gh-pages` branch serves saturn-technology-project.github.io, which only redirects to saturn-core.com. GitHub does not let an organization's `.github.io` repository turn Pages off. The site source on `main` is not published from GitHub.
+The `gh-pages` branch serves eisoptric.github.io, which only redirects to eisoptric.com. GitHub does not let an organization's `.github.io` repository turn Pages off. The site source on `main` is not published from GitHub.
 
 ## Project layout
 
