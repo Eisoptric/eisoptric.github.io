@@ -38,6 +38,12 @@ const messages = {
       start: 'Get started',
       cta: 'GitHub',
       menu: 'Toggle menu',
+      releases: 'Releases',
+      releasesNotes: {
+        lilith: 'Small models trained in the open. In preparation.',
+        app: 'The open-source desktop workbench for AI research.',
+        mcp: 'Policy, approval and audit for every agent tool call.',
+      },
     },
     hero: {
       eyebrow: 'Eisoptric · An independent AI research project',
@@ -701,6 +707,12 @@ const messages = {
       start: '開始使用',
       cta: 'GitHub',
       menu: '開啟選單',
+      releases: '發布',
+      releasesNotes: {
+        lilith: '公開訓練的小型模型，準備中。',
+        app: '開源的 AI 研究桌面工作台。',
+        mcp: '替 Agent 的每次工具呼叫加上政策、審批與稽核。',
+      },
     },
     hero: {
       eyebrow: 'Eisoptric · 獨立 AI 研究計劃',

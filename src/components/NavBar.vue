@@ -8,7 +8,8 @@ import { ORG_GITHUB_URL } from '../config'
 const { locale, t } = useI18n()
 const route = useRoute()
 const menuOpen = ref(false)
-const langMenu = ref<'bar' | 'tools' | null>(null)
+// Which popup is open: the language menu in the bar or in the phone tools, or the Releases menu.
+const langMenu = ref<'bar' | 'tools' | 'releases' | null>(null)
 
 watch(
   () => route.path,
@@ -22,7 +23,7 @@ function closeLang() {
   langMenu.value = null
 }
 
-function toggleLang(which: 'bar' | 'tools') {
+function toggleLang(which: 'bar' | 'tools' | 'releases') {
   langMenu.value = langMenu.value === which ? null : which
 }
 
@@ -40,13 +41,16 @@ onBeforeUnmount(() => {
   document.removeEventListener('keydown', onKeydown)
 })
 
-const links = computed(() => [
-  { label: t.value.nav.research, to: localePath('/research', locale.value) },
-  { label: t.value.nav.lilith, to: localePath('/lilith', locale.value) },
-  { label: t.value.nav.app, to: localePath('/app', locale.value) },
-  { label: t.value.nav.mcp, to: localePath('/mcp', locale.value) },
-  { label: t.value.nav.about, to: localePath('/about', locale.value) },
+// Research and the Releases menu sit left of the centred wordmark, About sits right.
+const researchLink = computed(() => ({ label: t.value.nav.research, to: localePath('/research', locale.value) }))
+// What the project releases: its models and its two tools, each with one line on what it is.
+const releases = computed(() => [
+  { label: t.value.nav.lilith, note: t.value.nav.releasesNotes.lilith, to: localePath('/lilith', locale.value) },
+  { label: t.value.nav.app, note: t.value.nav.releasesNotes.app, to: localePath('/app', locale.value) },
+  { label: t.value.nav.mcp, note: t.value.nav.releasesNotes.mcp, to: localePath('/mcp', locale.value) },
 ])
+const releasesCurrent = computed(() => releases.value.some((item) => item.to === route.path))
+const aboutLink = computed(() => ({ label: t.value.nav.about, to: localePath('/about', locale.value) }))
 const enTo = computed(() => localePath(route.path, 'en'))
 const zhTo = computed(() => localePath(route.path, 'zh'))
 </script>
@@ -54,14 +58,40 @@ const zhTo = computed(() => localePath(route.path, 'zh'))
 <template>
   <header class="site-header">
     <div class="wrap bar">
-      <Brand />
-
       <nav class="nav-links" :aria-label="locale === 'zh' ? '主要' : 'Main'">
-        <RouterLink v-for="link in links" :key="link.to" :to="link.to" :aria-current="route.path === link.to ? 'page' : undefined">{{ link.label }}</RouterLink>
+        <RouterLink class="pill" :to="researchLink.to" :aria-current="route.path === researchLink.to ? 'page' : undefined">{{ researchLink.label }}</RouterLink>
+        <div class="releases" @click.stop>
+          <button
+            class="pill pill-menu"
+            :class="{ current: releasesCurrent }"
+            type="button"
+            :aria-expanded="langMenu === 'releases'"
+            aria-controls="releases-panel"
+            @click="toggleLang('releases')"
+          >
+            {{ t.nav.releases }}
+            <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" /></svg>
+          </button>
+          <div v-if="langMenu === 'releases'" id="releases-panel" class="releases-panel">
+            <RouterLink
+              v-for="item in releases"
+              :key="item.to"
+              :to="item.to"
+              :aria-current="route.path === item.to ? 'page' : undefined"
+              @click="langMenu = null"
+            >
+              <strong>{{ item.label }}</strong>
+              <span>{{ item.note }}</span>
+            </RouterLink>
+          </div>
+        </div>
       </nav>
 
+      <Brand />
+
       <div class="nav-end">
-        <a class="btn btn-primary btn-sm" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{ t.nav.cta }}</a>
+        <RouterLink class="pill" :to="aboutLink.to" :aria-current="route.path === aboutLink.to ? 'page' : undefined">{{ aboutLink.label }}</RouterLink>
+        <a class="pill" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{ t.nav.cta }}</a>
         <div class="lang" @click.stop>
           <button
             class="lang-btn"
@@ -89,7 +119,7 @@ const zhTo = computed(() => localePath(route.path, 'zh'))
       </div>
 
       <div class="mobile-tools">
-        <a class="btn btn-primary btn-sm mobile-start" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{ t.nav.cta }}</a>
+        <a class="pill mobile-start" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{ t.nav.cta }}</a>
         <div class="lang" @click.stop>
           <button
             class="lang-btn"
@@ -127,7 +157,11 @@ const zhTo = computed(() => localePath(route.path, 'zh'))
     </div>
 
     <div v-if="menuOpen" class="mobile-menu wrap">
-      <RouterLink v-for="link in links" :key="link.to" :to="link.to" :aria-current="route.path === link.to ? 'page' : undefined">{{ link.label }}</RouterLink>
+      <RouterLink :to="researchLink.to" :aria-current="route.path === researchLink.to ? 'page' : undefined">{{ researchLink.label }}</RouterLink>
+      <p class="mobile-group">{{ t.nav.releases }}</p>
+      <RouterLink v-for="item in releases" :key="item.to" class="mobile-sub" :to="item.to" :aria-current="route.path === item.to ? 'page' : undefined">{{ item.label }}</RouterLink>
+      <RouterLink :to="aboutLink.to" :aria-current="route.path === aboutLink.to ? 'page' : undefined">{{ aboutLink.label }}</RouterLink>
+      <a class="mobile-only" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{ t.nav.cta }}</a>
     </div>
   </header>
 </template>
