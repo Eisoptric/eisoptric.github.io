@@ -7,7 +7,7 @@ import { PAGES, canonicalUrl, markdownUrl } from './seo'
 // comes from the same copy the site shows, so the two cannot drift apart.
 
 const SUMMARY =
-  'Eisoptric is a small, independent AI research project founded and run by Rick Weng in Taiwan. It studies how capabilities form during pretraining, what trained models compute inside (interpretability), and how to keep models that act through tools under human oversight. It releases the tools it builds for that work: Eisoptric App, an open-source desktop research workbench, and Eisoptric MCP, a gateway that puts every tool call an AI agent makes under policy, human approval and audit.'
+  'Eisoptric is a small, independent AI research project founded and run by Rick Weng in Taiwan. It studies how capabilities form during pretraining, what trained models compute inside (interpretability), and how to keep models that act through tools under human oversight. It releases the tools it builds for that work: Eisoptric Workbench, an open-source desktop research workbench, and Eisoptric MCP, a gateway that puts every tool call an AI agent makes under policy, human approval and audit.'
 
 const FACTS = [
   `Website: ${SITE_URL}/`,
@@ -15,12 +15,12 @@ const FACTS = [
   `GitHub: ${ORG_GITHUB_URL}`,
   'Research status: research notes are in progress; none are published yet.',
   `Eisoptric MCP console: ${CONSOLE_URL}`,
-  `Eisoptric App source: ${GITHUB_URL}`,
-  `Eisoptric App releases: ${RELEASES_URL}`,
+  `Eisoptric Workbench source: ${GITHUB_URL}`,
+  `Eisoptric Workbench releases: ${RELEASES_URL}`,
   `Sponsorship: ${DONATE_URL}`,
   'Price: both tools are free, with every feature on every account. There are no paid plans.',
-  'License: Eisoptric App is licensed under the Apache License 2.0.',
-  'Operator: Rick Weng, an individual in Taiwan, who operates the website, the hosted gateway and Eisoptric App distribution.',
+  'License: Eisoptric Workbench is licensed under the Apache License 2.0.',
+  'Operator: Rick Weng, an individual in Taiwan, who operates the website, the hosted gateway and Eisoptric Workbench distribution.',
 ]
 
 const SECTION_TITLES: Record<Locale, string> = { en: 'English', zh: '中文（繁體）' }

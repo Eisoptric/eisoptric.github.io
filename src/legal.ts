@@ -76,7 +76,7 @@ const en = {
           },
           {
             type: 'p',
-            text: 'Using the Services includes visiting the website, creating or using an account, signing in to the console, connecting to the MCP backend, and using Eisoptric App when it connects to our servers.',
+            text: 'Using the Services includes visiting the website, creating or using an account, signing in to the console, connecting to the MCP backend, and using Eisoptric Workbench when it connects to our servers.',
           },
           {
             type: 'p',
@@ -110,8 +110,8 @@ const en = {
               'The website at https://saturn-core.com.',
               'The MCP console at https://dashboard.saturn-core.com.',
               'The MCP backend at https://api.saturn-core.com, which is the server for the gateway, accounts, policies, approvals, and the audit trail.',
-              'Eisoptric App, the desktop application for macOS and Windows.',
-              'The Eisoptric App backend, a server separate from the MCP backend, which Eisoptric App uses to sign in, sync, and run agents.',
+              'Eisoptric Workbench, the desktop application for macOS and Windows.',
+              'The Eisoptric Workbench backend, a server separate from the MCP backend, which Eisoptric Workbench uses to sign in, sync, and run agents.',
             ],
           },
           {
@@ -186,11 +186,11 @@ const en = {
           },
           {
             type: 'p',
-            text: 'The source code of Eisoptric App is offered under the Apache License, Version 2.0, and the source code of the Eisoptric SDK under the MIT License. Where we make the source code of the MCP backend and the console available, it is offered under the Functional Source License, Version 1.1, ALv2 Future License (FSL-1.1-ALv2). That license lets you read, audit, modify, and run the code for any purpose except a competing commercial product or service. Each version also becomes available under the Apache License 2.0 two years after we release it. The copyright holder of all of this code is Rick Weng.',
+            text: 'The source code of Eisoptric Workbench is offered under the Apache License, Version 2.0, and the source code of the Eisoptric SDK under the MIT License. Where we make the source code of the MCP backend and the console available, it is offered under the Functional Source License, Version 1.1, ALv2 Future License (FSL-1.1-ALv2). That license lets you read, audit, modify, and run the code for any purpose except a competing commercial product or service. Each version also becomes available under the Apache License 2.0 two years after we release it. The copyright holder of all of this code is Rick Weng.',
           },
           {
             type: 'p',
-            text: 'Those licenses govern your rights in the source code. They do not replace these terms for the Services we operate. When you use the hosted console, the MCP backend, or Eisoptric App together with our servers, these terms apply.',
+            text: 'Those licenses govern your rights in the source code. They do not replace these terms for the Services we operate. When you use the hosted console, the MCP backend, or Eisoptric Workbench together with our servers, these terms apply.',
           },
           {
             type: 'p',
@@ -320,7 +320,7 @@ const en = {
   privacy: {
     title: 'Privacy Policy — Eisoptric',
     description:
-      'How Rick Weng handles personal data when you use the Eisoptric website, console, MCP backend, Eisoptric App, and Eisoptric App backend.',
+      'How Rick Weng handles personal data when you use the Eisoptric website, console, MCP backend, Eisoptric Workbench, and Eisoptric Workbench backend.',
     crumb: 'Privacy Policy',
     heading: 'Privacy Policy',
     updated: 'Updated 19 November 2026',
@@ -367,7 +367,7 @@ const en = {
           {
             type: 'ul',
             items: [
-              'Identity and account data, including name, email address, organization name if you create an organization account, role, and sign-in credentials. When you sign up, we email a verification code to the address you gave. Signing in from Eisoptric App uses this same account.',
+              'Identity and account data, including name, email address, organization name if you create an organization account, role, and sign-in credentials. When you sign up, we email a verification code to the address you gave. Signing in from Eisoptric Workbench uses this same account.',
               'What you configure: members, permissions, agents, tool sets, policies and their versions, and which MCP servers a person may connect.',
               'Each tool call the gateway evaluates: the agent, the tool, the arguments, the policy version, the decision, the reviewer when there is one, and whether the call was executed.',
               'Upstream credentials you store in the vault, sealed so the gateway can make a call you have allowed. The console does not return the secret itself.',
@@ -376,11 +376,11 @@ const en = {
           },
           {
             type: 'p',
-            text: 'Eisoptric App runs on your computer. Until it connects to our servers, agents, files, commands, chats, and model keys stay on that computer, and we do not receive them. When you sign in and use the Eisoptric App backend, that backend — a server separate from the MCP backend — processes the App data it syncs and runs: agents, conversations, tasks, scheduled wakes, memories, and the MCP servers you attach in the App.',
+            text: 'Eisoptric Workbench runs on your computer. Until it connects to our servers, agents, files, commands, chats, and model keys stay on that computer, and we do not receive them. When you sign in and use the Eisoptric Workbench backend, that backend — a server separate from the MCP backend — processes the App data it syncs and runs: agents, conversations, tasks, scheduled wakes, memories, and the MCP servers you attach in the App.',
           },
           {
             type: 'p',
-            text: 'Downloads of Eisoptric App and the source code are served by GitHub. If you donate through GitHub Sponsors, GitHub collects your payment details and shares with us what its Sponsors program shows, such as your GitHub username. GitHub processes those requests under its own terms.',
+            text: 'Downloads of Eisoptric Workbench and the source code are served by GitHub. If you donate through GitHub Sponsors, GitHub collects your payment details and shares with us what its Sponsors program shows, such as your GitHub username. GitHub processes those requests under its own terms.',
           },
         ],
       },
@@ -402,11 +402,11 @@ const en = {
         blocks: [
           {
             type: 'p',
-            text: 'We keep account data, console data, MCP backend data, and Eisoptric App backend data while you use the Services. When the purpose ends, or you ask us to delete the data, we delete it or stop using it. We may keep what we still need to finish a request you already made, to resolve a dispute, or to comply with law (Article 11, paragraph 3).',
+            text: 'We keep account data, console data, MCP backend data, and Eisoptric Workbench backend data while you use the Services. When the purpose ends, or you ask us to delete the data, we delete it or stop using it. We may keep what we still need to finish a request you already made, to resolve a dispute, or to comply with law (Article 11, paragraph 3).',
           },
           {
             type: 'p',
-            text: 'The console, the MCP backend, and the Eisoptric App backend are hosted on Google Cloud in Taiwan (asia-east1). The website is hosted by Cloudflare. Sign-up verification codes and account emails are sent through Resend. Eisoptric App downloads and donations are handled by GitHub. A tool call is sent to an upstream MCP server only when your own configuration allows it. People in your organization see what their roles allow.',
+            text: 'The console, the MCP backend, and the Eisoptric Workbench backend are hosted on Google Cloud in Taiwan (asia-east1). The website is hosted by Cloudflare. Sign-up verification codes and account emails are sent through Resend. Eisoptric Workbench downloads and donations are handled by GitHub. A tool call is sent to an upstream MCP server only when your own configuration allows it. People in your organization see what their roles allow.',
           },
           {
             type: 'p',
@@ -453,7 +453,7 @@ const en = {
         blocks: [
           {
             type: 'p',
-            text: 'You choose what to provide. You can browse the website without providing anything. If you do not provide account information, you cannot use the console, the MCP backend, or the parts of Eisoptric App that require sign-in. Eisoptric App can still be used on your computer for functions that do not connect to our servers.',
+            text: 'You choose what to provide. You can browse the website without providing anything. If you do not provide account information, you cannot use the console, the MCP backend, or the parts of Eisoptric Workbench that require sign-in. Eisoptric Workbench can still be used on your computer for functions that do not connect to our servers.',
           },
         ],
       },
@@ -523,7 +523,7 @@ const zh = {
           },
           {
             type: 'p',
-            text: '使用本服務，包括瀏覽網站、建立或使用帳號、登入主控台、連線 MCP 後端，以及使用會連上我們伺服器的 Eisoptric App。',
+            text: '使用本服務，包括瀏覽網站、建立或使用帳號、登入主控台、連線 MCP 後端，以及使用會連上我們伺服器的 Eisoptric Workbench。',
           },
           {
             type: 'p',
@@ -557,8 +557,8 @@ const zh = {
               '網站 https://saturn-core.com。',
               'MCP 主控台 https://dashboard.saturn-core.com。',
               'MCP 後端伺服器 https://api.saturn-core.com，提供 Gateway、帳號、政策、核准與審計。',
-              'Eisoptric App，供 macOS 與 Windows 使用的桌面應用程式。',
-              'Eisoptric App 後端伺服器。它與 MCP 後端分開，供 Eisoptric App 登入、同步並執行 Agent。',
+              'Eisoptric Workbench，供 macOS 與 Windows 使用的桌面應用程式。',
+              'Eisoptric Workbench 後端伺服器。它與 MCP 後端分開，供 Eisoptric Workbench 登入、同步並執行 Agent。',
             ],
           },
           {
@@ -633,11 +633,11 @@ const zh = {
           },
           {
             type: 'p',
-            text: 'Eisoptric App 的原始碼以 Apache License 2.0 版授權提供，Eisoptric SDK 的原始碼以 MIT 授權提供。MCP 後端與主控台的原始碼，於我們提供時，以 Functional Source License 1.1 版、Apache 2.0 為未來授權（FSL-1.1-ALv2）提供。依該授權，你可以為任何目的閱讀、稽核、修改並執行該程式碼，但不得用於與本服務競爭的商業產品或服務。每個版本自我們發布滿兩年起，另可依 Apache License 2.0 使用。上述程式碼的著作權人均為 Rick Weng。',
+            text: 'Eisoptric Workbench 的原始碼以 Apache License 2.0 版授權提供，Eisoptric SDK 的原始碼以 MIT 授權提供。MCP 後端與主控台的原始碼，於我們提供時，以 Functional Source License 1.1 版、Apache 2.0 為未來授權（FSL-1.1-ALv2）提供。依該授權，你可以為任何目的閱讀、稽核、修改並執行該程式碼，但不得用於與本服務競爭的商業產品或服務。每個版本自我們發布滿兩年起，另可依 Apache License 2.0 使用。上述程式碼的著作權人均為 Rick Weng。',
           },
           {
             type: 'p',
-            text: '這些授權規範你對原始碼的權利，不取代本條款對我們營運之本服務的規範。你使用我們代管的主控台、MCP 後端，或會連上我們伺服器的 Eisoptric App 時，仍應遵守本條款。',
+            text: '這些授權規範你對原始碼的權利，不取代本條款對我們營運之本服務的規範。你使用我們代管的主控台、MCP 後端，或會連上我們伺服器的 Eisoptric Workbench 時，仍應遵守本條款。',
           },
           {
             type: 'p',
@@ -766,7 +766,7 @@ const zh = {
   },
   privacy: {
     title: '隱私權政策 — Eisoptric',
-    description: '你使用 Eisoptric 網站、主控台、MCP 後端、Eisoptric App 與 Eisoptric App 後端時，Rick Weng 如何處理個人資料。',
+    description: '你使用 Eisoptric 網站、主控台、MCP 後端、Eisoptric Workbench 與 Eisoptric Workbench 後端時，Rick Weng 如何處理個人資料。',
     crumb: '隱私權政策',
     heading: '隱私權政策',
     updated: '更新日期：2026 年 11 月 19 日',
@@ -813,7 +813,7 @@ const zh = {
           {
             type: 'ul',
             items: [
-              '身份與帳號資料，包括姓名、Email、組織名稱（若你建立組織帳號）、角色與登入憑證。註冊時，我們會寄驗證碼到你填寫的 Email。從 Eisoptric App 登入，使用的是同一組帳號。',
+              '身份與帳號資料，包括姓名、Email、組織名稱（若你建立組織帳號）、角色與登入憑證。註冊時，我們會寄驗證碼到你填寫的 Email。從 Eisoptric Workbench 登入，使用的是同一組帳號。',
               '你設定的內容：成員、權限、Agent、工具集、政策與其版本，以及某人可以連接哪些 MCP Server。',
               'Gateway 評估的每一筆工具呼叫：Agent、工具、參數、政策版本、判定、審核人員（若有），以及是否已執行。',
               '你存放在金庫中的上游憑證。憑證經封存，以便 Gateway 執行你允許的呼叫。主控台不回傳密鑰本身。',
@@ -822,11 +822,11 @@ const zh = {
           },
           {
             type: 'p',
-            text: 'Eisoptric App 在你的電腦上運行。在它連上我們的伺服器之前，Agent、檔案、指令、對話與模型金鑰都留在該電腦，我們不會收到。你登入並使用 Eisoptric App 後端時，該後端與 MCP 後端分開，並處理它所同步與執行的 App 資料：Agent、對話、任務、排程喚醒、記憶，以及你在 App 中掛載的 MCP Server。',
+            text: 'Eisoptric Workbench 在你的電腦上運行。在它連上我們的伺服器之前，Agent、檔案、指令、對話與模型金鑰都留在該電腦，我們不會收到。你登入並使用 Eisoptric Workbench 後端時，該後端與 MCP 後端分開，並處理它所同步與執行的 App 資料：Agent、對話、任務、排程喚醒、記憶，以及你在 App 中掛載的 MCP Server。',
           },
           {
             type: 'p',
-            text: 'Eisoptric App 與原始碼的下載由 GitHub 提供。你若透過 GitHub Sponsors 贊助，付款資料由 GitHub 蒐集，我們只會收到 Sponsors 計畫提供的資訊，例如你的 GitHub 使用者名稱。GitHub 依它自己的條款處理這些請求。',
+            text: 'Eisoptric Workbench 與原始碼的下載由 GitHub 提供。你若透過 GitHub Sponsors 贊助，付款資料由 GitHub 蒐集，我們只會收到 Sponsors 計畫提供的資訊，例如你的 GitHub 使用者名稱。GitHub 依它自己的條款處理這些請求。',
           },
         ],
       },
@@ -848,11 +848,11 @@ const zh = {
         blocks: [
           {
             type: 'p',
-            text: '帳號、主控台、MCP 後端與 Eisoptric App 後端的資料，在你使用本服務期間保存。特定目的消失，或你請求刪除時，我們會刪除或停止利用。為完成你已經提出的請求、解決爭議或遵守法律所仍必要的部分，得依第11條第3項但書繼續保存。',
+            text: '帳號、主控台、MCP 後端與 Eisoptric Workbench 後端的資料，在你使用本服務期間保存。特定目的消失，或你請求刪除時，我們會刪除或停止利用。為完成你已經提出的請求、解決爭議或遵守法律所仍必要的部分，得依第11條第3項但書繼續保存。',
           },
           {
             type: 'p',
-            text: '主控台、MCP 後端與 Eisoptric App 後端由 Google Cloud 於台灣區域（asia-east1）代管。網站由 Cloudflare 代管。註冊驗證碼與帳號通知信透過 Resend 寄送。Eisoptric App 的下載與贊助由 GitHub 處理。工具呼叫只有在你自己的設定允許時，才會送到上游 MCP Server。組織內的人依其角色看到對應的內容。',
+            text: '主控台、MCP 後端與 Eisoptric Workbench 後端由 Google Cloud 於台灣區域（asia-east1）代管。網站由 Cloudflare 代管。註冊驗證碼與帳號通知信透過 Resend 寄送。Eisoptric Workbench 的下載與贊助由 GitHub 處理。工具呼叫只有在你自己的設定允許時，才會送到上游 MCP Server。組織內的人依其角色看到對應的內容。',
           },
           {
             type: 'p',
@@ -899,7 +899,7 @@ const zh = {
         blocks: [
           {
             type: 'p',
-            text: '你可以選擇是否提供。瀏覽網站不需要提供任何資料。你若不提供帳號資料，就無法使用主控台、MCP 後端，以及 Eisoptric App 中需要登入的功能。Eisoptric App 不連線我們伺服器的功能，仍可在你的電腦上使用。',
+            text: '你可以選擇是否提供。瀏覽網站不需要提供任何資料。你若不提供帳號資料，就無法使用主控台、MCP 後端，以及 Eisoptric Workbench 中需要登入的功能。Eisoptric Workbench 不連線我們伺服器的功能，仍可在你的電腦上使用。',
           },
         ],
       },

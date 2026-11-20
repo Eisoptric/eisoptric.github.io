@@ -23,7 +23,7 @@ const messages = {
     meta: {
       title: 'Eisoptric — Research on how AI models learn, and what they compute',
       description:
-        'Eisoptric is a small, independent AI research project founded by Rick Weng in Taiwan. We study how capabilities form during pretraining and what trained models compute inside, and we release the tools we build along the way: Eisoptric App and Eisoptric MCP.',
+        'Eisoptric is a small, independent AI research project founded by Rick Weng in Taiwan. We study how capabilities form during pretraining and what trained models compute inside, and we release the tools we build along the way: Eisoptric Workbench and Eisoptric MCP.',
     },
     nav: {
       home: 'Eisoptric home',
@@ -255,8 +255,8 @@ const messages = {
       items: [
         ['What is Eisoptric?', 'Eisoptric is a small, independent AI research project founded and run by Rick Weng in Taiwan. It studies how capabilities form during pretraining and what trained models compute inside, and how to keep models that act through tools under human oversight.'],
         ['Who runs Eisoptric?', 'Rick Weng, who founded it in Taiwan and is for now its only researcher. Eisoptric is not part of a company or university.'],
-        ['Why does a research project ship software?', 'Because the research needs it. Eisoptric App is the workbench we use for experiments and interpretability, and Eisoptric MCP is the gateway we needed before letting agents act on their own. We release them because they are useful beyond our own work.'],
-        ['Are the tools free?', 'Yes. Eisoptric App and Eisoptric MCP are both free, with every feature on every account. Eisoptric App is open source under the Apache License 2.0.'],
+        ['Why does a research project ship software?', 'Because the research needs it. Eisoptric Workbench is what we use for experiments and interpretability, and Eisoptric MCP is the gateway we needed before letting agents act on their own. We release them because they are useful beyond our own work.'],
+        ['Are the tools free?', 'Yes. Eisoptric Workbench and Eisoptric MCP are both free, with every feature on every account. Eisoptric Workbench is open source under the Apache License 2.0.'],
         ['Where are the research results?', 'Our first notes are in progress. They will be published on the research page, each with its question, method, code and data.'],
         ['Can I collaborate or ask a question?', 'Yes. Write to hello@saturn-core.com, or open an issue on GitHub.'],
       ],
@@ -269,7 +269,7 @@ const messages = {
       lede: 'Eisoptric MCP is the MCP server your agents talk to. Behind it sit your real MCP servers — CRM, payments, databases, cloud consoles. Eisoptric exposes only the tools you approve, evaluates every call against policy, pauses the sensitive ones for a human, and records everything.',
       primary: 'Get started',
       secondary: 'Read the whitepaper',
-      note: 'Standards-compliant MCP over HTTP. Works with Claude, ChatGPT, Cursor, Eisoptric App, or any MCP client.',
+      note: 'Standards-compliant MCP over HTTP. Works with Claude, ChatGPT, Cursor, Eisoptric Workbench, or any MCP client.',
       howTitle: 'Up and running in four steps.',
       howDesc: 'No SDK, no agent code changes. Eisoptric works at the protocol level.',
       how: [
@@ -332,19 +332,19 @@ const messages = {
       ctaBody: 'Create a free account, connect a server, and write one rule. The first approval request shows you the whole path.',
     },
     appPage: {
-      title: 'Eisoptric App — A free, open-source workbench for AI research',
-      description: 'Eisoptric App is a free, Apache 2.0-licensed desktop workbench for AI research. Run experiments on your own computer or an SSH host, read every sample, look inside the model, and choose how much the assistant may do.',
-      eyebrow: 'Eisoptric App · Open source · A tool from Eisoptric’s research',
+      title: 'Eisoptric Workbench — Free, open-source software for AI research',
+      description: 'Eisoptric Workbench is a free, Apache 2.0-licensed desktop workbench for AI research. Run experiments on your own computer or an SSH host, read every sample, look inside the model, and choose how much the assistant may do.',
+      eyebrow: 'Eisoptric Workbench · Open source · A tool from Eisoptric’s research',
       heading: 'A workbench for AI research, on your own computer.',
       lede: 'Read the method, write the code yourself, run the experiment and read every sample. Eisoptric is organized around your questions, models, experiments and findings rather than around chats, and you decide how much the assistant may do.',
-      download: 'Download Eisoptric App',
+      download: 'Download Eisoptric Workbench',
       downloadNote: 'macOS · Windows · Free',
       github: 'View on GitHub',
       secondary: 'Connect to Eisoptric MCP',
       note: 'Preview release, licensed under Apache 2.0. The builds are not code-signed yet: on macOS, approve the first launch in System Settings → Privacy & Security; on Windows, choose More info → Run anyway when SmartScreen warns. Works offline with local models.',
       shot: {
-        alt: 'Eisoptric App’s Experiments screen: mean IOI accuracy of five Pythia-160m checkpoints, from 0.37 at step 1k to 0.96 at step 143k',
-        caption: 'A real screenshot. Indirect object identification on five Pythia-160m checkpoints, 200 prompts each, run in Eisoptric App; the hypothesis stays undecided until you judge it.',
+        alt: 'Eisoptric Workbench’s Experiments screen: mean IOI accuracy of five Pythia-160m checkpoints, from 0.37 at step 1k to 0.96 at step 143k',
+        caption: 'A real screenshot. Indirect object identification on five Pythia-160m checkpoints, 200 prompts each, run in Eisoptric Workbench; the hypothesis stays undecided until you judge it.',
       },
       highlights: [
         ['Your research, not a chat', 'Questions, hypotheses, code, runs, samples and conclusions each have a place. Reopen a project and Home says where the work stopped and what is still open.'],
@@ -353,7 +353,7 @@ const messages = {
       ],
       screensTitle: 'Ten screens around one project.',
       screensDesc: 'Each screen holds one part of the work, and the assistant on every screen knows which one you are on. The screenshots show an example project.',
-      screenAlt: 'Eisoptric App’s {screen} screen, in an example project',
+      screenAlt: 'Eisoptric Workbench’s {screen} screen, in an example project',
       screens: [
         ['Home', 'Where the work stopped, what changed since you last looked, and what still needs a decision.'],
         ['Workspace', 'Your code, with the run, its cost, samples, findings and a terminal underneath. Notebooks open as cells.'],
@@ -480,7 +480,7 @@ const messages = {
         ['License', 'Apache License 2.0. Copyright Rick Weng.'],
       ],
       ctaTitle: 'Built in the open.',
-      ctaBody: 'Eisoptric App is free for everyone. Download it, star the repository, open an issue, or send a pull request.',
+      ctaBody: 'Eisoptric Workbench is free for everyone. Download it, star the repository, open an issue, or send a pull request.',
     },
     trustPage: {
       title: 'Eisoptric Trust — How keys, payloads, and credentials are protected',
@@ -620,7 +620,7 @@ const messages = {
       toolsTitle: 'Why we build tools.',
       toolsDesc: 'Research is only as good as the instruments behind it. We build what we need, use it every day, and release it when it is useful to others.',
       tools: [
-        ['Eisoptric App', 'The workbench we run experiments and interpretability in: questions, code, every sample and the model’s insides, kept together. Open source under Apache 2.0.'],
+        ['Eisoptric Workbench', 'Where we run experiments and interpretability in: questions, code, every sample and the model’s insides, kept together. Open source under Apache 2.0.'],
         ['Eisoptric MCP', 'The gateway we needed before letting agents act on their own: every tool call under policy, approval and audit. Free for everyone.'],
       ],
       contactTitle: 'Get in touch.',
@@ -678,7 +678,7 @@ const messages = {
       ctaBody: 'Training runs, releases and notes will be announced on GitHub.',
     },
     pricingPage: {
-      title: 'Eisoptric Pricing — Free Desktop App and MCP Gateway',
+      title: 'Eisoptric Pricing — Free Workbench and MCP Gateway',
       description: 'Eisoptric is free. The desktop App and the MCP gateway cost nothing, and every account gets every feature. Sponsors keep it that way.',
     },
   },
@@ -686,7 +686,7 @@ const messages = {
     meta: {
       title: 'Eisoptric — 研究 AI 模型如何學習、內部在算什麼',
       description:
-        'Eisoptric 是 Rick Weng 在台灣創立的小型獨立 AI 研究計劃。我們研究能力如何在預訓練中形成、訓練好的模型內部在計算什麼，並把研究途中打造的工具釋出：Eisoptric App 與 Eisoptric MCP。',
+        'Eisoptric 是 Rick Weng 在台灣創立的小型獨立 AI 研究計劃。我們研究能力如何在預訓練中形成、訓練好的模型內部在計算什麼，並把研究途中打造的工具釋出：Eisoptric Workbench 與 Eisoptric MCP。',
     },
     nav: {
       home: 'Eisoptric 首頁',
@@ -903,8 +903,8 @@ const messages = {
       items: [
         ['Eisoptric 是什麼？', 'Eisoptric 是由 Rick Weng 創立並經營的小型獨立 AI 研究計劃。我們研究能力如何在預訓練中形成、訓練好的模型內部在計算什麼，以及如何讓透過工具行動的模型留在人的監督之下。'],
         ['誰在經營 Eisoptric？', 'Rick Weng。他在台灣創立了這個計劃，目前也是唯一的研究者。Eisoptric 不隸屬於任何公司或大學。'],
-        ['研究計劃為什麼要發行軟體？', '因為研究需要。Eisoptric App 是我們做實驗與可解釋性分析的工作台；Eisoptric MCP 是我們讓 Agent 自主行動之前需要的 Gateway。它們在我們自己的研究之外也有用，所以我們把它們釋出。'],
-        ['工具是免費的嗎？', '是的。Eisoptric App 與 Eisoptric MCP 都免費，每個帳號都有全部功能。Eisoptric App 以 Apache License 2.0 授權開源。'],
+        ['研究計劃為什麼要發行軟體？', '因為研究需要。Eisoptric Workbench 是我們做實驗與可解釋性分析的工作台；Eisoptric MCP 是我們讓 Agent 自主行動之前需要的 Gateway。它們在我們自己的研究之外也有用，所以我們把它們釋出。'],
+        ['工具是免費的嗎？', '是的。Eisoptric Workbench 與 Eisoptric MCP 都免費，每個帳號都有全部功能。Eisoptric Workbench 以 Apache License 2.0 授權開源。'],
         ['研究成果在哪裡？', '第一批筆記正在撰寫中。發表後會放在研究頁，每篇都附上問題、方法、程式碼與資料。'],
         ['可以合作或提問嗎？', '可以。請寄信到 hello@saturn-core.com，或在 GitHub 上開 issue。'],
       ],
@@ -917,7 +917,7 @@ const messages = {
       lede: 'Eisoptric MCP 是 Agent 實際對話的那台 MCP Server。它後面才是你真正的 MCP Server——CRM、付款、資料庫、雲端主控台。Eisoptric 只露出你核准的工具，對每一筆呼叫比對政策，把敏感的那幾筆暫停交給人，並記錄一切。',
       primary: '開始使用',
       secondary: '閱讀白皮書',
-      note: '符合標準的 HTTP MCP。相容 Claude、ChatGPT、Cursor、Eisoptric App 或任何 MCP 用戶端。',
+      note: '符合標準的 HTTP MCP。相容 Claude、ChatGPT、Cursor、Eisoptric Workbench 或任何 MCP 用戶端。',
       howTitle: '四個步驟，開始運作。',
       howDesc: '不需要 SDK，不需要改 Agent 程式碼。Eisoptric 在協定層運作。',
       how: [
@@ -980,19 +980,19 @@ const messages = {
       ctaBody: '建立免費帳號、連接一台 Server、寫一條規則。第一筆核准請求就會讓你看到完整路徑。',
     },
     appPage: {
-      title: 'Eisoptric App — 免費、開源的 AI 研究工作台',
-      description: 'Eisoptric App 是免費、Apache 2.0 授權的桌面 AI 研究工作台。在自己的電腦或 SSH 主機上跑實驗、讀每一個樣本、檢視模型內部，並決定研究助理可以做多少。',
-      eyebrow: 'Eisoptric App · 開源 · 來自 Eisoptric 研究的工具',
+      title: 'Eisoptric Workbench — 免費、開源的 AI 研究工作台',
+      description: 'Eisoptric Workbench 是免費、Apache 2.0 授權的桌面 AI 研究工作台。在自己的電腦或 SSH 主機上跑實驗、讀每一個樣本、檢視模型內部，並決定研究助理可以做多少。',
+      eyebrow: 'Eisoptric Workbench · 開源 · 來自 Eisoptric 研究的工具',
       heading: '在你自己的電腦上做 AI 研究的工作台。',
       lede: '讀懂方法、親手寫程式、執行實驗並讀過每一個樣本。Eisoptric 圍繞你的問題、模型、實驗與發現來組織，而不是圍繞對話；研究助理可以做多少，由你決定。',
-      download: '下載 Eisoptric App',
+      download: '下載 Eisoptric Workbench',
       downloadNote: 'macOS · Windows · 免費',
       github: '在 GitHub 上查看',
       secondary: '連接 Eisoptric MCP',
       note: '預覽版，以 Apache 2.0 授權。目前的版本都尚未簽署：macOS 第一次開啟時請到「系統設定 → 隱私權與安全性」允許；Windows 出現 SmartScreen 警告時，請按「其他資訊 → 仍要執行」。搭配本機模型可離線使用。',
       shot: {
-        alt: 'Eisoptric App 的「實驗」畫面：五個 Pythia-160m 檢查點的 IOI 平均準確率，從 step 1k 的 0.37 到 step 143k 的 0.96',
-        caption: '真實截圖。在 Eisoptric App 中對五個 Pythia-160m 檢查點各跑 200 個間接受詞辨識提示；假說在你判定之前維持未判定。',
+        alt: 'Eisoptric Workbench 的「實驗」畫面：五個 Pythia-160m 檢查點的 IOI 平均準確率，從 step 1k 的 0.37 到 step 143k 的 0.96',
+        caption: '真實截圖。在 Eisoptric Workbench 中對五個 Pythia-160m 檢查點各跑 200 個間接受詞辨識提示；假說在你判定之前維持未判定。',
       },
       highlights: [
         ['是你的研究，不是一串對話', '問題、假說、程式、執行、樣本與結論各有位置。重新開啟專案時，首頁會告訴你工作停在哪裡、還有什麼沒決定。'],
@@ -1001,7 +1001,7 @@ const messages = {
       ],
       screensTitle: '十個畫面，圍繞同一個專案。',
       screensDesc: '每個畫面負責工作的一部分，而每個畫面上的研究助理都知道你正在哪一個畫面。截圖為示範專案。',
-      screenAlt: 'Eisoptric App 的「{screen}」畫面（示範專案）',
+      screenAlt: 'Eisoptric Workbench 的「{screen}」畫面（示範專案）',
       screens: [
         ['首頁', '工作停在哪裡、上次看過之後有什麼改變，以及還有什麼需要你決定。'],
         ['工作區', '你的程式碼，下方是執行、花費、樣本、發現與終端機。筆記本以儲存格開啟。'],
@@ -1128,7 +1128,7 @@ const messages = {
         ['授權', 'Apache License 2.0。著作權人 Rick Weng。'],
       ],
       ctaTitle: '公開開發。',
-      ctaBody: 'Eisoptric App 對所有人免費。下載它、為儲存庫加星、開 issue，或送出 pull request。',
+      ctaBody: 'Eisoptric Workbench 對所有人免費。下載它、為儲存庫加星、開 issue，或送出 pull request。',
     },
     trustPage: {
       title: '信任 — 金鑰、Payload 與憑證如何被保護',
@@ -1267,7 +1267,7 @@ const messages = {
       toolsTitle: '我們為什麼做工具。',
       toolsDesc: '研究的品質取決於背後的儀器。我們打造自己需要的工具、每天使用它，並在它對別人也有用時釋出。',
       tools: [
-        ['Eisoptric App', '我們做實驗與可解釋性分析的工作台：問題、程式碼、每一個樣本與模型內部都放在一起。以 Apache 2.0 開源。'],
+        ['Eisoptric Workbench', '我們做實驗與可解釋性分析的工作台：問題、程式碼、每一個樣本與模型內部都放在一起。以 Apache 2.0 開源。'],
         ['Eisoptric MCP', '我們讓 Agent 自主行動之前需要的 Gateway：每一次工具呼叫都經過政策、核准與審計。所有人都能免費使用。'],
       ],
       contactTitle: '聯絡我們。',
@@ -1325,8 +1325,8 @@ const messages = {
       ctaBody: '訓練進度、模型釋出與研究筆記都會在 GitHub 上公告。',
     },
     pricingPage: {
-      title: '方案與定價 — 免費 Eisoptric App 與 MCP Gateway',
-      description: 'Eisoptric 完全免費。桌面 App 與 MCP Gateway 都不收費，每個帳號都能使用全部功能，由贊助者支持維持。',
+      title: '方案與定價 — 免費 Eisoptric Workbench 與 MCP Gateway',
+      description: 'Eisoptric 完全免費。Workbench 與 MCP Gateway 都不收費，每個帳號都能使用全部功能，由贊助者支持維持。',
     },
   },
 } as const

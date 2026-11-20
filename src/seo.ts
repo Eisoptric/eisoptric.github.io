@@ -103,7 +103,7 @@ function desktopApplication(lang: Locale) {
   return {
     '@type': 'SoftwareApplication',
     '@id': `${SITE_URL}/#saturn-app`,
-    name: 'Eisoptric App',
+    name: 'Eisoptric Workbench',
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'macOS, Windows',
     url: canonicalUrl('app', lang),
