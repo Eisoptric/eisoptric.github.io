@@ -121,7 +121,7 @@ const screenFiles = ['home', 'workspace', 'lineage', 'experiments', 'samples', '
       <div class="hero-aside">
         <pre class="code"><span class="k">my-project/</span>
 <span class="k">├─</span> <span class="v">probe.py</span>
-<span class="k">└─</span> <span class="k">.saturn/research/</span>
+<span class="k">└─</span> <span class="k">.workbench/research/</span>
    <span class="k">├─</span> <span class="v">questions/</span>
    <span class="k">├─</span> <span class="v">hypotheses/</span>
    <span class="k">├─</span> <span class="v">experiments/</span>
