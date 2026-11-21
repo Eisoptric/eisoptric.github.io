@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=EB+Garamond:ital,wght@0,500;1,400&display=block"
+      rel="stylesheet"
+    />
+    <style>
+      /* Eisoptric social card, 1200 x 630, Vellum pigments. The mark is the outlined SVG from public/brand. */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+      }
+      body {
+        background: #faf8f4;
+        color: #1f1a14;
+        font-family: 'EB Garamond', Georgia, serif;
+        position: relative;
+        overflow: hidden;
+      }
+      .mark {
+        position: absolute;
+        left: 780px;
+        top: 155px;
+        width: 320px;
+        height: 320px;
+      }
+      .text {
+        position: absolute;
+        left: 96px;
+        top: 0;
+        bottom: 0;
+        width: 620px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .label {
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #5e5446;
+      }
+      h1 {
+        margin-top: 18px;
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 500;
+        font-size: 120px;
+        line-height: 0.95;
+        letter-spacing: 0.02em;
+      }
+      .line {
+        margin-top: 26px;
+        font-style: italic;
+        font-size: 36px;
+        line-height: 1.25;
+        color: #5e5446;
+      }
+      .rule {
+        margin-top: 34px;
+        width: 64px;
+        height: 2px;
+        background: #9c7a2e;
+      }
+      .url {
+        margin-top: 20px;
+        font-size: 22px;
+        letter-spacing: 0.06em;
+        color: #5e5446;
+      }
+    </style>
+  </head>
+  <body>
+    <img class="mark" src="LOGO" alt="" />
+    <div class="text">
+      <p class="label">Pretraining · Interpretability</p>
+      <h1>Eisoptric</h1>
+      <p class="line">Looking into the minds we train.</p>
+      <div class="rule"></div>
+      <p class="url">eisoptric.com</p>
+    </div>
+  </body>
+</html>
