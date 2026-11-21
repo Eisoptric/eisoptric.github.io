@@ -1,0 +1,330 @@
+/* The header: the wordmark between two groups of pill links, the language and menu buttons, and the releases panel. */
+
+/* ------------------------------------------------------------------
+   Header: the wordmark centred between two groups of pill links,
+   with square icon buttons for language and the phone menu.
+   ------------------------------------------------------------------ */
+
+.site-header {
+  background: var(--bg);
+  backdrop-filter: none;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header .bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  height: 80px;
+}
+
+.site-header .nav-links {
+  justify-self: start;
+  display: flex;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.site-header .brand {
+  justify-self: center;
+  gap: 12px;
+}
+
+.site-header .brand .mark {
+  width: 42px;
+  height: 42px;
+}
+
+.site-header .wordmark {
+  font-size: 28px;
+}
+
+.site-header .nav-end {
+  justify-self: end;
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* A link set as a pill: a hairline, a ground a shade deeper than the page. */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg-raised) 55%, var(--bg));
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--ink);
+  white-space: nowrap;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.pill:hover {
+  background: var(--bg-raised);
+  border-color: color-mix(in srgb, var(--ink) 30%, var(--line));
+}
+
+.pill[aria-current='page'],
+.nav-links a.pill.router-link-active {
+  background: var(--bg-raised);
+  border-color: var(--ink-2);
+  color: var(--ink);
+}
+
+/* Language and menu: square buttons with the pill's hairline and ground. */
+.site-header .lang-btn,
+.site-header .menu-toggle {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--bg-raised) 55%, var(--bg));
+  color: var(--ink);
+}
+
+.site-header .lang-btn:hover,
+.site-header .lang-btn[aria-expanded='true'],
+.site-header .menu-toggle:hover,
+.site-header .menu-toggle[aria-expanded='true'] {
+  background: var(--bg-raised);
+  border-color: color-mix(in srgb, var(--ink) 30%, var(--line));
+}
+
+.site-header .lang-menu {
+  border-radius: 12px;
+}
+
+html[lang='zh-Hant'] .pill {
+  font-size: 15px;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 980px) {
+  .site-header .bar {
+    display: flex;
+    height: 68px;
+  }
+
+  .site-header .brand .mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .site-header .wordmark {
+    font-size: 23px;
+  }
+
+  .mobile-tools .pill {
+    height: 40px;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-header .brand .mark {
+    width: 30px;
+    height: 30px;
+  }
+
+  .site-header .wordmark {
+    font-size: 18px;
+    letter-spacing: 0.1em;
+  }
+
+  .mobile-tools {
+    gap: 6px;
+  }
+
+  .mobile-tools .pill {
+    padding: 0 12px;
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pill {
+    transition: none;
+  }
+}
+
+/* On the narrowest phones GitHub moves from the bar into the menu. */
+.mobile-menu .mobile-only {
+  display: none;
+}
+
+@media (max-width: 380px) {
+  .mobile-tools .mobile-start {
+    display: none;
+  }
+
+  .mobile-menu .mobile-only {
+    display: flex;
+  }
+}
+
+/* Releases: a pill that opens a panel of the project's models and tools. */
+.releases {
+  position: relative;
+}
+
+.pill-menu {
+  gap: 8px;
+  cursor: pointer;
+}
+
+.pill-menu svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.15s ease;
+}
+
+.pill-menu[aria-expanded='true'] svg {
+  transform: rotate(180deg);
+}
+
+.pill-menu.current,
+.pill-menu[aria-expanded='true'] {
+  background: var(--bg-raised);
+  border-color: var(--ink-2);
+}
+
+.releases-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 30;
+  width: 360px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 18px 40px -24px rgba(31, 26, 20, 0.45);
+}
+
+.releases-panel a {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: 10px;
+}
+
+.releases-panel a:hover,
+.releases-panel a:focus-visible,
+.releases-panel a[aria-current='page'] {
+  background: var(--bg-raised);
+}
+
+.releases-panel strong {
+  font-family: var(--display);
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.releases-panel span {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+/* In the phone menu the current page is marked in lapis, with a short lapis rule before it. */
+.mobile-menu a[aria-current='page'] {
+  color: var(--link);
+}
+
+.mobile-menu a[aria-current='page']::before {
+  content: '';
+  width: 10px;
+  height: 1px;
+  margin-right: 10px;
+  background: currentColor;
+}
+
+/* The phone menu: the research, tools and project groups, each collapsible, divided by hairlines.
+   The chevron turns at once when a group opens: the brand allows no motion here. */
+.mobile-menu .menu-group {
+  border-bottom: 1px solid var(--line);
+}
+
+.mobile-menu .menu-group-toggle {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.mobile-menu .menu-group-toggle svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mobile-menu .menu-group-toggle[aria-expanded='true'] svg {
+  transform: rotate(180deg);
+}
+
+.mobile-menu .menu-group-links {
+  list-style: none;
+  padding: 0 0 12px 16px;
+}
+
+.mobile-menu .menu-group-links a {
+  font-size: 18px;
+  color: var(--ink-2);
+}
+
+.mobile-menu .menu-group-links a:hover,
+.mobile-menu .menu-group-links a[aria-current='page'] {
+  color: var(--link);
+}
+
+.mobile-menu .menu-github {
+  margin-top: 8px;
+}
+
+html[lang='zh-Hant'] .mobile-menu .menu-group-toggle {
+  font-size: 18px;
+  letter-spacing: 0.04em;
+}
+
+html[lang='zh-Hant'] .mobile-menu .menu-group-links a {
+  font-size: 17px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pill-menu svg {
+    transition: none;
+  }
+}

@@ -1,0 +1,711 @@
+/* The manuscript layer: the Eisoptric pigments and type applied to every page. */
+
+/* ------------------------------------------------------------------
+   Eisoptric. Pigments, not swatches: vellum and ink for the page, lapis
+   for the brand and for links, vermilion only for rubrics (the section
+   sign, the lozenge, a drop capital), gilt for rules and rings.
+   Cormorant Garamond for display, EB Garamond for text, IBM Plex Mono for
+   code. Panels are cut square; gilt hairlines take the place of shadows.
+   UI that imitates software (code, mock windows, tables) keeps the sans.
+   ------------------------------------------------------------------ */
+
+body {
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.65;
+  font-feature-settings:
+    'onum' 1,
+    'kern' 1;
+  background-color: var(--bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+html[lang='zh-Hant'] body {
+  line-height: 1.85;
+}
+
+::selection {
+  background: var(--lapis);
+  color: var(--vellum);
+}
+
+/* Things that imitate software keep a sans or mono face. */
+.code,
+.code-caption,
+.mock,
+.app-shot,
+.doc-table,
+.btn-sub,
+.status-badge,
+.lang-menu,
+.mono,
+pre {
+  font-family: var(--sans);
+}
+
+.code,
+pre {
+  font-family: var(--mono);
+}
+
+h1,
+h2,
+h3,
+.wordmark,
+.hero-product strong,
+.faq dt {
+  font-family: var(--display);
+  font-weight: 500;
+}
+
+h1 {
+  font-size: clamp(46px, 6.6vw, 88px);
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: clamp(34px, 4.4vw, 54px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+html[lang='zh-Hant'] h1,
+html[lang='zh-Hant'] h2,
+html[lang='zh-Hant'] h3 {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+html[lang='zh-Hant'] h3 {
+  font-size: 21px;
+}
+
+.lede {
+  font-family: var(--body);
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+/* Labels: uppercase with wide tracking, like a frieze inscription. */
+.eyebrow {
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+html[lang='zh-Hant'] .eyebrow {
+  letter-spacing: 0.2em;
+  font-size: 13px;
+}
+
+/* Header and navigation */
+
+.site-header::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand .mark {
+  width: 38px;
+  height: 38px;
+  flex: none;
+}
+
+.mark .m-ink {
+  fill: var(--ink);
+}
+.mark .m-lapis {
+  fill: var(--link);
+}
+.mark .m-gilt {
+  fill: var(--gold);
+}
+.mark .m-ring {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 8;
+}
+.mark .m-verm {
+  fill: var(--rubric);
+}
+
+/* The wordmark: Cormorant Garamond 500, uppercase, 0.14em; its cap height matches the E in the glyph. */
+.wordmark {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  font-family: var(--display);
+  font-size: 17px;
+  gap: 28px;
+}
+
+.nav-links a.router-link-active {
+  color: var(--link);
+}
+
+.mobile-menu {
+  font-family: var(--display);
+  font-size: 19px;
+}
+
+/* Buttons: square-cornered, like a printed label. Lapis is the one primary action. */
+
+.btn {
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-sm);
+}
+
+.btn-sm {
+  font-size: 15px;
+}
+
+.btn-lg {
+  font-size: 18px;
+}
+
+.btn-primary {
+  background: var(--link);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  background: var(--ink);
+}
+
+.btn-outline {
+  border-color: var(--ink);
+}
+
+.text-link {
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--link);
+}
+
+/* Sections */
+
+.band-oat {
+  background: var(--bg-raised);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.section-head {
+  margin-bottom: 56px;
+}
+
+.section-head h2 + .lede,
+.section-head .eyebrow + h2 {
+  margin-top: 14px;
+}
+
+/* The section sign in vermilion, with the section's number, above each section's heading. */
+.section-mark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-family: var(--display);
+  line-height: 1;
+}
+
+.section-mark .sign {
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--rubric);
+}
+
+.section-mark .no {
+  font-size: 22px;
+  font-weight: 600;
+  font-variant-numeric: lining-nums;
+  color: var(--ink-2);
+}
+
+.section-head .section-mark + .eyebrow {
+  display: block;
+}
+
+/* Roman numerals for items within a section. */
+.benefit .num,
+.principles .roman,
+.questions .num {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: var(--ink-2);
+}
+
+.principles .roman {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.benefit {
+  padding-top: 22px;
+  border-top: 1px solid var(--ink);
+}
+
+.benefit h3 {
+  margin-top: 8px;
+}
+
+.principles li {
+  border-top: 1px solid var(--ink);
+  box-shadow: 0 -4px 0 -3px var(--ink);
+  padding-top: 24px;
+}
+
+.checks li::before {
+  content: '·';
+  font-size: 1.4em;
+  line-height: 1.1;
+  color: var(--accent-ink);
+}
+
+.faq dt {
+  font-size: 24px;
+}
+
+/* Epigraph and ornament */
+
+.epigraph {
+  max-width: 44rem;
+}
+
+.epigraph.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.epigraph blockquote {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(26px, 3.2vw, 38px);
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.epigraph blockquote::before {
+  content: '“';
+  color: var(--rubric);
+}
+
+.epigraph blockquote::after {
+  content: '”';
+  color: var(--rubric);
+}
+
+html[lang='zh-Hant'] .epigraph blockquote {
+  font-style: normal;
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+}
+
+html[lang='zh-Hant'] .epigraph blockquote::before {
+  content: '「';
+}
+
+html[lang='zh-Hant'] .epigraph blockquote::after {
+  content: '」';
+}
+
+.epigraph blockquote[lang='grc']::before,
+.epigraph blockquote[lang='grc']::after {
+  content: none;
+}
+
+.epigraph blockquote[lang='grc'] {
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(34px, 4.4vw, 52px);
+  letter-spacing: 0.01em;
+}
+
+/* A gilt rule between the line and its translation. */
+.epigraph figcaption {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--gold);
+  display: inline-block;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--ink-2);
+}
+
+.epigraph-band {
+  padding: 96px 0;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 56px auto;
+  max-width: 22rem;
+  color: var(--gold);
+}
+
+.ornament::before,
+.ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+}
+
+.ornament span {
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+  background: var(--rubric);
+}
+
+.cta .ornament {
+  margin: 0 auto 40px;
+}
+
+/* A single column of prose, set like a page. */
+.manuscript {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.manuscript .section-head {
+  margin-bottom: 28px;
+}
+
+.manuscript-link {
+  margin-top: 24px;
+}
+
+.prose p {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--ink);
+}
+
+.prose p + p {
+  margin-top: 1.1em;
+}
+
+html[lang='zh-Hant'] .prose p {
+  font-size: 17px;
+  line-height: 2;
+  text-align: justify;
+}
+
+.drop-cap::first-letter {
+  float: left;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 4.4em;
+  line-height: 0.82;
+  padding: 0.06em 0.1em 0 0;
+  color: var(--rubric);
+}
+
+/* ::first-letter takes an opening bracket together with the character after it, so Chinese text gets no drop cap. */
+html[lang='zh-Hant'] .drop-cap::first-letter {
+  float: none;
+  font: inherit;
+  padding: 0;
+  color: inherit;
+}
+
+/* Home */
+
+.home-hero h1 {
+  max-width: 12em;
+}
+
+.questions {
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  border-radius: 0;
+  padding: 32px 34px 34px;
+}
+
+.questions li {
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 22px;
+}
+
+html[lang='zh-Hant'] .questions li {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.questions .num {
+  line-height: 1.5;
+}
+
+.shoggoth-teaser {
+  align-items: end;
+  gap: 64px;
+}
+
+.shoggoth-teaser .section-head {
+  margin-bottom: 0;
+}
+
+.status-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+  color: var(--ink-2);
+  font-size: 16px;
+}
+
+.status-line .status-badge {
+  margin: 0;
+}
+
+.note-placeholder {
+  border-style: dashed;
+  border-color: var(--line-strong);
+  border-radius: 0;
+  background: transparent;
+}
+
+/* Tool tiles: bound like book covers. */
+.hero-product {
+  border-radius: var(--radius);
+  background: var(--oat);
+}
+
+.hero-product.dark {
+  background: var(--slate);
+  box-shadow: inset 0 0 0 1px var(--nocturne-gilt);
+}
+
+.hero-product:not(.dark) {
+  box-shadow: inset 0 0 0 1px var(--gilt);
+}
+
+.hero-product strong {
+  font-size: 34px;
+}
+
+.band-oat .hero-product:not(.dark) {
+  background: var(--bg);
+  box-shadow: inset 0 0 0 1px var(--gilt);
+}
+
+.hero-product .art .fill {
+  fill: var(--lapis);
+}
+
+.hero-product.dark .art .fill {
+  fill: var(--nocturne-lapis);
+}
+
+.hero-product.dark .arrow {
+  color: var(--nocturne-gilt);
+}
+
+/* Shoggoth */
+
+.title-plate {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.3em;
+}
+
+.shoggoth-hero h1 {
+  font-size: clamp(64px, 10vw, 128px);
+  font-style: italic;
+}
+
+/* The title is the Latin name in both languages, so it keeps its size on the Chinese page. */
+html[lang='zh-Hant'] .shoggoth-hero h1 {
+  font-size: clamp(64px, 10vw, 128px);
+  letter-spacing: -0.015em;
+}
+
+.series .folio {
+  padding: 32px 34px 36px;
+  background: var(--bg-raised);
+  border: 1px solid var(--line-strong);
+}
+
+.series .folio h3 {
+  font-size: 34px;
+  font-style: italic;
+}
+
+.series .folio p {
+  margin-top: 12px;
+  color: var(--ink-2);
+}
+
+/* Footer and dark bands: the Nocturne pigments, the star atlas. */
+
+.site-footer {
+  --ink: var(--nocturne-ink);
+  --ink-2: var(--nocturne-muted);
+  --ink-3: var(--nocturne-muted);
+  --line: var(--nocturne-hairline);
+  --link: var(--nocturne-lapis);
+  --gold: var(--nocturne-gilt);
+  --accent-ink: var(--nocturne-lapis);
+  --accent: var(--nocturne-lapis);
+  --rubric: var(--nocturne-vermilion);
+  background: var(--nocturne);
+}
+
+.site-footer .footer-heading {
+  font-family: var(--display);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.band-dark {
+  --ink: var(--nocturne-ink);
+  --ink-2: var(--nocturne-muted);
+  --ink-3: var(--nocturne-muted);
+  --line: var(--nocturne-hairline);
+  --link: var(--nocturne-lapis);
+  --gold: var(--nocturne-gilt);
+  --accent-ink: var(--nocturne-lapis);
+  --accent: var(--nocturne-lapis);
+  --rubric: var(--nocturne-vermilion);
+  background: var(--nocturne);
+}
+
+.band-dark .btn-primary {
+  background: var(--nocturne-lapis);
+  color: var(--nocturne);
+}
+
+.band-dark .btn-primary:hover {
+  background: var(--nocturne-ink);
+  color: var(--nocturne);
+}
+
+@media (max-width: 860px) {
+  .shoggoth-teaser {
+    gap: 24px;
+  }
+
+  .section-mark .sign {
+    font-size: 34px;
+  }
+
+  .epigraph-band {
+    padding: 64px 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .questions {
+    padding: 24px 22px 26px;
+  }
+
+  .questions li {
+    font-size: 19px;
+  }
+
+  .series .folio {
+    padding: 24px 22px 28px;
+  }
+}
+
+/* Status badges: square-cut labels, not pills. */
+.status-badge {
+  border-radius: var(--radius-sm);
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+html[lang='zh-Hant'] .status-badge {
+  letter-spacing: 0.06em;
+}
+
+.status-planned {
+  background: var(--vellum-deep);
+  color: var(--lapis);
+  border-color: var(--hairline);
+}
+
+.status-current {
+  background: var(--vellum-deep);
+  color: var(--pigment-ink);
+  border-color: var(--hairline);
+}
+
+/* On a phone the wordmark tightens so the bar keeps its controls on screen. */
+@media (max-width: 520px) {
+  .brand {
+    gap: 8px;
+  }
+
+  .brand .mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .wordmark {
+    font-size: 19px;
+    letter-spacing: 0.1em;
+  }
+}
+
+/* The Greek line keeps its own setting on the Chinese pages: no corner brackets, italic. */
+html[lang='zh-Hant'] .epigraph blockquote[lang='grc'] {
+  font-style: italic;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+html[lang='zh-Hant'] .epigraph blockquote[lang='grc']::before,
+html[lang='zh-Hant'] .epigraph blockquote[lang='grc']::after {
+  content: none;
+}

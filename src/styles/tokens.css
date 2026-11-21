@@ -1,0 +1,52 @@
+/* The design tokens: the Eisoptric pigments (Vellum and Nocturne), type, and the names the site uses for them. */
+
+:root {
+  /* Layout, and the sans kept for UI that imitates software. The colours and type are the Eisoptric tokens further down. */
+  --sans: ui-sans-serif, system-ui, -apple-system, 'PingFang TC', 'Noto Sans TC', sans-serif;
+  --max: 1200px;
+  --measure: 38rem;
+}
+
+:root {
+  /* Pigments (the Eisoptric tokens, Vellum theme). */
+  --vellum: #faf8f4;
+  --vellum-deep: #f1ede6;
+  --pigment-ink: #1f1a14;
+  --ink-muted: #5e5446;
+  --lapis: #23407a;
+  --vermilion: #a8321f;
+  --gilt: #9c7a2e;
+  --hairline: #d9d2c5;
+  /* Nocturne, for the dark bands and the footer. */
+  --nocturne: #14161f;
+  --nocturne-deep: #1e2130;
+  --nocturne-ink: #eee6d6;
+  --nocturne-muted: #a9a08f;
+  --nocturne-lapis: #8fa8e0;
+  --nocturne-vermilion: #e07a62;
+  --nocturne-gilt: #c9a65a;
+  --nocturne-hairline: #3a3d4d;
+
+  /* The site's own names, mapped onto the pigments. */
+  --bg: var(--vellum);
+  --bg-raised: var(--vellum-deep);
+  --oat: var(--vellum-deep);
+  --slate: var(--nocturne);
+  --slate-2: var(--nocturne-deep);
+  --ink: var(--pigment-ink);
+  --ink-2: var(--ink-muted);
+  --ink-3: #6e6455; /* 5.0:1 on vellum, 4.4:1 on vellum-deep: small print on the page only. */
+  --line: var(--hairline);
+  --line-strong: var(--gilt);
+  --accent: var(--lapis);
+  --accent-ink: var(--lapis);
+  --rubric: var(--vermilion);
+  --link: var(--lapis);
+  --gold: var(--gilt);
+  --display: 'Cormorant Garamond', 'EB Garamond', 'Noto Serif TC', Georgia, serif;
+  --serif: 'EB Garamond', 'Noto Serif TC', Georgia, 'Times New Roman', serif;
+  --body: 'EB Garamond', 'Noto Serif TC', Georgia, 'Times New Roman', serif;
+  --mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --radius: 0;
+  --radius-sm: 2px;
+}

@@ -1,0 +1,13 @@
+Copyright (c) 2026 Rick Weng. All rights reserved.
+
+This repository holds the source of the Eisoptric website (https://eisoptric.com): its code, text,
+translations, images and illustrations, and the Eisoptric name, logo and mark.
+
+It is published so that it can be read. No license is granted to copy, modify, publish, distribute,
+sublicense or otherwise use any part of it, except as GitHub's Terms of Service allow for viewing and
+forking on GitHub, without the copyright holder's written permission.
+
+Third-party software and fonts the site uses (Vue, Vue Router, Vite and the other packages in
+package-lock.json; the typefaces served by Google Fonts) remain under their own licenses.
+
+Permission requests: hello@eisoptric.com
