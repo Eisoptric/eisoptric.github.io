@@ -1,37 +1,11 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import Brand from './Brand.vue'
-import { localePath, useI18n } from '../i18n'
+import { useI18n } from '../i18n'
+import { useSiteGroups } from '../site-groups'
 
 const { locale, t } = useI18n()
 const year = new Date().getFullYear()
-
-const columns = computed(() => [
-  {
-    heading: t.value.footer.research,
-    links: [
-      { label: t.value.nav.research, to: localePath('/research', locale.value) },
-      { label: t.value.nav.lilith, to: localePath('/lilith', locale.value) },
-      { label: t.value.nav.about, to: localePath('/about', locale.value) },
-    ],
-  },
-  {
-    heading: t.value.footer.tools,
-    links: [
-      { label: t.value.footer.app, to: localePath('/app', locale.value) },
-      { label: t.value.footer.mcp, to: localePath('/mcp', locale.value) },
-      { label: t.value.footer.trust, to: localePath('/trust', locale.value) },
-      { label: t.value.footer.pricing, to: localePath('/pricing', locale.value) },
-    ],
-  },
-  {
-    heading: t.value.footer.legal,
-    links: [
-      { label: t.value.footer.privacy, to: localePath('/privacy', locale.value) },
-      { label: t.value.footer.terms, to: localePath('/terms', locale.value) },
-    ],
-  },
-])
+const columns = useSiteGroups()
 </script>
 
 <template>
@@ -42,7 +16,7 @@ const columns = computed(() => [
           <Brand />
           <p class="tagline">{{ t.footer.tagline }}</p>
         </div>
-        <nav v-for="column in columns" :key="column.heading" :aria-label="column.heading">
+        <nav v-for="column in columns" :key="column.key" :aria-label="column.heading">
           <p class="footer-heading">{{ column.heading }}</p>
           <RouterLink v-for="link in column.links" :key="link.to" :to="link.to">{{ link.label }}</RouterLink>
         </nav>

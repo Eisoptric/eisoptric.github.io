@@ -1,5 +1,7 @@
 <template>
-  <pre class="code"><span class="k">policy</span>    <span class="v">Payments</span>  <span class="k">v3  production</span>
+  <pre
+    class="code"
+  ><span class="k">policy</span>    <span class="v">Payments</span>  <span class="k">v3  production</span>
 
 <span class="k">rule</span>      <span class="v">payments.transfer</span>
 <span class="k">when</span>      <span class="v">amount &gt; 1000 AND currency == "USD"</span>

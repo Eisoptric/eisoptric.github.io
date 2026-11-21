@@ -33,7 +33,7 @@ const toolPaths = ['/app', '/mcp']
     </div>
   </section>
 
-  <section class="section" id="hidden-name">
+  <section id="hidden-name" class="section">
     <div class="wrap">
       <Epigraph center />
       <Ornament />
@@ -46,7 +46,7 @@ const toolPaths = ['/app', '/mcp']
           <p v-for="para in t.aboutPage.name" :key="para">{{ para }}</p>
         </div>
         <p class="manuscript-link">
-          <RouterLink class="text-link" :to="localePath('/lilith', locale)">{{ t.homeLilith.link }} →</RouterLink>
+          <RouterLink class="text-link" :to="localePath('/shoggoth', locale)">{{ t.homeShoggoth.link }} →</RouterLink>
         </p>
       </div>
     </div>
@@ -91,7 +91,7 @@ const toolPaths = ['/app', '/mcp']
     </div>
   </section>
 
-  <section class="section band-oat" id="contact">
+  <section id="contact" class="section band-oat">
     <div class="wrap">
       <div class="section-head">
         <SectionMark :index="4" />
@@ -100,11 +100,15 @@ const toolPaths = ['/app', '/mcp']
       <dl class="faq">
         <div v-for="item in t.aboutPage.contact" :key="item[0]">
           <dt>{{ item[0] }}</dt>
-          <dd><a class="text-link" :href="`mailto:${item[1]}`">{{ item[1] }}</a></dd>
+          <dd>
+            <a class="text-link" :href="`mailto:${item[1]}`">{{ item[1] }}</a>
+          </dd>
         </div>
       </dl>
       <div class="actions">
-        <a class="btn btn-primary btn-lg" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{ t.aboutPage.github }}</a>
+        <a class="btn btn-primary btn-lg" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{
+          t.aboutPage.github
+        }}</a>
         <a class="btn btn-outline btn-lg" :href="DONATE_URL" target="_blank" rel="noopener">{{ t.aboutPage.donate }}</a>
       </div>
     </div>

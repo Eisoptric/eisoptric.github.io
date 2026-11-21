@@ -1,0 +1,210 @@
+/* The original header and the section grid. */
+
+/* Header */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.brand img {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+}
+
+.wordmark {
+  font-family: var(--serif);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  color: var(--ink-2);
+}
+
+.nav-links a:hover,
+.nav-links a.router-link-active {
+  color: var(--ink);
+}
+
+.nav-end {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.lang {
+  position: relative;
+}
+
+.lang-btn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--ink-2);
+}
+
+.lang-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lang-btn:hover,
+.lang-btn[aria-expanded='true'] {
+  background: var(--bg-raised);
+  color: var(--ink);
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 30;
+  min-width: 168px;
+  padding: 6px;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 16px 40px -24px rgba(20, 20, 19, 0.45);
+}
+
+.lang-menu a {
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.lang-menu a:hover,
+.lang-menu a.active {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.crumbs {
+  margin-bottom: 18px;
+}
+
+.crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  list-style: none;
+  color: var(--ink-3);
+  font-size: 13px;
+}
+
+.crumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.crumbs li:not(:last-child)::after {
+  content: '/';
+  color: var(--ink-3);
+}
+
+.crumbs a:hover {
+  color: var(--ink);
+}
+
+.crumbs [aria-current='page'] {
+  color: var(--ink-2);
+}
+
+.center .crumbs ol {
+  justify-content: center;
+}
+
+.mobile-tools {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+}
+
+.menu-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+/* Sections */
+
+main {
+  min-height: 60vh;
+}
+
+.section-head {
+  max-width: 44rem;
+}
+
+.section-head .lede {
+  margin-top: 20px;
+}
+
+.hero {
+  padding: 96px 0 72px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.hero .eyebrow {
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 4.8vw, 58px);
+}
+
+.hero .lede {
+  margin-top: 24px;
+  max-width: 34rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.hero-note {
+  margin-top: 28px;
+  font-size: 14px;
+  color: var(--ink-2);
+}

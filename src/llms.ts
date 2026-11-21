@@ -1,19 +1,21 @@
 import { CONSOLE_URL, CONTACT_ADDRESS, DONATE_URL, GITHUB_URL, ORG_GITHUB_URL, RELEASES_URL, SITE_URL } from './config'
-import { pageMeta, type Locale, type PageName } from './i18n'
-import { PAGES, canonicalUrl, markdownUrl } from './seo'
+import type { Locale } from './i18n'
+import { PAGE_NAMES, pageLanguages, pageMeta, type PageName } from './page-table'
+import { canonicalUrl, markdownUrl } from './seo'
 
 // llms.txt, llms-full.txt and the Markdown copy of each page are built from the rendered pages by
 // scripts/prerender.mjs. Only the summary and the facts below are written by hand: everything else
 // comes from the same copy the site shows, so the two cannot drift apart.
 
 const SUMMARY =
-  'Eisoptric is a small, independent AI research project founded and run by Rick Weng in Taiwan. It studies how capabilities form during pretraining, what trained models compute inside (interpretability), and how to keep models that act through tools under human oversight. It releases the tools it builds for that work: Eisoptric Workbench, an open-source desktop research workbench, and Eisoptric MCP, a gateway that puts every tool call an AI agent makes under policy, human approval and audit.'
+  'Eisoptric is a small, independent AI research project founded and run by Rick Weng in Taiwan. It studies how capabilities form during pretraining, what trained models compute inside (interpretability), and how to keep models that act through tools under human oversight. It is preparing Shoggoth, a series of small language models trained from scratch, to be released with every checkpoint, the data order and the code. It releases the tools it builds for that work: Eisoptric Workbench, an open-source desktop research workbench, and Eisoptric MCP, a gateway that puts every tool call an AI agent makes under policy, human approval and audit.'
 
 const FACTS = [
   `Website: ${SITE_URL}/`,
   `Contact: ${CONTACT_ADDRESS}`,
   `GitHub: ${ORG_GITHUB_URL}`,
   'Research status: research notes are in progress; none are published yet.',
+  'Models: the Shoggoth series is in preparation; no model has been trained or released yet.',
   `Eisoptric MCP console: ${CONSOLE_URL}`,
   `Eisoptric Workbench source: ${GITHUB_URL}`,
   `Eisoptric Workbench releases: ${RELEASES_URL}`,
@@ -32,7 +34,7 @@ function header(): string {
 /** llms.txt: the summary, the facts, and a link to the Markdown copy of every page in both languages. */
 export function llmsIndex(): string {
   const sections = (['en', 'zh'] as const).map((lang) => {
-    const links = PAGES.map((page) => {
+    const links = PAGE_NAMES.filter((page) => pageLanguages(page).includes(lang)).map((page) => {
       const meta = pageMeta(page, lang)
       return `- [${meta.title}](${markdownUrl(page, lang)}): ${meta.description}`
     })
@@ -63,7 +65,9 @@ export function documentHeader(page: PageName, lang: Locale, built: string): str
   const other: Locale = lang === 'en' ? 'zh' : 'en'
   return [
     `Source: ${canonicalUrl(page, lang)}`,
-    `${other === 'zh' ? '中文' : 'English'}: ${markdownUrl(page, other)}`,
+    ...(pageLanguages(page).includes(other)
+      ? [`${other === 'zh' ? '中文' : 'English'}: ${markdownUrl(page, other)}`]
+      : []),
     `Built: ${built}`,
   ].join('\n')
 }
@@ -71,13 +75,12 @@ export function documentHeader(page: PageName, lang: Locale, built: string): str
 /** llms-full.txt: the summary and facts, then every page's Markdown, English first. */
 export function llmsFull(documents: PageDocument[], built: string): string {
   const ordered = (['en', 'zh'] as const).flatMap((lang) =>
-    PAGES.map((page) => documents.find((doc) => doc.page === page && doc.lang === lang)),
+    PAGE_NAMES.filter((page) => pageLanguages(page).includes(lang)).map((page) =>
+      documents.find((doc) => doc.page === page && doc.lang === lang),
+    ),
   )
   if (ordered.some((doc) => !doc)) throw new Error('llms-full.txt is missing a page')
-  return [
-    header(),
-    `- Built: ${built}`,
-    '',
-    ...ordered.flatMap((doc) => ['---', '', doc!.markdown.trim(), '']),
-  ].join('\n')
+  return [header(), `- Built: ${built}`, '', ...ordered.flatMap((doc) => ['---', '', doc!.markdown.trim(), ''])].join(
+    '\n',
+  )
 }

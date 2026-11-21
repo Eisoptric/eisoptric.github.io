@@ -3,7 +3,8 @@ import { computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import NavBar from './components/NavBar.vue'
 import Footer from './components/Footer.vue'
-import { isPageName, locale, type PageName } from './i18n'
+import { locale } from './i18n'
+import { isPageName, type PageName } from './page-table'
 import { applyHead, applyNotFoundHead } from './seo'
 
 const route = useRoute()

@@ -1,19 +1,20 @@
 import { CONTACT_ADDRESS, GITHUB_URL, ORG_GITHUB_URL, RELEASES_URL, SITE_URL } from './config'
-import { freePricing } from './free-pricing'
-import { PAGE_NAMES, copy, pageMeta, type Locale, type PageName } from './i18n'
-import { legalCopy } from './legal'
+import { copy, type Locale } from './i18n'
+import {
+  PAGE_NAMES,
+  isPostPage,
+  pageCrumb,
+  pageLanguages,
+  pageMeta,
+  pagePath,
+  pagePriority,
+  postOf,
+  type PageName,
+} from './page-table'
 
-export const PAGES = PAGE_NAMES
-const LOCALES = ['en', 'zh'] as const
 const ORG_ID = `${SITE_URL}/#organization`
 const SITE_ID = `${SITE_URL}/#website`
 const OG_IMAGE = new URL('/og.png', SITE_URL).href
-
-export function pagePath(page: PageName, lang: Locale): string {
-  const slug = page === 'home' ? '/' : `/${page}`
-  if (lang === 'zh') return slug === '/' ? '/zh' : `/zh${slug}`
-  return slug
-}
 
 export function canonicalUrl(page: PageName, lang: Locale): string {
   return new URL(pagePath(page, lang), SITE_URL).href
@@ -32,10 +33,15 @@ export function markdownUrl(page: PageName, lang: Locale): string {
 }
 
 export function prerenderPaths(): string[] {
-  return PAGES.flatMap((page) => LOCALES.map((lang) => pagePath(page, lang)))
+  return PAGE_NAMES.flatMap((page) => pageLanguages(page).map((lang) => pagePath(page, lang)))
 }
 
-function htmlLang(lang: Locale): string {
+/** The page hreflang x-default points at: English when the page exists in English. */
+function defaultUrl(page: PageName): string {
+  return canonicalUrl(page, pageLanguages(page)[0])
+}
+
+export function htmlLang(lang: Locale): string {
   return lang === 'zh' ? 'zh-Hant' : 'en'
 }
 
@@ -49,24 +55,10 @@ function imageAlt(lang: Locale): string {
     : 'Eisoptric, research on how AI models learn and what they compute'
 }
 
-function crumbLabel(page: PageName, lang: Locale): string {
-  const nav = copy(lang).nav
-  if (page === 'research') return nav.research
-  if (page === 'lilith') return nav.lilith
-  if (page === 'about') return nav.about
-  if (page === 'mcp') return nav.mcp
-  if (page === 'app') return nav.app
-  if (page === 'trust') return nav.trust
-  if (page === 'pricing') return nav.pricing
-  if (page === 'terms' || page === 'privacy') return legalCopy[lang][page].crumb
-  return 'Eisoptric'
-}
-
 function faqFor(page: PageName, lang: Locale) {
   const text = copy(lang)
   if (page === 'home') return text.homeFaq.items
   if (page === 'trust') return text.trustPage.faq
-  if (page === 'pricing') return freePricing(lang).page.faq
   return null
 }
 
@@ -91,7 +83,14 @@ function mcpApplication(lang: Locale) {
     featureList:
       lang === 'zh'
         ? ['工具集', '參數層級政策', '多人核准', '簽章 Webhook', '加密的原始內容', '審計軌跡']
-        : ['Tool sets', 'Argument-level policy', 'Multi-approver quorum', 'Signed webhooks', 'Encrypted raw payloads', 'Audit trail'],
+        : [
+            'Tool sets',
+            'Argument-level policy',
+            'Multi-approver quorum',
+            'Signed webhooks',
+            'Encrypted raw payloads',
+            'Audit trail',
+          ],
     provider: { '@id': ORG_ID },
     isAccessibleForFree: true,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -114,8 +113,20 @@ function desktopApplication(lang: Locale) {
     isAccessibleForFree: true,
     featureList:
       lang === 'zh'
-        ? ['問題、假說、實驗、樣本與結論都是專案裡的純文字檔', '每個對話可設定 AI 參與程度', '本機 Runtime，只監聽 127.0.0.1', '自帶模型', 'Apache 2.0 授權']
-        : ['Questions, hypotheses, experiments, samples and findings as plain files in the project', 'Per-chat AI involvement', 'Local runtime on 127.0.0.1', 'Bring your own model', 'Apache 2.0 license'],
+        ? [
+            '問題、假說、實驗、樣本與結論都是專案裡的純文字檔',
+            '每個對話可設定 AI 參與程度',
+            '本機 Runtime，只監聽 127.0.0.1',
+            '自帶模型',
+            'Apache 2.0 授權',
+          ]
+        : [
+            'Questions, hypotheses, experiments, samples and findings as plain files in the project',
+            'Per-chat AI involvement',
+            'Local runtime on 127.0.0.1',
+            'Bring your own model',
+            'Apache 2.0 license',
+          ],
     provider: { '@id': ORG_ID },
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }
@@ -166,7 +177,10 @@ export function jsonLd(page: PageName, lang: Locale) {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Eisoptric', item: canonicalUrl('home', lang) },
-        { '@type': 'ListItem', position: 2, name: crumbLabel(page, lang), item: url },
+        ...(isPostPage(page)
+          ? [{ '@type': 'ListItem', position: 2, name: pageCrumb('posts', lang), item: canonicalUrl('posts', lang) }]
+          : []),
+        { '@type': 'ListItem', position: isPostPage(page) ? 3 : 2, name: pageCrumb(page, lang), item: url },
       ],
     }
   }
@@ -177,9 +191,26 @@ export function jsonLd(page: PageName, lang: Locale) {
     pageNode.mainEntity = questions(faq)
   }
 
+  if (isPostPage(page)) {
+    const post = postOf(page)
+    const version = post.versions[lang]!
+    graph.push({
+      '@type': 'BlogPosting',
+      '@id': `${url}#post`,
+      headline: version.title,
+      description: version.description,
+      datePublished: version.date,
+      inLanguage: htmlLang(lang),
+      url,
+      mainEntityOfPage: { '@id': `${url}#webpage` },
+      author: { '@type': 'Person', name: 'Rick Weng' },
+      publisher: { '@id': ORG_ID },
+    })
+  }
+
   graph.push(pageNode)
-  if (page === 'home' || page === 'mcp' || page === 'pricing') graph.push(mcpApplication(lang))
-  if (page === 'home' || page === 'app' || page === 'pricing') graph.push(desktopApplication(lang))
+  if (page === 'home' || page === 'mcp') graph.push(mcpApplication(lang))
+  if (page === 'home' || page === 'app') graph.push(desktopApplication(lang))
 
   return { '@context': 'https://schema.org', '@graph': graph }
 }
@@ -192,12 +223,13 @@ export function headTags(page: PageName, lang: Locale): string {
   const meta = pageMeta(page, lang)
   const url = canonicalUrl(page, lang)
   const alt = imageAlt(lang)
-  const other = lang === 'zh' ? 'en_US' : 'zh_TW'
+  const otherLang: Locale = lang === 'zh' ? 'en' : 'zh'
+  const hasOther = pageLanguages(page).includes(otherLang)
   const alternates = [
-    ...LOCALES.map(
+    ...pageLanguages(page).map(
       (item) => `<link rel="alternate" hreflang="${htmlLang(item)}" href="${canonicalUrl(page, item)}" />`,
     ),
-    `<link rel="alternate" hreflang="x-default" href="${canonicalUrl(page, 'en')}" />`,
+    `<link rel="alternate" hreflang="x-default" href="${defaultUrl(page)}" />`,
   ]
   const json = JSON.stringify(jsonLd(page, lang)).replace(/</g, '\\u003c')
   return [
@@ -207,10 +239,10 @@ export function headTags(page: PageName, lang: Locale): string {
     `<link rel="canonical" href="${url}" />`,
     ...alternates,
     `<link rel="alternate" type="text/markdown" href="${markdownUrl(page, lang)}" title="${lang === 'zh' ? 'Markdown 版本' : 'Markdown version'}" />`,
-    `<meta property="og:type" content="website" />`,
+    `<meta property="og:type" content="${isPostPage(page) ? 'article' : 'website'}" />`,
     `<meta property="og:site_name" content="Eisoptric" />`,
     `<meta property="og:locale" content="${ogLocale(lang)}" />`,
-    `<meta property="og:locale:alternate" content="${other}" />`,
+    ...(hasOther ? [`<meta property="og:locale:alternate" content="${ogLocale(otherLang)}" />`] : []),
     `<meta property="og:title" content="${esc(meta.title)}" />`,
     `<meta property="og:description" content="${esc(meta.description)}" />`,
     `<meta property="og:url" content="${url}" />`,
@@ -245,34 +277,23 @@ export function applyNotFoundHead(lang: Locale) {
   upsertMeta('name', 'description', text.description)
   upsertMeta('name', 'robots', 'noindex')
   document.head
-    .querySelectorAll('link[rel="canonical"], link[rel="alternate"][hreflang], link[rel="alternate"][type="text/markdown"], #seo-jsonld')
+    .querySelectorAll(
+      'link[rel="canonical"], link[rel="alternate"][hreflang], link[rel="alternate"][type="text/markdown"], #seo-jsonld',
+    )
     .forEach((el) => el.remove())
 }
 
 export function sitemapXml(): string {
-  const priorities: Record<PageName, string> = {
-    home: '1.0',
-    research: '0.9',
-    lilith: '0.9',
-    about: '0.8',
-    mcp: '0.9',
-    app: '0.9',
-    trust: '0.8',
-    pricing: '0.8',
-    terms: '0.3',
-    privacy: '0.3',
-  }
   const lastmod = new Date().toISOString().slice(0, 10)
-  const urls = PAGES.flatMap((page) =>
-    LOCALES.map((lang) => {
+  const urls = PAGE_NAMES.flatMap((page) =>
+    pageLanguages(page).map((lang) => {
       const alternates = [
-        ...LOCALES.map(
-          (alt) =>
-            `    <xhtml:link rel="alternate" hreflang="${htmlLang(alt)}" href="${canonicalUrl(page, alt)}"/>`,
+        ...pageLanguages(page).map(
+          (alt) => `    <xhtml:link rel="alternate" hreflang="${htmlLang(alt)}" href="${canonicalUrl(page, alt)}"/>`,
         ),
-        `    <xhtml:link rel="alternate" hreflang="x-default" href="${canonicalUrl(page, 'en')}"/>`,
+        `    <xhtml:link rel="alternate" hreflang="x-default" href="${defaultUrl(page)}"/>`,
       ].join('\n')
-      return `  <url>\n    <loc>${canonicalUrl(page, lang)}</loc>\n    <lastmod>${lastmod}</lastmod>\n${alternates}\n    <changefreq>weekly</changefreq>\n    <priority>${priorities[page]}</priority>\n  </url>`
+      return `  <url>\n    <loc>${canonicalUrl(page, lang)}</loc>\n    <lastmod>${lastmod}</lastmod>\n${alternates}\n    <changefreq>weekly</changefreq>\n    <priority>${pagePriority(page)}</priority>\n  </url>`
     }),
   )
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls.join('\n')}\n</urlset>\n`
@@ -309,7 +330,7 @@ export function applyHead(page: PageName, lang: Locale) {
   upsertMeta('name', 'robots', 'index, follow, max-image-preview:large')
   upsertCanonical(url)
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove())
-  for (const item of LOCALES) {
+  for (const item of pageLanguages(page)) {
     const link = document.createElement('link')
     link.rel = 'alternate'
     link.hreflang = htmlLang(item)
@@ -319,12 +340,14 @@ export function applyHead(page: PageName, lang: Locale) {
   const fallback = document.createElement('link')
   fallback.rel = 'alternate'
   fallback.hreflang = 'x-default'
-  fallback.href = canonicalUrl(page, 'en')
+  fallback.href = defaultUrl(page)
   document.head.appendChild(fallback)
-  upsertMeta('property', 'og:type', 'website')
+  upsertMeta('property', 'og:type', isPostPage(page) ? 'article' : 'website')
   upsertMeta('property', 'og:site_name', 'Eisoptric')
   upsertMeta('property', 'og:locale', ogLocale(lang))
-  upsertMeta('property', 'og:locale:alternate', lang === 'zh' ? 'en_US' : 'zh_TW')
+  const otherLang: Locale = lang === 'zh' ? 'en' : 'zh'
+  document.head.querySelector('meta[property="og:locale:alternate"]')?.remove()
+  if (pageLanguages(page).includes(otherLang)) upsertMeta('property', 'og:locale:alternate', ogLocale(otherLang))
   upsertMeta('property', 'og:title', meta.title)
   upsertMeta('property', 'og:description', meta.description)
   upsertMeta('property', 'og:url', url)

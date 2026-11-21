@@ -1,0 +1,175 @@
+/* Posts: the list, and the body of a post rendered from Markdown, set at the research-note measure. */
+
+.post-list {
+  list-style: none;
+  max-width: 48rem;
+}
+
+.post-list li {
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+
+.post-list li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.post-meta {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--ink-2);
+}
+
+.post-lang {
+  text-transform: uppercase;
+}
+
+.post-list h2 {
+  margin-top: 8px;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.post-list h2 a {
+  color: var(--ink);
+}
+
+.post-list h2 a:hover {
+  color: var(--link);
+}
+
+.post-list p:last-child {
+  margin-top: 8px;
+  color: var(--ink-2);
+}
+
+.post-empty {
+  color: var(--ink-2);
+  font-style: italic;
+}
+
+.post-body {
+  max-width: 38rem;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.post-body > * + * {
+  margin-top: 1.1em;
+}
+
+.post-body h2 {
+  margin-top: 2em;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.post-body h3 {
+  margin-top: 1.6em;
+  font-size: 23px;
+}
+
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+  margin-top: 1.4em;
+  font-size: 19px;
+}
+
+.post-body a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.post-body ul,
+.post-body ol {
+  padding-left: 1.4em;
+}
+
+.post-body li + li {
+  margin-top: 0.4em;
+}
+
+.post-body blockquote {
+  padding-left: 18px;
+  border-left: 2px solid var(--gold);
+  color: var(--ink-2);
+}
+
+.post-body code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  padding: 1px 5px;
+  background: var(--bg-raised);
+}
+
+.post-body pre {
+  padding: 20px 24px;
+  background: var(--bg-raised);
+  overflow-x: auto;
+  line-height: 1.55;
+}
+
+.post-body pre code {
+  padding: 0;
+  background: none;
+}
+
+.post-body img {
+  max-width: 100%;
+  height: auto;
+}
+
+.post-body hr {
+  border: 0;
+  border-top: 1px solid var(--line-strong);
+  width: 64px;
+  margin: 2.4em 0;
+}
+
+.post-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.post-body th,
+.post-body td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.post-notice {
+  max-width: 38rem;
+  margin-top: 48px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-2);
+  font-style: italic;
+}
+
+.notes-posts {
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+html[lang='zh-Hant'] .post-notice,
+html[lang='zh-Hant'] .post-empty {
+  font-style: normal;
+}
+
+/* The post body follows its title closely. */
+.post-hero {
+  padding-bottom: 32px;
+}
+
+.post-hero + .section {
+  padding-top: 32px;
+}

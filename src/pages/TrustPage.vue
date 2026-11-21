@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import Breadcrumb from '../components/Breadcrumb.vue'
 import { CONSOLE_URL } from '../config'
 import { useI18n } from '../i18n'
-import { splitStatusBadges } from '../legal'
+import { splitStatusBadges } from '../status-badges'
 import { trustPaper } from '../trust-paper'
 
 const { locale, t } = useI18n()
@@ -112,7 +112,7 @@ function openPaper(event: MouseEvent) {
     </div>
   </section>
 
-  <section class="section" id="whitepaper">
+  <section id="whitepaper" class="section">
     <article class="wrap prose paper">
       <p class="eyebrow accent">{{ paper.eyebrow }}</p>
       <h2>{{ paper.heading }}</h2>
@@ -173,7 +173,7 @@ function openPaper(event: MouseEvent) {
     </article>
   </section>
 
-  <section class="section band-oat" id="disclosure">
+  <section id="disclosure" class="section band-oat">
     <div class="wrap">
       <div class="section-head">
         <h2>{{ t.trustPage.disclosureTitle }}</h2>

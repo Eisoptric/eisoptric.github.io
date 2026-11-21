@@ -1,0 +1,246 @@
+/* The editorial layer: large serif headlines, generous space, quiet labels and full-width bands. */
+
+/* Editorial layout: large serif headlines, generous space, quiet labels, and full-width bands that change the
+   page's color instead of boxing its content. */
+
+.footer-heading {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.section {
+  padding: 136px 0;
+}
+
+.section + .section {
+  border-top: 0;
+}
+
+.btn-lg {
+  height: 52px;
+  padding: 0 28px;
+}
+
+.btn-outline:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.card {
+  border-color: transparent;
+}
+
+.site-header {
+  border-bottom-color: transparent;
+}
+
+/* Bands */
+
+.band-dark {
+  --line-strong: #4a4945;
+  --bg-raised: var(--slate-2);
+  color: var(--ink);
+}
+
+.band-dark .btn-outline {
+  border-color: #faf9f5;
+}
+
+.band-dark .btn-outline:hover {
+  background: #faf9f5;
+  color: var(--slate);
+}
+
+/* The footer is a dark band of its own. */
+
+.site-footer {
+  color: var(--ink);
+  padding: 88px 0 48px;
+}
+
+.site-footer .brand img {
+  filter: invert(1);
+}
+
+/* Home: the two products as colored tiles, each with a line drawing. */
+
+.hero-products {
+  gap: 20px;
+}
+
+.hero-product {
+  min-height: 228px;
+  padding: 28px 30px 30px;
+  border: 0;
+}
+
+.hero-product:hover {
+  transform: translateY(-3px);
+}
+
+.hero-product .art {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 18px;
+  color: var(--ink);
+}
+
+.hero-product .art path,
+.hero-product .art circle,
+.hero-product .art rect,
+.hero-product .art line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hero-product .art .fill {
+  stroke: none;
+}
+
+.hero-product.dark .art {
+  color: #faf9f5;
+}
+
+.principles li {
+  border-top-color: var(--accent);
+}
+
+.home-hero {
+  padding: 136px 0 120px;
+}
+
+.mission-quote {
+  max-width: 54rem;
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.4vw, 42px);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+html[lang='zh-Hant'] .mission-quote {
+  letter-spacing: 0;
+  line-height: 1.45;
+}
+
+@media (max-width: 860px) {
+  .section {
+    padding: 88px 0;
+  }
+
+  .home-hero {
+    padding: 72px 0 64px;
+  }
+}
+
+.band-dark .btn-primary.btn-download .btn-sub {
+  color: #5e5d59;
+  border-left-color: #c2c0b6;
+}
+
+.band-dark .app-shot img {
+  border-color: #3a3936;
+}
+
+/* On an oat band, panels turn ivory so they still stand apart. */
+.band-oat .card,
+.band-oat .mock,
+.band-oat .modes li {
+  background: var(--bg);
+}
+
+/* Every page ends on an oat band before the dark footer. */
+.section:has(> .wrap.cta) {
+  background: var(--bg-raised);
+}
+
+.band-dark .code {
+  background: #0d0d0c;
+}
+
+/* Research project: home hero questions, note placeholders, tool cards */
+
+.questions ol {
+  list-style: none;
+  margin-top: 16px;
+  display: grid;
+  gap: 18px;
+}
+
+.questions li {
+  display: grid;
+  gap: 8px;
+  line-height: 1.45;
+}
+
+.questions .num {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent-ink);
+}
+
+.note-placeholder {
+  max-width: 46rem;
+  padding: 28px 30px;
+  border: 1px dashed var(--line-strong);
+}
+
+.note-placeholder .status-badge {
+  margin: 0;
+}
+
+.note-placeholder h3 {
+  margin-top: 14px;
+  font-size: 22px;
+}
+
+.note-placeholder p {
+  margin-top: 8px;
+  color: var(--ink-2);
+}
+
+.note-placeholder .text-link {
+  display: inline-block;
+  margin-top: 14px;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tool-cards .hero-product {
+  height: 100%;
+}
+
+.benefit .checks {
+  margin-top: 16px;
+  font-size: 15px;
+}
+
+.principles.four-col {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.principles.two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 860px) {
+  .principles.four-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tool-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .principles.four-col,
+  .principles.two-col {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

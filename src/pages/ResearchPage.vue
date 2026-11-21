@@ -19,7 +19,7 @@ const { locale, t } = useI18n()
     </div>
   </section>
 
-  <section class="section band-oat" id="agenda">
+  <section id="agenda" class="section band-oat">
     <div class="wrap">
       <div class="section-head">
         <SectionMark :index="0" />
@@ -39,8 +39,8 @@ const { locale, t } = useI18n()
     </div>
   </section>
 
-  <section class="section" id="models">
-    <div class="wrap two lilith-teaser">
+  <section id="models" class="section">
+    <div class="wrap two shoggoth-teaser">
       <div class="section-head">
         <SectionMark :index="1" />
         <h2>{{ t.researchPage.modelsTitle }}</h2>
@@ -48,14 +48,16 @@ const { locale, t } = useI18n()
       <div>
         <p class="lede">{{ t.researchPage.models }}</p>
         <p class="status-line">
-          <span class="status-badge status-planned">{{ t.homeLilith.badge }}</span>
-          <RouterLink class="text-link" :to="localePath('/lilith', locale)">{{ t.researchPage.modelsLink }} →</RouterLink>
+          <span class="status-badge status-planned">{{ t.homeShoggoth.badge }}</span>
+          <RouterLink class="text-link" :to="localePath('/shoggoth', locale)"
+            >{{ t.researchPage.modelsLink }} →</RouterLink
+          >
         </p>
       </div>
     </div>
   </section>
 
-  <section class="section band-oat" id="notes">
+  <section id="notes" class="section band-oat">
     <div class="wrap">
       <div class="section-head">
         <SectionMark :index="2" />
@@ -68,6 +70,10 @@ const { locale, t } = useI18n()
         <h3>{{ t.researchPage.placeholder.title }}</h3>
         <p>{{ t.researchPage.placeholder.body }}</p>
       </div>
+      <p class="status-line notes-posts">
+        <span>{{ t.researchPage.postsNote }}</span>
+        <RouterLink class="text-link" :to="localePath('/posts', locale)">{{ t.researchPage.postsLink }} →</RouterLink>
+      </p>
     </div>
   </section>
 
@@ -93,7 +99,9 @@ const { locale, t } = useI18n()
       <h2>{{ t.researchPage.ctaTitle }}</h2>
       <p class="lede">{{ t.researchPage.ctaBody }}</p>
       <div class="actions">
-        <a class="btn btn-primary btn-lg" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{ t.cta.primary }}</a>
+        <a class="btn btn-primary btn-lg" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{
+          t.cta.primary
+        }}</a>
         <a class="btn btn-outline btn-lg" :href="`mailto:${CONTACT_ADDRESS}`">{{ t.cta.secondary }}</a>
       </div>
     </div>

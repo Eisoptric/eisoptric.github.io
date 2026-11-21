@@ -3,14 +3,18 @@ import { createMemoryHistory, createRouter, createWebHistory, type RouteRecordRa
 import HomePage from './pages/HomePage.vue'
 import ResearchPage from './pages/ResearchPage.vue'
 import AboutPage from './pages/AboutPage.vue'
-import LilithPage from './pages/LilithPage.vue'
+import ShoggothPage from './pages/ShoggothPage.vue'
 import McpPage from './pages/McpPage.vue'
 import AppPage from './pages/AppPage.vue'
 import TrustPage from './pages/TrustPage.vue'
-import PricingPage from './pages/PricingPage.vue'
+import SupportPage from './pages/SupportPage.vue'
+import BrandPage from './pages/BrandPage.vue'
+import PostsPage from './pages/PostsPage.vue'
+import PostPage from './pages/PostPage.vue'
 import LegalPage from './pages/LegalPage.vue'
 import NotFoundPage from './pages/NotFoundPage.vue'
-import { locale, type Locale, type PageName } from './i18n'
+import { locale, type Locale } from './i18n'
+import { PAGE_NAMES, isPostPage, pageLanguages, pagePath, type FixedPage, type PageName } from './page-table'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -20,42 +24,42 @@ declare module 'vue-router' {
   }
 }
 
-const pages: { path: string; page: PageName; component: Component }[] = [
-  { path: '/', page: 'home', component: HomePage },
-  { path: '/research', page: 'research', component: ResearchPage },
-  { path: '/lilith', page: 'lilith', component: LilithPage },
-  { path: '/about', page: 'about', component: AboutPage },
-  { path: '/mcp', page: 'mcp', component: McpPage },
-  { path: '/app', page: 'app', component: AppPage },
-  { path: '/trust', page: 'trust', component: TrustPage },
-  { path: '/pricing', page: 'pricing', component: PricingPage },
-  { path: '/terms', page: 'terms', component: LegalPage },
-  { path: '/privacy', page: 'privacy', component: LegalPage },
-]
+// Each page's component. The paths, titles and everything else about a page are in src/page-table.ts.
+// Every post uses PostPage.
+const components: Record<FixedPage, Component> = {
+  home: HomePage,
+  research: ResearchPage,
+  posts: PostsPage,
+  shoggoth: ShoggothPage,
+  about: AboutPage,
+  mcp: McpPage,
+  app: AppPage,
+  trust: TrustPage,
+  support: SupportPage,
+  brand: BrandPage,
+  terms: LegalPage,
+  privacy: LegalPage,
+}
 
 function localized(lang: Locale): RouteRecordRaw[] {
-  return pages.map(
-    (page): RouteRecordRaw => ({
-      path: lang === 'zh' ? (page.path === '/' ? '/zh' : `/zh${page.path}`) : page.path,
-      name: lang === 'en' ? page.page : `${lang}-${page.page}`,
-      component: page.component,
-      meta: { locale: lang, page: page.page },
-    }),
-  )
+  return PAGE_NAMES.filter((page) => pageLanguages(page).includes(lang)).map((page: PageName): RouteRecordRaw => ({
+    path: pagePath(page, lang),
+    name: lang === 'en' ? page : `${lang}-${page}`,
+    component: isPostPage(page) ? PostPage : components[page],
+    meta: { locale: lang, page },
+  }))
 }
 
 export const routes: RouteRecordRaw[] = [
   ...localized('en'),
   ...localized('zh'),
-  { path: '/platform', redirect: '/mcp' },
-  { path: '/security', redirect: '/trust' },
-  { path: '/zh/security', redirect: '/zh/trust' },
-  { path: '/product', redirect: '/mcp' },
-  { path: '/cloud', redirect: '/mcp' },
-  { path: '/approach', redirect: '/mcp' },
-  { path: '/developers', redirect: '/app' },
-  // Any other path is a 404. The build prerenders these to 404.html and zh/404.html, which Cloudflare Pages serves with status 404.
-  { path: '/zh/:pathMatch(.*)*', name: 'zh-not-found', component: NotFoundPage, meta: { locale: 'zh', notFound: true } },
+  // Any other path is a 404. The build prerenders these to 404.html and zh/404.html, which Cloudflare serves with status 404.
+  {
+    path: '/zh/:pathMatch(.*)*',
+    name: 'zh-not-found',
+    component: NotFoundPage,
+    meta: { locale: 'zh', notFound: true },
+  },
   { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFoundPage, meta: { locale: 'en', notFound: true } },
 ]
 

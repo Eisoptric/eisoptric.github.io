@@ -3,7 +3,8 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import Breadcrumb from '../components/Breadcrumb.vue'
 import { localePath, useI18n } from '../i18n'
-import { legalCopy, splitStatusBadges } from '../legal'
+import { legalCopy } from '../legal'
+import { splitStatusBadges } from '../status-badges'
 
 const route = useRoute()
 const { locale } = useI18n()

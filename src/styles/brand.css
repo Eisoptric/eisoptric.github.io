@@ -1,0 +1,363 @@
+/* The Brand page: logo tiles, pigment swatches and type specimens. Swatch colours are the kit's own values, so
+   they stay true to the kit even where the site's tokens give a pigment another job. */
+
+.brand-hero-mark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-hero-mark img {
+  width: min(100%, 280px);
+  height: auto;
+}
+
+.brand-note {
+  margin-top: 24px;
+  max-width: 44rem;
+  color: var(--ink-2);
+  font-style: italic;
+}
+
+.brand-table th[scope='row'] {
+  white-space: normal;
+  min-width: 10em;
+}
+
+.brand-subhead {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.brand-rules {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.brand-rules li {
+  padding-left: 22px;
+  position: relative;
+  color: var(--ink-2);
+}
+
+.brand-rules li::before {
+  content: '·';
+  position: absolute;
+  left: 4px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* Logo tiles: each file on its own ground, Vellum on vellum and Nocturne on nocturne. */
+
+.brand-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  padding: 28px;
+}
+
+.tile-vellum {
+  background: #faf8f4;
+}
+
+.tile-nocturne {
+  background: #14161f;
+  border-color: #14161f;
+}
+
+.brand-tile img {
+  max-width: 100%;
+  height: auto;
+  max-height: 120px;
+}
+
+.brand-mark-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.brand-mark-pair .brand-tile {
+  flex-direction: column;
+  gap: 16px;
+  padding: 48px 28px 24px;
+}
+
+.brand-mark-pair img {
+  width: 200px;
+  max-height: none;
+}
+
+.brand-mark-pair figcaption {
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #5e5446;
+}
+
+.brand-mark-pair .tile-nocturne figcaption {
+  color: #a9a08f;
+}
+
+.brand-mark-text {
+  display: grid;
+  gap: 40px;
+}
+
+.brand-mark-text .brand-rules {
+  max-width: 48rem;
+}
+
+.brand-files {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px 32px;
+}
+
+.brand-file-previews {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.brand-file-previews .brand-tile {
+  height: 150px;
+}
+
+.brand-file h3 {
+  font-size: 22px;
+}
+
+.brand-file p {
+  margin-top: 6px;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+
+.brand-downloads {
+  list-style: none;
+  margin-top: 14px;
+  display: grid;
+  gap: 6px;
+  font-size: 15px;
+}
+
+.brand-downloads li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  align-items: baseline;
+}
+
+.brand-downloads-theme {
+  min-width: 6.5em;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+/* Pigments: each swatch is split, Vellum on the left and Nocturne on the right. */
+
+.brand-pigments {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px 28px;
+}
+
+.brand-swatch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 96px;
+  border: 1px solid var(--line);
+  margin-bottom: 14px;
+}
+
+.brand-pigments h3 {
+  font-size: 22px;
+}
+
+.brand-hex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 14px;
+  margin: 4px 0 8px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+
+.brand-pigments p:last-child {
+  color: var(--ink-2);
+  font-size: 15px;
+}
+
+.sw-vellum-vellum {
+  background: #faf8f4;
+}
+.sw-vellum-nocturne {
+  background: #14161f;
+}
+.sw-vellumDeep-vellum {
+  background: #f1ede6;
+}
+.sw-vellumDeep-nocturne {
+  background: #1e2130;
+}
+.sw-ink-vellum {
+  background: #1f1a14;
+}
+.sw-ink-nocturne {
+  background: #eee6d6;
+}
+.sw-inkMuted-vellum {
+  background: #5e5446;
+}
+.sw-inkMuted-nocturne {
+  background: #a9a08f;
+}
+.sw-lapis-vellum {
+  background: #23407a;
+}
+.sw-lapis-nocturne {
+  background: #8fa8e0;
+}
+.sw-vermilion-vellum {
+  background: #a8321f;
+}
+.sw-vermilion-nocturne {
+  background: #e07a62;
+}
+.sw-gilt-vellum {
+  background: #9c7a2e;
+}
+.sw-gilt-nocturne {
+  background: #c9a65a;
+}
+.sw-verdigris-vellum {
+  background: #006e64;
+}
+.sw-verdigris-nocturne {
+  background: #4eb9ad;
+}
+.sw-hairline-vellum {
+  background: #d9d2c5;
+}
+.sw-hairline-nocturne {
+  background: #3a3d4d;
+}
+
+/* Type specimens: each face's name, set in that face. */
+
+.brand-typefaces {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 48px;
+}
+
+.brand-typefaces li {
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+
+.brand-typefaces li p:last-child {
+  margin-top: 8px;
+  color: var(--ink-2);
+}
+
+.brand-specimen {
+  font-size: 40px;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.tf-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+.tf-garamond {
+  font-family: 'EB Garamond', serif;
+}
+
+.tf-mono {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 32px;
+}
+
+.tf-noto {
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 500;
+  font-size: 34px;
+}
+
+/* Describing Eisoptric: text others may quote, set apart so it is easy to copy. */
+
+.brand-about {
+  max-width: 48rem;
+}
+
+.brand-about > div {
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+
+.brand-about dt {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.brand-about dd {
+  margin-top: 10px;
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.brand-usage {
+  max-width: 48rem;
+  margin-top: 40px;
+}
+
+.brand-usage p {
+  color: var(--ink-2);
+}
+
+.brand-usage p + p {
+  margin-top: 10px;
+}
+
+@media (max-width: 980px) {
+  .brand-files,
+  .brand-typefaces {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .brand-pigments {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .brand-hero-mark {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-mark-pair,
+  .brand-pigments {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .brand-mark-pair img {
+    width: 150px;
+  }
+}

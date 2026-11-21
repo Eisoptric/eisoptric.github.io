@@ -13,8 +13,12 @@ const { locale, t } = useI18n()
       <div class="h-hero-foot">
         <p class="h-lede">{{ t.hero.desc }}</p>
         <div class="h-actions">
-          <RouterLink class="btn btn-primary btn-lg" :to="localePath('/research', locale)">{{ t.hero.primary }}</RouterLink>
-          <RouterLink class="btn btn-outline btn-lg" :to="localePath('/about', locale)">{{ t.hero.secondary }}</RouterLink>
+          <RouterLink class="btn btn-primary btn-lg" :to="localePath('/research', locale)">{{
+            t.hero.primary
+          }}</RouterLink>
+          <RouterLink class="btn btn-outline btn-lg" :to="localePath('/about', locale)">{{
+            t.hero.secondary
+          }}</RouterLink>
         </div>
       </div>
     </div>
@@ -48,12 +52,14 @@ const { locale, t } = useI18n()
     <div class="wrap h-grid2">
       <article class="h-card">
         <p class="h-card-label">
-          {{ t.homeLilith.eyebrow }}
-          <span class="status-badge status-planned">{{ t.homeLilith.badge }}</span>
+          {{ t.homeShoggoth.eyebrow }}
+          <span class="status-badge status-planned">{{ t.homeShoggoth.badge }}</span>
         </p>
-        <h3>{{ t.homeLilith.title }}</h3>
-        <p>{{ t.homeLilith.desc }}</p>
-        <RouterLink class="h-link" :to="localePath('/lilith', locale)">{{ t.homeLilith.link }} <span aria-hidden="true">→</span></RouterLink>
+        <h3>{{ t.homeShoggoth.title }}</h3>
+        <p>{{ t.homeShoggoth.desc }}</p>
+        <RouterLink class="h-link" :to="localePath('/shoggoth', locale)"
+          >{{ t.homeShoggoth.link }} <span aria-hidden="true">→</span></RouterLink
+        >
       </article>
       <article class="h-card">
         <p class="h-card-label">
@@ -62,7 +68,9 @@ const { locale, t } = useI18n()
         </p>
         <h3>{{ t.notes.placeholderTitle }}</h3>
         <p>{{ t.notes.placeholderBody }}</p>
-        <RouterLink class="h-link" :to="localePath('/research', locale)">{{ t.notes.link }} <span aria-hidden="true">→</span></RouterLink>
+        <RouterLink class="h-link" :to="localePath('/research', locale)"
+          >{{ t.notes.link }} <span aria-hidden="true">→</span></RouterLink
+        >
       </article>
     </div>
   </section>
@@ -133,7 +141,9 @@ const { locale, t } = useI18n()
       <h2>{{ t.cta.title }}</h2>
       <p>{{ t.cta.body }}</p>
       <div class="h-actions">
-        <a class="btn btn-primary btn-lg" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{ t.cta.primary }}</a>
+        <a class="btn btn-primary btn-lg" :href="ORG_GITHUB_URL" target="_blank" rel="noopener noreferrer">{{
+          t.cta.primary
+        }}</a>
         <a class="btn btn-outline btn-lg" :href="`mailto:${CONTACT_ADDRESS}`">{{ t.cta.secondary }}</a>
       </div>
     </div>
